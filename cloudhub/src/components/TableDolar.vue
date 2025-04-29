@@ -108,16 +108,29 @@
             <td>{{ report.id }}</td>
             <td>{{ report.bankRef }}</td>
             <td>{{ report.type }}</td>
+            <td>{{ report.transactionType }}</td>
             <td>{{ report.amount }}</td>
             <td>{{ report.rate }}</td>
-            <td>{{ report.contracts }}</td>
-            <td>{{ report.invoices }}</td>  
+            <td>
+              <div v-for="contract in report.contracts" class="d-flex justify-center ga-2 mt-2" >
+                <v-chip variant="flat" size="small" color="blue">
+                  {{contract}}
+                </v-chip>
+              </div>
+            </td>
+            
+            <td>
+              <div v-for="invoice in report.invoices" class="d-flex justify-center gap-2 mt-2">
+                <v-chip variant="flat" size="small" color="green">
+                  {{ invoice }}
+                </v-chip>
+              </div>
+            </td>
             <td>{{ report.billingDate }}</td>
             <td>{{ report.client }}</td>
             <td>{{ report.idNumber }}</td>
             <td>{{ report.bankDest }}</td>
             <td>{{ report.bankOrigin }}</td>
-            <td>{{ report.transactionType }}</td>
             <td>{{ report.transactionDate }}</td>
             <td>{{ report.reportDate }}</td>
             <Modal :imageIcon="DetailsIcon" 
