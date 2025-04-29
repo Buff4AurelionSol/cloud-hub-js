@@ -35,9 +35,22 @@
 
     function exportTable(data, name){
       const workSheet = XLSX.utils.json_to_sheet(data);
+      const newWorkSheet = configureWorkSheet(workSheet)
       const workBook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(workBook, workSheet, name, true)
+      XLSX.utils.book_append_sheet(workBook, newWorkSheet, name, true)
       XLSX.writeFile(workBook, name +=".xlsx")
+    }
+
+    function configureWorkSheet(workSheet){
+      workSheet['!cols'] = [];
+      workSheet['!cols'][2] = { width: 15};
+      workSheet['!cols'][3] = { width: 15};
+      workSheet['!cols'][4] = {width: 18};
+      workSheet['!cols'][8] = {width: 25};
+      workSheet['!cols'][11] = {width: 20};
+      workSheet['!cols'][12] = {width: 18};
+      workSheet['!cols'][13] = {width: 15};
+      return workSheet
     }
 
  
