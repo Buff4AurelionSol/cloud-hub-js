@@ -30,7 +30,7 @@
           props.transactions.includes(report.transactionType);
         
         const searchMatch = !props.searchValue || 
-          Object.values(REPORTS_DOLLAR).some(value => 
+          Object.values(report).some(value => 
             String(value).toLowerCase().includes(props.searchValue.toLocaleLowerCase())
           )
           return transactionMatch && searchMatch;
