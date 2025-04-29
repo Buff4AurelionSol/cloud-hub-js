@@ -1,7 +1,8 @@
 <script setup >
    import ExchangeIMG from '@/pics/exchangeIMG.png'
-   const emit = defineEmits(['numberToFilter','sendData', 'transactions', 'orderBy', 'isChangeDirectionOrderBy', 'isChangeDirectionTransaction', 'sendSearch'])
+   const emit = defineEmits(['numberToFilter','sendData', 'transactions', 'orderBy', 'isChangeDirectionOrderBy', 'isChangeDirectionTransaction', 'sendSearch', 'sendPayTypeState'])
    const selectedValues = ref([])
+   const payTypeState = ref('BOLIVARES')
 
   const props = defineProps({
     haveIChangeDirectionOrderBy:{
@@ -24,6 +25,7 @@
     emit('transactions', data.transaction)
     emit('orderBy', data.orderBy)
     emit('sendSearch', data.search)
+    emit('sendPayTypeState', payTypeState.value)
 
   }
 
@@ -39,6 +41,10 @@
     emit('isChangeDirectionTransaction')
   }
 
+  function getPayType(data){
+    payTypeState.value = data
+  }
+
 
 </script>
 
@@ -48,6 +54,10 @@
     <div class="box-form">
       <div class="box-search">
         <SearchInput/> 
+      </div>
+      <div class="box-rols">
+        <PayType @sendPayTypeState="getPayType"/>
+        
       </div>
   
       <div class="box-date-time">
@@ -124,7 +134,12 @@
   .box-search{
     height: 40px;
     margin-bottom: 15px;
-    grid-row: 1/2; 
+    grid-row: 1; 
+  }
+
+  .box-rols{
+    grid-row: 1;
+    grid-column: 2;
   }
 
   .showRegisters{

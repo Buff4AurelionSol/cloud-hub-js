@@ -5,6 +5,7 @@
   const orderBy = ref("")
   const haveIChangeDirectionOrderBy = ref(false)
   const searchValue = ref("")
+  const payTypeState = ref('BOLIVARES')
 
   function getNumberToFilter(value) {
     indexState.value = Number(value)
@@ -36,6 +37,11 @@
 
   }
 
+  function getPayType(data){
+    payTypeState.value = data
+    console.log(payTypeState.value)
+  }
+
 </script>
 
 
@@ -47,9 +53,20 @@
         :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy"
         @isChangeDirectionOrderBy="isChangeDirectionOrderBy"
         @sendSearch="getSearch"
+        @sendPayTypeState="getPayType"
    />
+    
+  <div v-if="payTypeState === 'BOLIVARES'">
+    <Table :indexState="indexState" :filters="filters" :transactions="transactions" :orderBy="orderBy"
+      :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy" :searchValue="searchValue" 
+    />
+  </div>
+  <div v-else-if="payTypeState === 'DIVISAS'">
+    <TableDolar :indexState="indexState" :filters="filters" :transactions="transactions" :orderBy="orderBy"
+      :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy" :searchValue="searchValue" 
+    />
+  </div>
 
-   <Table :indexState="indexState" :filters="filters" :transactions="transactions" :orderBy="orderBy"
-      :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy" :searchValue="searchValue" />
+   
 </template>
 

@@ -93,7 +93,7 @@
           <th>MONTO USD</th>
           <th>TASA</th>
           <th>CONTRATOS</th>
-          <th>CLIENTES</th>
+          <th>CLIENTE</th>
           <th>RIF/CEDULA</th>
           <th>BANCO ORIGEN</th>
           <th>BANCO DESTINO</th>
