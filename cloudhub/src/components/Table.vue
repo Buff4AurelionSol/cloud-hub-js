@@ -1,6 +1,8 @@
 <script setup>
   import {reports} from '@/stores/const' 
   import DetailsIcon from '@/pics/visible.png'
+  import * as XLSX from 'xlsx'
+
     const props = defineProps({
       indexState:{
         type: Number,
@@ -24,6 +26,21 @@
       }
     })
     
+    function handleExport() {
+      const fileName = prompt('Introduce el nombre del archivo Excel:', 'Reporte');
+      if (!fileName) return; // Si el usuario cancela o deja vacío, no hace nada
+      exportTable(sortedAndFilteredData.value, fileName);
+    }
+
+
+    function exportTable(data, name){
+      const workSheet = XLSX.utils.json_to_sheet(data);
+      const workBook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workBook, workSheet, name, true)
+      XLSX.writeFile(workBook, name +=".xlsx")
+    }
+
+ 
     const sortedAndFilteredData = computed(() => {
       let data = reports.slice(0, props.indexState).filter(report => {
         const transactionMatch = props.transactions.length === 0 || props.transactions.includes('TODOS') || 
@@ -36,7 +53,6 @@
           return transactionMatch && searchMatch;
       } 
        );
-      
       
 
       let sortedData;
@@ -130,6 +146,8 @@
             <h2>No se encontraron registros</h2>
       </div>
       <footer>
+       <v-btn @click="handleExport">Exportar</v-btn>
+
         Total de registros: {{reports.length}}
       </footer>
   </div>  
