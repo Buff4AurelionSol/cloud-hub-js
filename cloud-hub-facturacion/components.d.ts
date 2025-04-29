@@ -8,10 +8,15 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AppFooter: typeof import('./src/components/AppFooter.vue')['default']
     DateInput: typeof import('./src/components/DateInput.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    Form: typeof import('./src/components/Form.vue')['default']
+    Modal: typeof import('./src/components/Modal.vue')['default']
+    OrderByInput: typeof import('./src/components/OrderByInput.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SearchInput: typeof import('./src/components/SearchInput.vue')['default']
+    ShowPaysInput: typeof import('./src/components/ShowPaysInput.vue')['default']
+    Table: typeof import('./src/components/Table.vue')['default']
+    TransactionInput: typeof import('./src/components/TransactionInput.vue')['default']
   }
 }

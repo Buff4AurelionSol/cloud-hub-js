@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld />
+  <TransacctionInput/>
 </template>
 
 <script setup>
