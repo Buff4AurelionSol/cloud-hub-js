@@ -1,6 +1,8 @@
 <script setup>
   import {REPORTS_DOLLAR} from '@/stores/const' 
   import DetailsIcon from '@/pics/visible.png'
+  import {exportTable} from '@/modules/exportToExcell.js'
+
     const props = defineProps({
       indexState:{
         type: Number,
@@ -23,6 +25,12 @@
         type: String
       }
     })
+
+    function handleExport() {
+      const fileName = prompt('Introduce el nombre del archivo Excel:', 'Reporte');
+      if (!fileName) return; 
+      exportTable(sortedAndFilteredData.value, fileName);
+    }
     
     const sortedAndFilteredData = computed(() => {
       let data = REPORTS_DOLLAR.slice(0, props.indexState).filter(report => {
@@ -142,7 +150,8 @@
       <div v-else class="not-found">
             <h2>No se encontraron registros</h2>
       </div>
-      <footer>
+      <footer class="pt-2">
+        <v-btn variant="outlined" @click="handleExport">Exportar</v-btn>
         Total de registros: {{REPORTS_DOLLAR.length}}
       </footer>
   </div>  

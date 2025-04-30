@@ -85,7 +85,6 @@
     </div>
     <div class="box-button">
       <v-btn variant="outlined" type="submit"> Enviar </v-btn>
-      <v-btn variant="outlined" type="button"> Exportar</v-btn>
     </div>
   </form>
 </template>
