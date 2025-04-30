@@ -59,149 +59,81 @@
 <template>
   <header class="header-Form"><h1>Reportes de Pagos</h1></header>
   <form @submit="handleSubmit">
-    <div class="box-form">
-      <div class="box-search">
-        <SearchInput/> 
-      </div>
-      <div class="box-rols">
-        <PayType @sendPayTypeState="getPayType"/>
-        
-      </div>
-  
-      <div class="box-date-time">
-        <DateInput name="fecha-1" label="Fecha de inicio"/>
-        <DateInput name="fecha-2" label="Fecha final"/>
-      </div>
+    <v-container>    
+      <v-row .justify-center>
+        <v-col cols="6">
+          <SearchInput/> 
+        </v-col>
+        <v-col cols="6">
+          <PayType @sendPayTypeState="getPayType"/>
+        </v-col>
+      </v-row>
 
-      <div class="showRegisters">
-        <ShowPaysInput/>
-      </div>
+      <v-row>
+        <v-col cols="12" md="3">
+          <DateInput name="fecha-1" label="Fecha de inicio"/>
+        </v-col>
+        <v-col cols="12" md="3">
+          <DateInput name="fecha-2" label="Fecha final"/>
+        </v-col>
+        <v-col cols="12" md="6" class="order-by-col">
+          <OrderByInput/>
+          <button class="buttonExchange" name="changeDirectionOrderByButton" @click="isChangeDirectionOrderBy" type="button">
+            <span>
+              <img :src="ExchangeIMG" alt="Cambiar orden">
+            </span>
+          </button>
+        </v-col>
+      </v-row>
 
-      <div class="orderBy">
-        <OrderByInput/>
-        <div class="box-button-change">
-            <button class="buttonExchange" name="changeDirectionOrderByButton" @click="isChangeDirectionOrderBy" type="button">
-              <span>
-                <img :src="ExchangeIMG" alt="Cambiar orden">
-              </span>
-            </button>
-        </div>
-      </div>
-      <div class="transaction">
-        <TransactionInput @sendSelectedValues="getTransactions"/>
-      </div>
-    </div>
-    <div class="columns">
-      <ColumnsFilter @sendValuesColumns="getColumnsToFilter"/>
-    </div>
-    <div class="box-button">
-      <v-btn variant="outlined" type="submit"> Enviar </v-btn>
-    </div>
+      <v-row>
+        <v-col cols="6">
+          <ShowPaysInput/>
+        </v-col>
+        <v-col cols="6">
+          <TransactionInput @sendSelectedValues="getTransactions"/>
+        </v-col>
+      </v-row>
+
+      <v-row>
+        <v-col>
+          <ColumnsFilter @sendValuesColumns="getColumnsToFilter"/>
+        </v-col>
+      </v-row>
+
+      <v-row justify="center">
+        <v-btn variant="outlined" type="submit"> Enviar </v-btn>
+      </v-row>
+    </v-container>
     
   </form>
 </template>
 
 <style scoped>
-
-  .box-form{
-    display: grid;
-    grid-template-columns: 2;
-    grid-template-rows: 3;
-    gap: 10px; 
-  }
-  
-  .orderBy{
-    grid-column: 2;
-    grid-row: 2;
-    display: flex;
-    gap: 5px; 
-  }
-
-  .box-button-change{
+  .header-Form  {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 56px;
+    margin: 10px 0px;
   }
 
-  .transaction{
-    grid-column: 2;
-    grid-row: 3;
-    display: flex;
-    gap: 5px; 
-  }
-
-  .box-date-time{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    gap: 2px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    grid-column: 1;
-    grid-row: 2;
-    padding-left: 10px;
-  }
-
-  .box-search{
-    height: 40px;
-    margin-bottom: 15px;
-    grid-row: 1; 
-  }
-
-  .box-rols{
-    grid-row: 1;
-    grid-column: 2;
-  }
-
-  .showRegisters{
-    margin-bottom: 10px;
-    grid-column: 1;
-    grid-row: 3;
-    display: flex;
+  .order-by-col{
+    position: relative;
   }
 
   .buttonExchange{
     height: 25px;
     width: 25px;
     position: absolute;
-    right: 10px;
+    right: 20px;
+    bottom: 50px;
   }
 
-  .buttonExchange span{
-    height: 100%;
-    width: 100%;
-  }
-
+  
   .buttonExchange img {
     width: 100%;
     height: auto;
   }
 
-  .header-Form{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 10px;
-  }
-
-  .box-button{
-    grid-column: 1/2;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    
-  } 
   
-  .columns{
-    grid-row: 4;
-    height: 78px;
-  }
-
-  .columns-table-combobox{
-    height: 100%;
-    margin-right: 5px;
-    margin-left: 5px;
-  }
-
 </style>
 

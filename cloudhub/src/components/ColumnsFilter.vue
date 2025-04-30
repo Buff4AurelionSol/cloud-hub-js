@@ -14,7 +14,7 @@
 <template>
     <v-combobox
         multiple
-        label="Columnas a mostrar:"
+        label="Columnas a filtrar:"
         v-model="selectedColumns"
         :items="COLUMNS_TABLES"
         class="columns-table-combobox"
@@ -23,6 +23,10 @@
       />
 </template>
 
-<style>
+<style scoped>
+    .columns-table-combobox {
+        width: 100%;
+        height: 78px;  
+    }
 
 </style>

@@ -23,7 +23,6 @@
   <style scoped>
   .transactions {
     width: 100%;
-    margin-right: 5px;   
     height: 78px;  
   }
   

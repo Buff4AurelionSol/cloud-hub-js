@@ -14,9 +14,5 @@
 </template>
 
 <style>
-    .date-time{
-        width: auto;
-        height: 25px;
-        
-    }
+   
 </style>

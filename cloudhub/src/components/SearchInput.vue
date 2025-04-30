@@ -14,8 +14,5 @@
 </template>
 
 <style scoped>
-    .search-box{
-        place-self: start; 
-        margin-left: 5px;
-    }
+    
 </style>
