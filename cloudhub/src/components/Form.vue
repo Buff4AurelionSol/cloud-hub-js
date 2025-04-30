@@ -1,9 +1,11 @@
 <script setup >
    import ExchangeIMG from '@/pics/exchangeIMG.png'
-   const emit = defineEmits(['numberToFilter','sendData', 'transactions', 'orderBy', 'isChangeDirectionOrderBy', 'isChangeDirectionTransaction', 'sendSearch', 'sendPayTypeState'])
+   const emit = defineEmits(['numberToFilter','sendData', 'transactions', 'orderBy', 
+    'isChangeDirectionOrderBy', 'isChangeDirectionTransaction', 'sendSearch', 'sendPayTypeState','sendColumnsToFilter'])
    const selectedValues = ref([])
    const payTypeState = ref('BOLIVARES')
-
+   const selectedColumns = ref([])
+   
   const props = defineProps({
     haveIChangeDirectionOrderBy:{
       type: Boolean
@@ -18,6 +20,7 @@
     const data = Object.fromEntries(new FormData(e.target)) 
     let showPaysSelect = data["showPaysSelect"] 
     data.transaction = selectedValues.value
+    data.selectedColumns = selectedColumns.value
 
     console.log(data)
     emit('numberToFilter', showPaysSelect)
@@ -26,11 +29,16 @@
     emit('orderBy', data.orderBy)
     emit('sendSearch', data.search)
     emit('sendPayTypeState', payTypeState.value)
+    emit('sendColumnsToFilter', data.selectedColumns)
 
   }
 
   function getTransactions(values){
      selectedValues.value =  values
+  }
+
+  function getColumnsToFilter(values){
+    selectedColumns.value = values
   }
 
   function isChangeDirectionOrderBy(){
@@ -83,9 +91,13 @@
         <TransactionInput @sendSelectedValues="getTransactions"/>
       </div>
     </div>
+    <div class="columns">
+      <ColumnsFilter @sendValuesColumns="getColumnsToFilter"/>
+    </div>
     <div class="box-button">
       <v-btn variant="outlined" type="submit"> Enviar </v-btn>
     </div>
+    
   </form>
 </template>
 
@@ -178,6 +190,17 @@
     justify-content: center;
     gap: 10px;
     
+  } 
+  
+  .columns{
+    grid-row: 4;
+    height: 78px;
+  }
+
+  .columns-table-combobox{
+    height: 100%;
+    margin-right: 5px;
+    margin-left: 5px;
   }
 
 </style>

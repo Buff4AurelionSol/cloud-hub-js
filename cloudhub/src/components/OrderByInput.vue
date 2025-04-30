@@ -16,6 +16,7 @@
     .order-by-input{
         width: 50%;
         height: 60px;
+        margin-right: 5px;  
         margin-bottom: 6px; 
     }
 

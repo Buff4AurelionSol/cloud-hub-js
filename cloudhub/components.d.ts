@@ -8,6 +8,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    ColumnsFilter: typeof import('./src/components/ColumnsFilter.vue')['default']
     DateInput: typeof import('./src/components/DateInput.vue')['default']
     Form: typeof import('./src/components/Form.vue')['default']
     Modal: typeof import('./src/components/Modal.vue')['default']

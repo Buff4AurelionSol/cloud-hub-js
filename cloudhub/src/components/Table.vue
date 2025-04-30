@@ -23,12 +23,15 @@
       },
       searchValue:{
         type: String
+      },
+      columns:{
+        type: Array
       }
     })
     
     function handleExport() {
       const fileName = prompt('Introduce el nombre del archivo Excel:', 'Reporte');
-      if (!fileName) return; // Si el usuario cancela o deja vacío, no hace nada
+      if (!fileName) return; 
       exportTable(sortedAndFilteredData.value, fileName);
     }
  
@@ -81,6 +84,7 @@
       
     });
 
+
     const thereAreRegisters = computed(()=> sortedAndFilteredData.value.length > 0)
 
 </script>
@@ -91,42 +95,42 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>ID</th>
-          <th>ESTADO</th>
-          <th>REFERENCIA</th>
-          <th>TIPO REPORTE</th>
-          <th>TIPO TRANSACCIÓN</th>
-          <th>MONTO TRANSACCIÓN</th>
-          <th>MONTO USD</th>
-          <th>TASA</th>
-          <th>CONTRATOS</th>
-          <th>CLIENTE</th>
-          <th>RIF/CEDULA</th>
-          <th>BANCO ORIGEN</th>
-          <th>BANCO DESTINO</th>
-          <th>FECHA TRANSACCIÓN</th>
-          <th>FECHA REPORTE</th>
+          <th v-if="!props.columns.includes('ID')">ID</th>
+          <th v-if="!props.columns.includes('ESTADO')">ESTADO</th>
+          <th v-if="!props.columns.includes('REFERENCIA')">REFERENCIA</th>
+          <th v-if="!props.columns.includes('TIPO REPORTE')">TIPO REPORTE</th>
+          <th v-if="!props.columns.includes('TIPO TRANSACCIÓN')">TIPO TRANSACCIÓN</th>
+          <th v-if="!props.columns.includes('MONTO TRANSACCIÓN')">MONTO TRANSACCIÓN</th>
+          <th v-if="!props.columns.includes('MONTO USD')">MONTO USD</th>
+          <th v-if="!props.columns.includes('TASA')">TASA</th>
+          <th v-if="!props.columns.includes('CONTRATOS')">CONTRATOS</th>
+          <th v-if="!props.columns.includes('CLIENTE')">CLIENTE</th>
+          <th v-if="!props.columns.includes('RIF/CEDULA')">RIF/CEDULA</th>
+          <th v-if="!props.columns.includes('BANCO ORIGEN')">BANCO ORIGEN</th>
+          <th v-if="!props.columns.includes('BANCO DESTINO')">BANCO DESTINO</th>
+          <th v-if="!props.columns.includes('FECHA TRANSACCIÓN')">FECHA TRANSACCIÓN</th>
+          <th v-if="!props.columns.includes('FECHA REPORTE')">FECHA REPORTE</th>
           <th>Ver detalles</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(report, index) in sortedAndFilteredData" :key="index">
             <td>{{ index + 1 }}</td>
-            <td>{{ report.id }}</td>
-            <td>{{ report.estado }}</td>
-            <td>{{ report.referencia }}</td>
-            <td>{{ report.tipoReporte }}</td>
-            <td>{{ report.tipoTransaccion }}</td>
-            <td>{{ report.montoTransaccionBs }}</td>
-            <td>{{ report.montoUSD }}</td>  
-            <td>{{ report.tasa }}</td>
-            <td>{{ report.contratos }}</td>
-            <td>{{ report.cliente }}</td>
-            <td>{{ report.rifCedula }}</td>
-            <td>{{ report.bancoOrigen }}</td>
-            <td>{{ report.bancoDestino }}</td>
-            <td>{{ report.fechaTransaccion }}</td>
-            <td>{{ report.fechaReporte }}</td>
+            <td v-if="!props.columns.includes('ID')">{{ report.id }}</td>
+            <td v-if="!props.columns.includes('ESTADO')">{{ report.estado }}</td>
+            <td v-if="!props.columns.includes('REFERENCIA')">{{ report.referencia }}</td>
+            <td v-if="!props.columns.includes('TIPO REPORTE')">{{ report.tipoReporte }}</td>
+            <td v-if="!props.columns.includes('TIPO TRANSACCIÓN')">{{ report.tipoTransaccion }}</td>
+            <td v-if="!props.columns.includes('MONTO TRANSACCIÓN')">{{ report.montoTransaccionBs }}</td>
+            <td v-if="!props.columns.includes('MONTO USD')">{{ report.montoUSD }}</td>  
+            <td v-if="!props.columns.includes('TASA')">{{ report.tasa }}</td>
+            <td v-if="!props.columns.includes('CONTRATOS')">{{ report.contratos }}</td>
+            <td v-if="!props.columns.includes('CLIENTE')">{{ report.cliente }}</td>
+            <td v-if="!props.columns.includes('RIF/CEDULA')">{{ report.rifCedula }}</td>
+            <td v-if="!props.columns.includes('BANCO ORIGEN')">{{ report.bancoOrigen }}</td>
+            <td v-if="!props.columns.includes('BANCO DESTINO')">{{ report.bancoDestino }}</td>
+            <td v-if="!props.columns.includes('FECHA TRANSACCIÓN')">{{ report.fechaTransaccion }}</td>
+            <td v-if="!props.columns.includes('FECHA REPORTE')">{{ report.fechaReporte }}</td>
             <Modal :imageIcon="DetailsIcon" 
               :reportsDate="report.fechaReporte"
             />
