@@ -1,10 +1,14 @@
 <script setup>
-    const COLUMNS_TABLES = ['ID','ESTADO','REFERENCIA','TIPO REPORTE','TIPO TRANSACCIÓN',
-    'MONTO TRANSACCIÓN','MONTO USD','TASA','CONTRATOS','CLIENTE','RIF/CEDULA',
-    'BANCO ORIGEN','BANCO DESTINO','FECHA TRANSACCIÓN','FECHA REPORTE']
+    
     const selectedColumns = ref([])
 
     const emit = defineEmits(['sendValuesColumns'])
+
+    const props = defineProps({
+        columnsItems: {
+            type: Array
+        }
+    })
 
     const sendValuesColumns= (value) => {
         emit('sendValuesColumns', value)
@@ -16,7 +20,7 @@
         multiple
         label="Columnas a filtrar:"
         v-model="selectedColumns"
-        :items="COLUMNS_TABLES"
+        :items="props.columnsItems"
         class="columns-table-combobox"
         density="compact"
         @update:modelValue="sendValuesColumns"

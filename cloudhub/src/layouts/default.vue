@@ -1,5 +1,5 @@
 <template>
-  CULO
+hola
 </template>
 
 <script setup>

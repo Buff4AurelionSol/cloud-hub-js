@@ -25,7 +25,7 @@
         rounded="0"
         group
       >
-        <v-btn value="BOLIVARES" @click="addTypeState('BOLIVARES')" >
+        <v-btn value="BOLIVARES" @click="addTypeState('BOLIVARES')">
           BOLIVARES
         </v-btn>
 

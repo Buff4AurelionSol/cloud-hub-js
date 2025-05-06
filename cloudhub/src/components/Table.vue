@@ -102,7 +102,7 @@
       {key:'fechaReporte', label:'FECHA REPORTE'}
     ]
 
-    const VISIBLE_COLUMNS = computed(()=> CONFIG_COLUMN.filter(column => !props.columns.includes(column.key)))
+    const VISIBLE_COLUMNS = computed(()=> CONFIG_COLUMN.filter(column => !props.columns.includes(column.label)))
 
     const thereAreRegisters = computed(()=> sortedAndFilteredData.value.length > 0)
 

@@ -23,6 +23,9 @@
       },
       searchValue:{
         type: String
+      },
+      columns:{
+        type: Array
       }
     })
 
@@ -82,6 +85,27 @@
       
     });
 
+    
+    const CONFIG_COLUMN = [
+      {key:'id', label:'ID'},
+      {key:'bankRef', label:'REFERENCIA BANCARIA'},
+      {key:'type', label:'TIPO REPORTE'},
+      {key:'transactionType', label:'TIPO TRANSACCIÓN'},
+      {key:'amount', label:'MONTO ($)'},
+      {key:'rate', label:'TASA'},
+      {key:'contracts', label:'CONTRATO(S)'},
+      {key:'invoices', label:'FACTURA(S)'},
+      {key:'billingDate', label:'FECHA FACTURADO(S)'},
+      {key:'client', label:'CLIENTE'},
+      {key:'idNumber', label:'RIF/CEDULA'},
+      {key:'bankDest', label:'BANCO ORIGEN'},
+      {key:'bankOrigin', label:'BANCO DESTINO'},
+      {key:'transactionDate', label:'FECHA TRANSACCIÓN'},
+      {key:'reportDate', label:'FECHA REPORTE'}
+    ]
+
+    const VISIBLE_COLUMNS = computed(()=> CONFIG_COLUMN.filter(column => !props.columns.includes(column.key)))
+
     const thereAreRegisters = computed(()=> sortedAndFilteredData.value.length > 0)
 
 </script>
@@ -92,55 +116,23 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>ID</th>
-          <th>REFERENCIA BANCARIA</th>
-          <th>TIPO REPORTE</th>
-          <th>TIPO TRANSACCIÓN</th>
-          <th>MONTO ($)</th>
-          <th>TASA</th>
-          <th>CONTRATO(s)</th>
-          <th>FACTURA(s)</th>
-          <th>Fecha Facturado(s)</th>
-          <th>CLIENTE</th>
-          <th>RIF/CEDULA</th>
-          <th>BANCO ORIGEN</th>
-          <th>BANCO DESTINO</th>
-          <th>FECHA TRANSACCIÓN</th>
-          <th>FECHA REPORTE</th>
-          <th>Ver detalles</th>
+          <th v-for="column in VISIBLE_COLUMNS">{{column.label}}</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(report, index) in sortedAndFilteredData" :key="index">
             <td>{{ index + 1 }}</td>
-            <td>{{ report.id }}</td>
-            <td>{{ report.bankRef }}</td>
-            <td>{{ report.type }}</td>
-            <td>{{ report.transactionType }}</td>
-            <td>{{ report.amount }}</td>
-            <td>{{ report.rate }}</td>
-            <td>
-              <div v-for="contract in report.contracts" class="d-flex justify-center ga-2 mt-2" >
+            <td v-for="column in VISIBLE_COLUMNS" :key="column.key" >
+              <div v-for="(item, index) in report[column.key]" v-if="column.key === 'contracts' || column.key === 'invoices'" class="d-flex justify-center gap-2 mt-2" >
                 <v-chip variant="flat" size="small" color="blue">
-                  {{contract}}
+                  {{item}}
                 </v-chip>
               </div>
+              <template v-else>
+                {{report[column.key]}}
+              </template>
             </td>
-            
-            <td>
-              <div v-for="invoice in report.invoices" class="d-flex justify-center gap-2 mt-2">
-                <v-chip variant="flat" size="small" color="green">
-                  {{ invoice }}
-                </v-chip>
-              </div>
-            </td>
-            <td>{{ report.billingDate }}</td>
-            <td>{{ report.client }}</td>
-            <td>{{ report.idNumber }}</td>
-            <td>{{ report.bankDest }}</td>
-            <td>{{ report.bankOrigin }}</td>
-            <td>{{ report.transactionDate }}</td>
-            <td>{{ report.reportDate }}</td>
+
             <Modal :imageIcon="DetailsIcon" 
               :reportsDate="report.reportDate"
             />

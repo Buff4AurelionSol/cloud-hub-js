@@ -9,7 +9,10 @@
   const props = defineProps({
     haveIChangeDirectionOrderBy:{
       type: Boolean
-    }
+    },
+    columnsItems: {
+            type: Array
+        }
   })
 
 
@@ -97,7 +100,7 @@
 
       <v-row>
         <v-col>
-          <ColumnsFilter @sendValuesColumns="getColumnsToFilter"/>
+          <ColumnsFilter @sendValuesColumns="getColumnsToFilter" :columnsItems="props.columnsItems"/>
         </v-col>
       </v-row>
 
