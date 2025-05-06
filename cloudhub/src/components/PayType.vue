@@ -17,24 +17,24 @@
 </script>
 
 <template>
-    <v-row  class="text-center">
-          <v-col class="box-pay-type">
-            <v-btn-toggle
-              v-model="payTypeValue"
-              color="deep-purple-accent-3"
-              rounded="0"
-              group
-            >
-              <v-btn value="BOLIVARES" @click="addTypeState('BOLIVARES')">
-                BOLIVARES
-              </v-btn>
+  <v-row class="text-center">
+    <v-col class="box-pay-type">
+      <v-btn-toggle
+        v-model="payTypeValue"
+        color="deep-purple-accent-3"
+        rounded="0"
+        group
+      >
+        <v-btn value="BOLIVARES" @click="addTypeState('BOLIVARES')" >
+          BOLIVARES
+        </v-btn>
 
-              <v-btn value="DIVISAS" @click="addTypeState('DIVISAS')">
-                DIVISAS
-              </v-btn>  
-            </v-btn-toggle>
-          </v-col>
-    </v-row>
+        <v-btn value="DIVISAS" @click="addTypeState('DIVISAS')">
+          DIVISAS
+        </v-btn>
+      </v-btn-toggle>
+    </v-col>
+  </v-row>
 </template>
 
 <style scoped>
@@ -45,21 +45,10 @@
         gap: 30px;
     }
 
-    .mobile{
-      width: 300px;
-      display: flex;
-      flex-direction: column;
+    .box{
+      height: 200px;
+      width: 200px;
     }
-
-    .btn{
-      width: 300px;
-      height: 300px;
-      background-color: black;
-    }
-
-
-
- 
 
 
 </style>
