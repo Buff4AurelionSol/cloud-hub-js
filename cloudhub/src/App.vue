@@ -8,6 +8,16 @@
   const payTypeState = ref('BOLIVARES')
   const columnsToFilter = ref([])
 
+  const COLUMNS_TABLE = ['ID','ESTADO','REFERENCIA','TIPO REPORTE','TIPO TRANSACCIÓN',
+    'MONTO TRANSACCIÓN','MONTO USD','TASA','CONTRATOS','CLIENTE','RIF/CEDULA',
+    'BANCO ORIGEN','BANCO DESTINO','FECHA TRANSACCIÓN','FECHA REPORTE']
+
+    const COLUMNS_TABLE_DOLAR = ['ID','REFERENCIA BANCARIA', 'TIPO REPORTE', 'TIPO TRANSACCIÓN',
+        'MONTO ($)', 'TASA', 'CONTRATO(S)', 'FACTURA(S)', 'FECHA FACTURADO(S)', 'CLIENTE',
+        'RIF/CEDULA', 'BANCO ORIGEN', 'BANCO DESTINO', 'FECHA TRANSACCIÓN', 'FECHA REPORTE'
+    ]
+  const columnsItems = ref(COLUMNS_TABLE)
+
   function getNumberToFilter(value) {
     indexState.value = Number(value)
   }
@@ -59,6 +69,7 @@
         @sendSearch="getSearch"
         @sendPayTypeState="getPayType"
         @sendColumnsToFilter="getColumnsToFilter"
+        :columnsItems="columnsItems"
    />
     
   <div v-if="payTypeState === 'BOLIVARES'">
@@ -68,7 +79,8 @@
   </div>
   <div v-else-if="payTypeState === 'DIVISAS'">
     <TableDolar :indexState="indexState" :filters="filters" :transactions="transactions" :orderBy="orderBy"
-      :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy" :searchValue="searchValue" 
+      :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy" :searchValue="searchValue"
+      :columns="columnsToFilter" 
     />
   </div>
 
