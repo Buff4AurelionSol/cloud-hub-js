@@ -33,7 +33,7 @@
   function getOrderBy(data){
     orderBy.value = data
   }
-
+  
   function getSearch(data){
     searchValue.value = data
     console.log(searchValue.value)
@@ -50,10 +50,28 @@
 
   function getPayType(data){
     payTypeState.value = data
+    changeColumnsItems()
   }
 
   function getColumnsToFilter(columns){
     columnsToFilter.value = columns
+    
+  }
+
+
+  const changeColumnsItems = () => {
+    switch (payTypeState.value) {
+      case 'BOLIVARES':
+        columnsItems.value = COLUMNS_TABLE;
+        break;
+      
+      case 'DIVISAS':
+        columnsItems.value = COLUMNS_TABLE_DOLAR;
+        break; 
+
+      default:
+        break;
+    }
   }
 
 </script>
