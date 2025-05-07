@@ -24,7 +24,7 @@
     indexState.value = Number(value)
   }
 
-  function getData(data){
+  const getData = (data) =>{
     filters.value = data
   }
 
