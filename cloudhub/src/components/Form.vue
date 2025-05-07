@@ -17,7 +17,7 @@
 
 
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault()
     const dataArray = []
     const data = Object.fromEntries(new FormData(e.target)) 
@@ -26,6 +26,7 @@
     data.selectedColumns = selectedColumns.value
 
     console.log(data)
+    
     emit('numberToFilter', showPaysSelect)
     emit('sendData', dataArray)
     emit('transactions', data.transaction)
