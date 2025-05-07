@@ -53,7 +53,7 @@
     emit('isChangeDirectionTransaction')
   }
 
-  function getPayType(data){
+  const getPayType = (data) =>{
     payTypeState.value = data
   }
 
