@@ -20,7 +20,7 @@
     
   const columnsItems = ref(COLUMNS_TABLE[0].values)
 
-  function getNumberToFilter(value) {
+  const getNumberToFilter = (value) => {
     indexState.value = Number(value)
   }
 
