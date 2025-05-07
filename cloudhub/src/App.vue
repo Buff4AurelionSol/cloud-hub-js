@@ -51,9 +51,8 @@
     changeColumnsItems()
   }
 
-  function getColumnsToFilter(columns){
+  const getColumnsToFilter = (columns) =>{
     columnsToFilter.value = columns
-    
   }
 
 
