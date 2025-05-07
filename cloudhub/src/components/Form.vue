@@ -45,7 +45,7 @@
     selectedColumns.value = values
   }
 
-  function isChangeDirectionOrderBy(){
+  const isChangeDirectionOrderBy = () => {
     emit('isChangeDirectionOrderBy')
   }
 
