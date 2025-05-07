@@ -1,5 +1,5 @@
 <script setup>
-    const payTypeValue = ref('')
+    const payTypeValue = ref('BOLIVARES')
     const payTypeState = ref('')
     const emit = defineEmits(['sendPayTypeState'])
     const OPTIONS_TYPE_PAY = ['BOLIVARES', 'DIVISAS']

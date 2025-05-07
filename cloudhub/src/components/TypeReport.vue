@@ -1,5 +1,5 @@
 <script setup>
-    const typeReportValue = ref('')
+    const typeReportValue = ref('POR FACTURAR')
     const typeReportState = ref('')
     const emit = defineEmits(['sendTypeReportState'])
     const OPTIONS_REPORT_TYPE = ['POR FACTURAR', 'FACTURADOS', 'RECHAZADOS', 'POR VERIFICAR', 'RECIBOS']
