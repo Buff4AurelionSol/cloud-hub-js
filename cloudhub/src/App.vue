@@ -77,8 +77,7 @@
 <template>
 
 <v-app>
-  
-  <AppBar/>
+  <SideNav/>
 
  
   <Form @numberToFilter="getNumberToFilter" 

@@ -18,20 +18,22 @@
 
 <template>
   <v-row class="text-center">
-    <v-col class="box-pay-type">
+    <v-col>
       <v-btn-toggle
         v-model="payTypeValue"
         color="deep-purple-accent-3"
         rounded="0"
         group
       >
-        <v-btn value="BOLIVARES" @click="addTypeState('BOLIVARES')">
-          BOLIVARES
-        </v-btn>
+        <div>
+          <v-btn value="BOLIVARES" @click="addTypeState('BOLIVARES')" class="h-100">
+            BOLIVARES
+          </v-btn>
 
-        <v-btn value="DIVISAS" @click="addTypeState('DIVISAS')">
-          DIVISAS
-        </v-btn>
+          <v-btn value="DIVISAS" @click="addTypeState('DIVISAS')" class="h-100">
+            DIVISAS
+          </v-btn>
+        </div>
       </v-btn-toggle>
     </v-col>
   </v-row>

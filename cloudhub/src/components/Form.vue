@@ -65,11 +65,14 @@
   <form @submit="handleSubmit">
     <v-container>    
       <v-row>
-        <v-col cols="6">
+        <v-col cols="12" md="6">
           <SearchInput/> 
         </v-col>
-        <v-col cols="6">
+        <v-col cols="6" md="3">
           <PayType @sendPayTypeState="getPayType"/>
+        </v-col>
+        <v-col cols="6" md="3">
+          
         </v-col>
       </v-row>
 
