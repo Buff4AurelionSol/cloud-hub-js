@@ -1,9 +1,11 @@
 <script setup >
    import ExchangeIMG from '@/pics/exchangeIMG.png'
    const emit = defineEmits(['numberToFilter','sendData', 'transactions', 'orderBy', 
-    'isChangeDirectionOrderBy', 'isChangeDirectionTransaction', 'sendSearch', 'sendPayTypeState','sendColumnsToFilter'])
+    'isChangeDirectionOrderBy', 'isChangeDirectionTransaction', 'sendSearch', 'sendPayTypeState',
+    'sendTypeReport','sendColumnsToFilter'])
    const selectedValues = ref([])
    const payTypeState = ref('BOLIVARES')
+   const reportTypeState = ref('POR FACTURAR')
    const selectedColumns = ref([])
    
   const props = defineProps({
@@ -34,6 +36,7 @@
     emit('sendSearch', data.search)
     emit('sendPayTypeState', payTypeState.value)
     emit('sendColumnsToFilter', data.selectedColumns)
+    emit('sendTypeReport', reportTypeState.value)
 
   }
 
@@ -57,6 +60,10 @@
     payTypeState.value = data
   }
 
+  const getReportType = (data) => {
+    reportTypeState.value = data
+  }
+
 
 </script>
 
@@ -68,12 +75,11 @@
         <v-col cols="12" md="6">
           <SearchInput/> 
         </v-col>
-        <v-col cols="6" md="3">
+        <v-col cols="12" md="6">
           <PayType @sendPayTypeState="getPayType"/>
+          <TypeReport @sendTypeReportState="getReportType"/>
         </v-col>
-        <v-col cols="6" md="3">
-          
-        </v-col>
+       
       </v-row>
 
       <v-row>

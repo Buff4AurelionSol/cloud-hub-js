@@ -39,18 +39,3 @@
   </v-row>
 </template>
 
-<style scoped>
-    .box-pay-type{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-    }
-
-    .box{
-      height: 200px;
-      width: 200px;
-    }
-
-
-</style>

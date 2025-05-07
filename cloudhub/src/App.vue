@@ -6,6 +6,7 @@
   const haveIChangeDirectionOrderBy = ref(false)
   const searchValue = ref("")
   const payTypeState = ref('BOLIVARES')
+  const reportTypeState = ref('POR FACTURAR')
   const columnsToFilter = ref([])
 
   const COLUMNS_TABLE = [
@@ -51,6 +52,10 @@
     changeColumnsItems()
   }
 
+  const getTypeReport = (data) => {
+    reportTypeState.value = data
+  }
+
   const getColumnsToFilter = (columns) =>{
     columnsToFilter.value = columns
   }
@@ -90,14 +95,15 @@
         @sendPayTypeState="getPayType"
         @sendColumnsToFilter="getColumnsToFilter"
         :columnsItems="columnsItems"
+        @sendTypeReport="getTypeReport"
   />
     
-  <div v-if="payTypeState === 'BOLIVARES'">
+  <div v-if="payTypeState === 'BOLIVARES' && reportTypeState === 'POR FACTURAR'">
     <Table :indexState="indexState" :filters="filters" :transactions="transactions" :orderBy="orderBy"
       :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy" :searchValue="searchValue" :columns="columnsToFilter"
     />
   </div>
-  <div v-else-if="payTypeState === 'DIVISAS'">
+  <div v-else-if="payTypeState === 'DIVISAS' && reportTypeState === 'POR FACTURAR'">
     <TableDolar :indexState="indexState" :filters="filters" :transactions="transactions" :orderBy="orderBy"
       :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy" :searchValue="searchValue"
       :columns="columnsToFilter" 
