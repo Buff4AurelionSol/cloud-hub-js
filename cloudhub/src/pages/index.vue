@@ -1,5 +1,4 @@
 <template>
-  <TransacctionInput/>
 </template>
 
 <script setup>

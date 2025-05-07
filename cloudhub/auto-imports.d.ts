@@ -7,6 +7,7 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
+  const LISTA_TASAS: typeof import('./src/stores/mockdata/tasas.js')['LISTA_TASAS']
   const OPTIONS_ORDER_BY: typeof import('./src/stores/const.js')['OPTIONS_ORDER_BY']
   const OPTIONS_TRANSACTION: typeof import('./src/stores/const.js')['OPTIONS_TRANSACTION']
   const REPORTS_DOLLAR: typeof import('./src/stores/const.js')['REPORTS_DOLLAR']
@@ -24,6 +25,7 @@ declare global {
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const h: typeof import('vue')['h']
+  const handleAxiosError: typeof import('./src/utils/axiosErrorHandler.js')['handleAxiosError']
   const inject: typeof import('vue')['inject']
   const isProxy: typeof import('vue')['isProxy']
   const isReactive: typeof import('vue')['isReactive']
@@ -73,6 +75,7 @@ declare global {
   const unref: typeof import('vue')['unref']
   const useAppStore: typeof import('./src/stores/app.js')['useAppStore']
   const useAttrs: typeof import('vue')['useAttrs']
+  const useConsultasServices: typeof import('./src/stores/paymentsServices/consultas.js')['useConsultasServices']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
   const useDate: typeof import('vuetify')['useDate']
@@ -81,8 +84,10 @@ declare global {
   const useId: typeof import('vue')['useId']
   const useLink: typeof import('vue-router')['useLink']
   const useModel: typeof import('vue')['useModel']
+  const usePaymentsServices: typeof import('./src/stores/paymentsServices/index.js')['usePaymentsServices']
   const usePaymentsStore: typeof import('./src/stores/payments/index.js')['usePaymentsStore']
   const useReporteStore: typeof import('./src/stores/payments/reporte.js')['useReporteStore']
+  const useReportesServices: typeof import('./src/stores/paymentsServices/reportes.js')['useReportesServices']
   const useRoute: typeof import('vue-router')['useRoute']
   const useRouter: typeof import('vue-router')['useRouter']
   const useRtl: typeof import('vuetify')['useRtl']
@@ -90,6 +95,8 @@ declare global {
   const useSlots: typeof import('vue')['useSlots']
   const useTemplateRef: typeof import('vue')['useTemplateRef']
   const useTheme: typeof import('vuetify')['useTheme']
+  const useUserServices: typeof import('./src/stores/user.js')['useUserServices']
+  const useVerificacionesServices: typeof import('./src/stores/paymentsServices/verificaciones.js')['useVerificacionesServices']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
   const watchPostEffect: typeof import('vue')['watchPostEffect']
@@ -108,6 +115,7 @@ declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly LISTA_TASAS: UnwrapRef<typeof import('./src/stores/mockdata/tasas.js')['LISTA_TASAS']>
     readonly OPTIONS_ORDER_BY: UnwrapRef<typeof import('./src/stores/const.js')['OPTIONS_ORDER_BY']>
     readonly OPTIONS_TRANSACTION: UnwrapRef<typeof import('./src/stores/const.js')['OPTIONS_TRANSACTION']>
     readonly REPORTS_DOLLAR: UnwrapRef<typeof import('./src/stores/const.js')['REPORTS_DOLLAR']>
@@ -125,6 +133,7 @@ declare module 'vue' {
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
+    readonly handleAxiosError: UnwrapRef<typeof import('./src/utils/axiosErrorHandler.js')['handleAxiosError']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
@@ -174,6 +183,7 @@ declare module 'vue' {
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
     readonly useAppStore: UnwrapRef<typeof import('./src/stores/app.js')['useAppStore']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useConsultasServices: UnwrapRef<typeof import('./src/stores/paymentsServices/consultas.js')['useConsultasServices']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useDate: UnwrapRef<typeof import('vuetify')['useDate']>
@@ -182,8 +192,10 @@ declare module 'vue' {
     readonly useId: UnwrapRef<typeof import('vue')['useId']>
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
     readonly useModel: UnwrapRef<typeof import('vue')['useModel']>
+    readonly usePaymentsServices: UnwrapRef<typeof import('./src/stores/paymentsServices/index.js')['usePaymentsServices']>
     readonly usePaymentsStore: UnwrapRef<typeof import('./src/stores/payments/index.js')['usePaymentsStore']>
     readonly useReporteStore: UnwrapRef<typeof import('./src/stores/payments/reporte.js')['useReporteStore']>
+    readonly useReportesServices: UnwrapRef<typeof import('./src/stores/paymentsServices/reportes.js')['useReportesServices']>
     readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useRtl: UnwrapRef<typeof import('vuetify')['useRtl']>
@@ -191,6 +203,8 @@ declare module 'vue' {
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useTemplateRef: UnwrapRef<typeof import('vue')['useTemplateRef']>
     readonly useTheme: UnwrapRef<typeof import('vuetify')['useTheme']>
+    readonly useUserServices: UnwrapRef<typeof import('./src/stores/user.js')['useUserServices']>
+    readonly useVerificacionesServices: UnwrapRef<typeof import('./src/stores/paymentsServices/verificaciones.js')['useVerificacionesServices']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>

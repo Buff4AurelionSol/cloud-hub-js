@@ -75,7 +75,12 @@
 
 
 <template>
+
+<v-app>
   
+  <AppBar/>
+
+ 
   <Form @numberToFilter="getNumberToFilter" 
         @sendData="getData" 
         @transactions="getTransactions" 
@@ -86,7 +91,7 @@
         @sendPayTypeState="getPayType"
         @sendColumnsToFilter="getColumnsToFilter"
         :columnsItems="columnsItems"
-   />
+  />
     
   <div v-if="payTypeState === 'BOLIVARES'">
     <Table :indexState="indexState" :filters="filters" :transactions="transactions" :orderBy="orderBy"
@@ -100,6 +105,7 @@
     />
   </div>
 
+</v-app>
    
 </template>
 
