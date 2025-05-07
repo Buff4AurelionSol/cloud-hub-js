@@ -46,7 +46,7 @@
       : haveIChangeDirectionOrderBy.value = true
   }
 
-  function getPayType(data){
+  const getPayType = (data) =>{
     payTypeState.value = data
     changeColumnsItems()
   }
