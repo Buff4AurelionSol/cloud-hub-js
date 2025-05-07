@@ -29,7 +29,7 @@
       }
     })
     
-    function handleExport() {
+    const handleExport = () => {
       const fileName = prompt('Introduce el nombre del archivo Excel:', 'Reporte');
       if (!fileName) return; 
       exportTable(sortedAndFilteredData.value, fileName);
