@@ -26,7 +26,7 @@
     data.selectedColumns = selectedColumns.value
 
     console.log(data)
-    
+
     emit('numberToFilter', showPaysSelect)
     emit('sendData', dataArray)
     emit('transactions', data.transaction)
@@ -37,7 +37,7 @@
 
   }
 
-  function getTransactions(values){
+  const getTransactions = (values) =>{
      selectedValues.value =  values
   }
 
