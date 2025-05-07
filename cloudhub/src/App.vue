@@ -32,7 +32,7 @@
     transactions.value = data
   }
 
-  function getOrderBy(data){
+  const getOrderBy = (data) => {
     orderBy.value = data
   }
   
