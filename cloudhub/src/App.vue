@@ -8,15 +8,17 @@
   const payTypeState = ref('BOLIVARES')
   const columnsToFilter = ref([])
 
-  const COLUMNS_TABLE = ['ID','ESTADO','REFERENCIA','TIPO REPORTE','TIPO TRANSACCIÓN',
+  const COLUMNS_TABLE = [
+      {reportType: 'BOLIVARES', values: ['ID','ESTADO','REFERENCIA','TIPO REPORTE','TIPO TRANSACCIÓN',
     'MONTO TRANSACCIÓN','MONTO USD','TASA','CONTRATOS','CLIENTE','RIF/CEDULA',
-    'BANCO ORIGEN','BANCO DESTINO','FECHA TRANSACCIÓN','FECHA REPORTE']
-
-    const COLUMNS_TABLE_DOLAR = ['ID','REFERENCIA BANCARIA', 'TIPO REPORTE', 'TIPO TRANSACCIÓN',
+    'BANCO ORIGEN','BANCO DESTINO','FECHA TRANSACCIÓN','FECHA REPORTE']},
+      {reportType:'DIVISAS', values: ['ID','REFERENCIA BANCARIA', 'TIPO REPORTE', 'TIPO TRANSACCIÓN',
         'MONTO ($)', 'TASA', 'CONTRATO(S)', 'FACTURA(S)', 'FECHA FACTURADO(S)', 'CLIENTE',
         'RIF/CEDULA', 'BANCO ORIGEN', 'BANCO DESTINO', 'FECHA TRANSACCIÓN', 'FECHA REPORTE'
-    ]
-  const columnsItems = ref(COLUMNS_TABLE)
+    ]}]
+
+    
+  const columnsItems = ref(COLUMNS_TABLE[0].values)
 
   function getNumberToFilter(value) {
     indexState.value = Number(value)
@@ -34,9 +36,8 @@
     orderBy.value = data
   }
   
-  function getSearch(data){
+  const getSearch = (data) => {
     searchValue.value = data
-    console.log(searchValue.value)
   }
 
   function isChangeDirectionOrderBy(){
@@ -62,11 +63,11 @@
   const changeColumnsItems = () => {
     switch (payTypeState.value) {
       case 'BOLIVARES':
-        columnsItems.value = COLUMNS_TABLE;
+        columnsItems.value = COLUMNS_TABLE[0].values;
         break;
       
       case 'DIVISAS':
-        columnsItems.value = COLUMNS_TABLE_DOLAR;
+        columnsItems.value = COLUMNS_TABLE[1].values;
         break; 
 
       default:
