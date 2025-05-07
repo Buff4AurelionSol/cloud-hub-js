@@ -49,7 +49,7 @@
     emit('isChangeDirectionOrderBy')
   }
 
-  function isChangeDirectionTransaction(){
+  const isChangeDirectionTransaction = () => {
     emit('isChangeDirectionTransaction')
   }
 
