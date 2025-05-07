@@ -1,8 +1,7 @@
 <script setup>
-  import {REPORTS_DOLLAR} from '@/stores/const' 
-  import DetailsIcon from '@/pics/visible.png'
-  import {exportTable} from '@/modules/exportToExcell.js'
 
+  import DetailsIcon from '@/pics/visible.png'
+  
     const props = defineProps({
       indexState:{
         type: Number,

@@ -37,11 +37,19 @@ export default defineConfig({
       },
     }),
     AutoImport({
+      dirs: [
+        './src/composables/**',
+        './src/stores/**',
+        './src/utils/**',
+        './src/services/**',
+        './src/modules/**'
+      ],
       imports: [
         'vue',
-        VueRouterAutoImports,
+        'vue-router',
+        'pinia',
         {
-          'pinia': ['defineStore', 'storeToRefs'],
+          vuetify: ['useDate', 'useDisplay', 'useGoTo', 'useRtl', 'useTheme'],
         },
       ],
       eslintrc: {
@@ -87,4 +95,5 @@ export default defineConfig({
       },
     },
   },
+  
 })

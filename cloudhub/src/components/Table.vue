@@ -1,7 +1,7 @@
 <script setup>
-  import {reports} from '@/stores/const' 
+  
   import DetailsIcon from '@/pics/visible.png'
-  import {exportTable} from '@/modules/exportToExcell.js'
+
 
     const props = defineProps({
       indexState:{

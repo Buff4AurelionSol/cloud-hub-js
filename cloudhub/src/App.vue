@@ -75,6 +75,7 @@
 
 
 <template>
+  
   <Form @numberToFilter="getNumberToFilter" 
         @sendData="getData" 
         @transactions="getTransactions" 

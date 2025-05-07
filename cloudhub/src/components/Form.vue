@@ -64,7 +64,7 @@
   <header class="header-Form"><h1>Reportes de Pagos</h1></header>
   <form @submit="handleSubmit">
     <v-container>    
-      <v-row .justify-center>
+      <v-row>
         <v-col cols="6">
           <SearchInput/> 
         </v-col>

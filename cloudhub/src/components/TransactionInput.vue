@@ -1,5 +1,4 @@
 <script setup>
-  import {OPTIONS_TRANSACTION} from '@/stores/const.js'
     const selectedValues = ref([])
     const emit = defineEmits(['sendSelectedValues'])
     const sendValuesSelect = (value) => {
