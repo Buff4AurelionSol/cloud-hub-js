@@ -28,7 +28,7 @@
     filters.value = data
   }
 
-  function getTransactions(data){
+  const getTransactions = (data) => {
     transactions.value = data
   }
 
