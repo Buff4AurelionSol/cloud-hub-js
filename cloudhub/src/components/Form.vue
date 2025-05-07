@@ -41,7 +41,7 @@
      selectedValues.value =  values
   }
 
-  function getColumnsToFilter(values){
+  const getColumnsToFilter = (values) =>{
     selectedColumns.value = values
   }
 
