@@ -40,13 +40,10 @@
     searchValue.value = data
   }
 
-  function isChangeDirectionOrderBy(){
+  const isChangeDirectionOrderBy = () =>{
     haveIChangeDirectionOrderBy.value 
-    ? 
-      haveIChangeDirectionOrderBy.value = false 
-    : 
-      haveIChangeDirectionOrderBy.value = true
-
+      ? haveIChangeDirectionOrderBy.value = false 
+      : haveIChangeDirectionOrderBy.value = true
   }
 
   function getPayType(data){
