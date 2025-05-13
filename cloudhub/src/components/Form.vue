@@ -7,6 +7,7 @@
    const payTypeState = ref('BOLIVARES')
    const reportTypeState = ref('POR FACTURAR')
    const selectedColumns = ref([])
+   const formRef = ref(null)
    
   const props = defineProps({
     haveIChangeDirectionOrderBy:{
@@ -20,9 +21,13 @@
 
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    
+    if(!formRef.value) return;
+    
+    const formData = new FormData(formRef.value)
+    
     const dataArray = []
-    const data = Object.fromEntries(new FormData(e.target)) 
+    const data = Object.fromEntries(formData.entries()) 
     let showPaysSelect = data["showPaysSelect"] 
     data.transaction = selectedValues.value
     data.selectedColumns = selectedColumns.value
@@ -37,6 +42,7 @@
     emit('sendPayTypeState', payTypeState.value)
     emit('sendColumnsToFilter', data.selectedColumns)
     emit('sendTypeReport', reportTypeState.value)
+    
 
   }
 
@@ -69,7 +75,7 @@
 
 <template>
   <header class="header-Form"><h1>Reportes de Pagos</h1></header>
-  <form @submit="handleSubmit">
+  <form ref="formRef" @input="handleSubmit" >
     <v-container>    
       <v-row>
         <v-col cols="12" md="6">
@@ -112,10 +118,6 @@
         <v-col>
           <ColumnsFilter @sendValuesColumns="getColumnsToFilter" :columnsItems="props.columnsItems"/>
         </v-col>
-      </v-row>
-
-      <v-row justify="center">
-        <v-btn variant="outlined" type="submit"> Enviar </v-btn>
       </v-row>
     </v-container>
     
