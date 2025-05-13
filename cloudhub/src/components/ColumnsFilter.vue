@@ -18,7 +18,7 @@
 <template>
     <v-combobox
         multiple
-        label="Columnas a filtrar:"
+        label="Columnas a Ocultar:"
         v-model="selectedColumns"
         :items="props.columnsItems"
         class="columns-table-combobox"

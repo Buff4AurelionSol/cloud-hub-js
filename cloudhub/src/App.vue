@@ -82,8 +82,7 @@
 <template>
 
 <v-app>
-  <SideNav/>
-
+  
  
   <Form @numberToFilter="getNumberToFilter" 
         @sendData="getData" 
