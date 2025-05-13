@@ -4,15 +4,11 @@
     const emit = defineEmits(['sendPayTypeState'])
     const OPTIONS_TYPE_PAY = ['BOLIVARES', 'DIVISAS']
 
-    function addTypeState(data){
-        if(OPTIONS_TYPE_PAY.includes(data)){
-            payTypeState.value = data;
-            emit('sendPayTypeState', payTypeState.value);
-        }else{
-            console.log("Error")
-        }
-        
-    }
+    watch(payTypeValue, (newValue)=>{
+     OPTIONS_TYPE_PAY.includes(newValue) 
+      ? emit('sendPayTypeState', newValue)
+      : console.warn("Valor no permitido", newValue)
+    })
 
 </script>
 
@@ -26,11 +22,11 @@
         group
       >
         <div>
-          <v-btn value="BOLIVARES" @click="addTypeState('BOLIVARES')" class="h-100">
+          <v-btn value="BOLIVARES" class="h-100">
             BOLIVARES
           </v-btn>
 
-          <v-btn value="DIVISAS" @click="addTypeState('DIVISAS')" class="h-100">
+          <v-btn value="DIVISAS" class="h-100">
             DIVISAS
           </v-btn>
         </div>
