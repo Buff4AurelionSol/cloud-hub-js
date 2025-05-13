@@ -9,6 +9,7 @@
    const selectedColumns = ref([])
    const recordsToShow = ref(10)
    const formRef = ref(null)
+   const ordersState = ref(null)
    
   const props = defineProps({
     haveIChangeDirectionOrderBy:{
@@ -18,11 +19,6 @@
             type: Array
         }
   })
-
-
-  
-
-
 
   const handleSubmit = (e) => {
     
@@ -41,7 +37,7 @@
     emit('numberToFilter', recordsToShow.value)
     emit('sendData', dataArray)
     emit('transactions', data.transaction)
-    emit('orderBy', data.orderBy)
+    emit('orderBy', ordersState.value)
     emit('sendSearch', data.search)
     emit('sendPayTypeState', payTypeState.value)
     emit('sendColumnsToFilter', data.selectedColumns)
@@ -82,11 +78,15 @@
     recordsToShow.value = data
   }
 
+  const getOrders = (data) => {
+    ordersState.value = data; 
+  }
+
     watchEffect(()=>{
-      if(payTypeState.value || reportTypeState.value){
-        handleSubmit()
-      }
+      handleSubmit()
     })
+
+
 </script>
 
 <template>
@@ -112,7 +112,7 @@
           <DateInput name="fecha-2" label="Fecha final"/>
         </v-col>
         <v-col cols="12" md="6" class="order-by-col">
-          <OrderByInput/>
+          <OrderByInput @sendOrdersBy="getOrders"/>
           <button class="buttonExchange" name="changeDirectionOrderByButton" @click="isChangeDirectionOrderBy" type="button">
             <span>
               <img :src="ExchangeIMG" alt="Cambiar orden">
