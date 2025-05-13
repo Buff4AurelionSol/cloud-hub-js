@@ -7,6 +7,7 @@
    const payTypeState = ref('BOLIVARES')
    const reportTypeState = ref('POR FACTURAR')
    const selectedColumns = ref([])
+   const recordsToShow = ref(10)
    const formRef = ref(null)
    
   const props = defineProps({
@@ -19,6 +20,9 @@
   })
 
 
+  
+
+
 
   const handleSubmit = (e) => {
     
@@ -28,13 +32,13 @@
     
     const dataArray = []
     const data = Object.fromEntries(formData.entries()) 
-    let showPaysSelect = data["showPaysSelect"] 
+    data.showPaysSelect = recordsToShow.value
     data.transaction = selectedValues.value
     data.selectedColumns = selectedColumns.value
 
     console.log(data)
 
-    emit('numberToFilter', showPaysSelect)
+    emit('numberToFilter', recordsToShow.value)
     emit('sendData', dataArray)
     emit('transactions', data.transaction)
     emit('orderBy', data.orderBy)
@@ -45,6 +49,10 @@
     
 
   }
+
+
+
+  
 
   const getTransactions = (values) =>{
      selectedValues.value =  values
@@ -70,12 +78,20 @@
     reportTypeState.value = data
   }
 
+  const getRecordsToShow = (data) => {
+    recordsToShow.value = data
+  }
 
+    watchEffect(()=>{
+      if(payTypeState.value || reportTypeState.value){
+        handleSubmit()
+      }
+    })
 </script>
 
 <template>
   <header class="header-Form"><h1>Reportes de Pagos</h1></header>
-  <form ref="formRef" @input="handleSubmit" >
+  <form ref="formRef" @input="handleSubmit" @change="handleSubmit">
     <v-container>    
       <v-row>
         <v-col cols="12" md="6">
@@ -107,7 +123,7 @@
 
       <v-row>
         <v-col cols="6">
-          <ShowPaysInput/>
+          <ShowPaysInput @sendValuesToShow="getRecordsToShow"/>
         </v-col>
         <v-col cols="6">
           <TransactionInput @sendSelectedValues="getTransactions"/>
