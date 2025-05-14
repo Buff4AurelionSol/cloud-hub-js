@@ -106,23 +106,23 @@
         </v-btn>
       </v-row>    
       <v-row :class="{ 'justify-center': !showFormState }">
-        <v-col cols="12" md="6" v-if="showFormState">
+        <v-col cols="12" md="6" v-if="showFormState":class="{'box-filters-fade': showFormState}">
           <SearchInput/> 
         </v-col>
-        <v-col cols="12" md="6">
+        <v-col cols="12" md="6" :class="showFormState ? 'box-filters-fade': 'box-filters-move'">
           <PayType @sendPayTypeState="getPayType"/>
           <TypeReport @sendTypeReportState="getReportType"/>
         </v-col>
       </v-row>
 
       <v-row v-if="showFormState">
-        <v-col cols="12" md="3">
+        <v-col cols="12" md="3" :class="{'box-filters-fade': showFormState}">
           <DateInput name="fecha-1" label="Fecha de inicio"/>
         </v-col>
-        <v-col cols="12" md="3">
+        <v-col cols="12" md="3" :class="{'box-filters-fade': showFormState}">
           <DateInput name="fecha-2" label="Fecha final"/>
         </v-col>
-        <v-col cols="12" md="6" class="order-by-col">
+        <v-col cols="12" md="6" class="order-by-col" :class="{'box-filters-fade': showFormState}">
           <OrderByInput @sendOrdersBy="getOrders"/>
           <button class="buttonExchange" name="changeDirectionOrderByButton" @click="isChangeDirectionOrderBy" type="button">
             <span>
@@ -133,16 +133,16 @@
       </v-row>
 
       <v-row v-if="showFormState">
-        <v-col cols="6">
+        <v-col cols="6" :class="{'box-filters-fade': showFormState}">
           <ShowPaysInput @sendValuesToShow="getRecordsToShow"/>
         </v-col>
-        <v-col cols="6">
+        <v-col cols="6" :class="{'box-filters-fade': showFormState}">
           <TransactionInput @sendSelectedValues="getTransactions"/>
         </v-col>
       </v-row>
 
-      <v-row v-if="showFormState">
-        <v-col>
+      <v-row v-if="showFormState" >
+        <v-col :class="{'box-filters-fade': showFormState}">
           <ColumnsFilter @sendValuesColumns="getColumnsToFilter" :columnsItems="props.columnsItems"/>
         </v-col>
       </v-row>
@@ -175,6 +175,41 @@
     width: 100%;
     height: auto;
   }
+
+  .box-filters-move{
+    animation: move-right 2s normal;
+  }
+
+  .box-filters-fade{
+    animation: fade-down 2s normal;
+  }
+
+
+  @keyframes move-right {
+
+    from{
+      transform: translateX(-100px);
+    }
+
+    to {
+      transform: translateX(0px);
+    }
+    
+  }
+
+  
+  @keyframes fade-down{
+    from{
+      opacity: 0;
+      transform: translateY(30px) scale(0.9);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0px) scale(1);
+    }
+  }
+
+  
 
   
 </style>
