@@ -10,6 +10,7 @@
    const recordsToShow = ref(10)
    const formRef = ref(null)
    const ordersState = ref(null)
+   const showFormState = ref(false)
    
   const props = defineProps({
     haveIChangeDirectionOrderBy:{
@@ -82,9 +83,15 @@
     ordersState.value = data; 
   }
 
-    watchEffect(()=>{
-      handleSubmit()
-    })
+  watchEffect(()=>{
+    handleSubmit()
+  })
+
+  const changeStateShowForm = () => {
+    showFormState.value
+      ? showFormState.value = false 
+      : showFormState.value = true
+  }
 
 
 </script>
@@ -92,19 +99,23 @@
 <template>
   <header class="header-Form"><h1>Reportes de Pagos</h1></header>
   <form ref="formRef" @input="handleSubmit" @change="handleSubmit">
-    <v-container>    
-      <v-row>
-        <v-col cols="12" md="6">
+    <v-container>
+      <v-row cols="12" class="flex d-flex justify-center mb-2">
+        <v-btn size="large" @click="changeStateShowForm">
+          {{showFormState ? "Cerrar filtros" : "Abrir filtros"}}
+        </v-btn>
+      </v-row>    
+      <v-row :class="{ 'justify-center': !showFormState }">
+        <v-col cols="12" md="6" v-if="showFormState">
           <SearchInput/> 
         </v-col>
         <v-col cols="12" md="6">
           <PayType @sendPayTypeState="getPayType"/>
           <TypeReport @sendTypeReportState="getReportType"/>
         </v-col>
-       
       </v-row>
 
-      <v-row>
+      <v-row v-if="showFormState">
         <v-col cols="12" md="3">
           <DateInput name="fecha-1" label="Fecha de inicio"/>
         </v-col>
@@ -121,7 +132,7 @@
         </v-col>
       </v-row>
 
-      <v-row>
+      <v-row v-if="showFormState">
         <v-col cols="6">
           <ShowPaysInput @sendValuesToShow="getRecordsToShow"/>
         </v-col>
@@ -130,7 +141,7 @@
         </v-col>
       </v-row>
 
-      <v-row>
+      <v-row v-if="showFormState">
         <v-col>
           <ColumnsFilter @sendValuesColumns="getColumnsToFilter" :columnsItems="props.columnsItems"/>
         </v-col>
