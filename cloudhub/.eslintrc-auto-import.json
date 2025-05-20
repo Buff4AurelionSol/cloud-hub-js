@@ -110,6 +110,8 @@
     "useReportesServices": true,
     "useVerificacionesServices": true,
     "useUserServices": true,
-    "LISTA_TASAS": true
+    "LISTA_TASAS": true,
+    "REPORTS": true,
+    "AWAS": true
   }
 }
