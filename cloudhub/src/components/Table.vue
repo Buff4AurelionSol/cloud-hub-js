@@ -121,9 +121,20 @@
       <tbody>
         <tr v-for="(report, index) in sortedAndFilteredData" :key="index">
             <td>{{ index + 1 }}</td>
-            <td v-for="column in VISIBLE_COLUMNS" :key="column.key">{{report[column.key]}}</td>
+        
+            <td v-for="column in VISIBLE_COLUMNS" :key="column.key">
+              <div v-for="(item, index) in report[column.key]" v-if="column.key === 'contratos'">
+                <v-chip  variant="flat" size="small" color="blue">
+                   {{item.contrato }}
+                </v-chip>
+              </div>
+
+              <template v-else>
+                {{report[column.key]}}
+              </template>
+            </td>
             <Modal :imageIcon="DetailsIcon" 
-              :reportsDate="report.fechaReporte"
+              :reportData="report"
             />
         </tr>
       </tbody>

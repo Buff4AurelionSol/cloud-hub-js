@@ -3,12 +3,12 @@
         imageIcon: {
             type: String
         },
-        reportsDate: {
-            type: String
+        reportData: {
+            type: Object
         }
     })
 
-  const [date, time] = props.reportsDate.split(" ")
+  const [date, time] = props.reportData.fechaReporte.split(" ")
   
 
     
@@ -28,9 +28,10 @@
         </template>
 
         <template v-slot:default="{ isActive }">
-            <v-card title="Dialog">
+            <v-card title="Detalles">
             <v-card-text>
-                Creado el {{date}} a las: {{time }} 
+                <header>Creado el {{date}} a las: {{time }} </header>
+                <ContractsTable :itemsContracts="props.reportData.contratos"/>
             </v-card-text>
 
             <v-card-actions>

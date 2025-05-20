@@ -10,6 +10,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppBar: typeof import('./src/components/AppBar.vue')['default']
     ColumnsFilter: typeof import('./src/components/ColumnsFilter.vue')['default']
+    ContractsTable: typeof import('./src/components/ContractsTable.vue')['default']
     DateInput: typeof import('./src/components/DateInput.vue')['default']
     Form: typeof import('./src/components/Form.vue')['default']
     Modal: typeof import('./src/components/Modal.vue')['default']
@@ -23,6 +24,7 @@ declare module 'vue' {
     SideNav: typeof import('./src/components/SideNav.vue')['default']
     Table: typeof import('./src/components/Table.vue')['default']
     TableDolar: typeof import('./src/components/TableDolar.vue')['default']
+    TableModal: typeof import('./src/components/TableModal.vue')['default']
     TransactionInput: typeof import('./src/components/TransactionInput.vue')['default']
     TypeReport: typeof import('./src/components/TypeReport.vue')['default']
   }
