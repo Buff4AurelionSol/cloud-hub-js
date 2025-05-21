@@ -9,7 +9,7 @@
     })
 
   const [date, time] = props.reportData.created_at.split(" ")
-  
+  const [year, month, day] = date.split("-")
 
     
 </script>
@@ -30,7 +30,7 @@
         <template v-slot:default="{ isActive }">
             <v-card title="Detalles">
             <v-card-text>
-                <header>Creado el {{date}} a las: {{time }} </header>
+                <header>Creado el {{day}}-{{month}}-{{year}} a las: {{time }} </header>
                 <ContractsTable :itemsContracts="props.reportData.contratos"/>
             </v-card-text>
 
@@ -38,7 +38,7 @@
                 <v-spacer></v-spacer>
 
                 <v-btn
-                text="Close Dialog"
+                text="Cerrar detalles"
                 @click="isActive.value = false"
                 ></v-btn>
             </v-card-actions>
