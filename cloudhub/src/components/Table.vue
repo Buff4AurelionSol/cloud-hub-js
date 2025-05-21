@@ -158,7 +158,7 @@
 </script>
 
 <template>  
-  <div class="table-container box-filters-fade">
+  <div class="table-container box-filters-fade rounded-xl">
     <v-table v-if="thereAreRegisters" fixed-header>
       <thead>
         <tr>
@@ -195,7 +195,7 @@
             <h2>No se encontraron registros</h2>
       </div>
       <footer class="pt-2">
-       <v-btn variant="outlined" @click="handleExport">Exportar</v-btn>
+       <v-btn variant="outlined" rounded="xl" @click="handleExport">Exportar</v-btn>
         Total de registros: {{recordsToShow.length}}
       </footer>
   </div>  

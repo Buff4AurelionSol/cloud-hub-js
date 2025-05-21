@@ -22,6 +22,7 @@
                 color="surface-variant"
                 text="Open Dialog"
                 variant="flat"
+                rounded="xl"
             >
                 <img :src="props.imageIcon" class="box-icon" />
             </v-btn>   
