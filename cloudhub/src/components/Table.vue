@@ -39,7 +39,7 @@
       let data = REPORTS.slice(0, props.indexState).filter(report => {
         const transactionMatch = props.transactions.length === 0 || props.transactions.includes('TODOS') || 
           props.transactions.includes(report.transaccions.tipo);
-        
+  
         const searchMatch = !props.searchValue || 
           Object.values(report).some(value => 
             String(value).toLowerCase().includes(props.searchValue.toLocaleLowerCase())
@@ -56,7 +56,7 @@
           sortedData = data;
           break;
         case 'Referencia':
-          sortedData = [...data].sort((a, b) => a.referencia.localeCompare(b.referencia));
+          sortedData = [...data].sort((a, b) => a.transaccions[0].referencia.localeCompare(b.transaccions[0].referencia)) 
           break;
         case 'Monto Bs':
           sortedData = [...data].sort((a,b) => a.transaccions[monto] - b.transaccions[monto]);
