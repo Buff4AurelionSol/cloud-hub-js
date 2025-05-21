@@ -8,7 +8,7 @@
         }
     })
 
-  const [date, time] = props.reportData.fechaReporte.split(" ")
+  const [date, time] = props.reportData.created_at.split(" ")
   
 
     
@@ -31,7 +31,6 @@
             <v-card title="Detalles">
             <v-card-text>
                 <header>Creado el {{date}} a las: {{time }} </header>
-                <ContractsTable :itemsContracts="props.reportData.contratos"/>
             </v-card-text>
 
             <v-card-actions>

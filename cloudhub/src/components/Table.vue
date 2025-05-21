@@ -138,7 +138,6 @@
         <tr v-for="(report, index) in sortedAndFilteredData" :key="report.id">
             <td>{{ index + 1 }}</td>
             <td v-for="(column, i) in VISIBLE_COLUMNS" :key="column.key">
-
               <td v-if="isATransactionOption(column.key)" >
                 {{ report.transaccions.find((e)=> e[column.key] !== undefined )?.[column.key]}}
               </td>
@@ -148,6 +147,12 @@
               <template v-else>
                 {{report[column.key]}}
               </template>
+            </td>
+            <td>
+              <Modal
+                :image-icon="DetailsIcon"
+                :reportData="report"
+              />
             </td>
            
         </tr>
