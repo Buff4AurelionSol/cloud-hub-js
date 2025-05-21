@@ -28,7 +28,42 @@
         type: Array
       }
     })
+
+    const CONFIG_TRANSACCTION = ['id', 'referencia','pago_proveedor',
+      'banco_destino', 'banco_origen', 'tasa_id', 'tasa', 'tipo', 'monto', 'monto_usd',
+      'fecha', 'moneda', 'depositante', 'comprobante', 'id_comprobante'
+    ]
+
+    const CONFIG_CONTRACTS = ['nombre', 'contrato', 'rif', 'estado']
+
+   const searchInObject = (report, search) => {
+      const BASE_FIELDS = ['id', 'reporte_estado', 'tipo_reporte', 'nota', 'total_usd', 'created_at'];
+      
+      //Se revisa primero los values base
+      const baseMatch =  BASE_FIELDS.some(field => 
+        String(report[field] || '').toLowerCase().includes(search)
+      );
+
+      //Sino, se revisa en el array de transacciones
+      const transactionMatch = report?.transaccions.some(transaction => 
+        CONFIG_TRANSACCTION.some(field =>
+          String(transaction[field] || '').toLowerCase().includes(search)
+        )
+      )
+
+      //Sino, se revisa en el array de contratos
+      const contractMatch = report?.contratos.some( contract =>
+        CONFIG_CONTRACTS.some(field =>
+          String(contract[field] || '').toLowerCase().includes(search)
+        ) 
+      )
+
+      return baseMatch || transactionMatch || contractMatch;
     
+    }
+
+
+
     const handleExport = () => {
       const fileName = prompt('Introduce el nombre del archivo Excel:', 'Reporte');
       if (!fileName) return; 
@@ -40,11 +75,9 @@
         const transactionMatch = props.transactions.length === 0 || props.transactions.includes('TODOS') || 
           props.transactions.includes( report.transaccions.find(e => e.tipo !== undefined)?.tipo);
   
-        const searchMatch = !props.searchValue || 
-          Object.values(report).some(value => 
-            String(value).toLowerCase().includes(props.searchValue.toLocaleLowerCase())
-          )
-          return transactionMatch && searchMatch;
+        const searchMatch = !props.searchValue || searchInObject(report, props.searchValue.toLowerCase())
+
+        return transactionMatch && searchMatch; 
       } 
        );
        
@@ -103,12 +136,6 @@
       {key:'created_at', label:'FECHA REPORTE'}
     ]
 
-    const CONFIG_TRANSACCTION = ['id', 'referencia','pago_proveedor',
-      'banco_destino', 'banco_origen', 'tasa_id', 'tasa', 'tipo', 'monto', 'monto_usd',
-      'fecha', 'moneda', 'depositante', 'comprobante', 'id_comprobante'
-    ]
-
-    const CONFIG_CONTRACTS = ['nombre', 'contrato', 'rif', 'estado']
 
 
     const isATransactionOption = (data) => {
@@ -168,7 +195,7 @@
       </div>
       <footer class="pt-2">
        <v-btn variant="outlined" @click="handleExport">Exportar</v-btn>
-        Total de registros: {{reports.length}}
+        Total de registros: {{recordsToShow.length}}
       </footer>
   </div>  
 </template>
