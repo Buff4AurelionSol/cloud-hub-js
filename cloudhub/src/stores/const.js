@@ -35,7 +35,14 @@ export const reports = [
     montoTransaccionBs: 1889.57,
     montoUSD: 26.66,
     tasa: '70.01',
-    contratos: '1011346',
+    contratos: [
+      {
+        nombre: 'SABRINA ANZOLIN CHIMERI',
+        contrato: '1011346',
+        rif: '9966700',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'SABRINA ANZOLIN CHIMERI',
     rifCedula: '9966700',
     bancoDestino: 'Banesco',
@@ -52,7 +59,14 @@ export const reports = [
     montoTransaccionBs: 1889.57,
     montoUSD: 26.66,
     tasa: '70.01',
-    contratos: '1011346',
+    contratos: [
+      {
+        nombre: 'SABRINA ANZOLIN CHIMERI',
+        contrato: '1011346',
+        rif: '9966700',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'SABRINA ANZOLIN CHIMERI',
     rifCedula: '9966700',
     bancoDestino: 'Banesco',
@@ -69,7 +83,14 @@ export const reports = [
     montoTransaccionBs: 3250.00,
     montoUSD: 45.00,
     tasa: '72.22',
-    contratos: '1012387',
+    contratos: [
+      {
+        nombre: 'CARLOS PEREZ GOMEZ',
+        contrato: '1012387',
+        rif: '15894236',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'CARLOS PEREZ GOMEZ',
     rifCedula: '15894236',
     bancoDestino: 'Mercantil',
@@ -86,7 +107,14 @@ export const reports = [
     montoTransaccionBs: 2500.00,
     montoUSD: 34.72,
     tasa: '72.00',
-    contratos: '1011478',
+    contratos: [
+      {
+        nombre: 'MARIA FERNANDEZ TORREALBA',
+        contrato: '1011478',
+        rif: '20456239',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'MARIA FERNANDEZ TORREALBA',
     rifCedula: '20456239',
     bancoDestino: 'Banesco',
@@ -103,7 +131,14 @@ export const reports = [
     montoTransaccionBs: 1000.00,
     montoUSD: 13.89,
     tasa: '72.00',
-    contratos: '1011347',
+    contratos: [
+      {
+        nombre: 'JULIO MENDOZA RIVAS',
+        contrato: '1011347',
+        rif: '10928374',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'JULIO MENDOZA RIVAS',
     rifCedula: '10928374',
     bancoDestino: 'BNC',
@@ -120,7 +155,14 @@ export const reports = [
     montoTransaccionBs: 2350.00,
     montoUSD: 32.64,
     tasa: '72.00',
-    contratos: '1011349',
+    contratos: [
+      {
+        nombre: 'ISABEL ROMERO LOPEZ',
+        contrato: '1011349',
+        rif: '19582736',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'ISABEL ROMERO LOPEZ',
     rifCedula: '19582736',
     bancoDestino: 'Mercantil',
@@ -137,7 +179,14 @@ export const reports = [
     montoTransaccionBs: 4100.00,
     montoUSD: 56.94,
     tasa: '72.00',
-    contratos: '1011350',
+    contratos: [
+      {
+        nombre: 'RAFAEL URDANETA PEREZ',
+        contrato: '1011350',
+        rif: '10392847',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'RAFAEL URDANETA PEREZ',
     rifCedula: '10392847',
     bancoDestino: 'BOD',
@@ -154,7 +203,14 @@ export const reports = [
     montoTransaccionBs: 1850.00,
     montoUSD: 25.69,
     tasa: '72.00',
-    contratos: '1011351',
+    contratos: [
+      {
+        nombre: 'LAURA GARCIA MENDEZ',
+        contrato: '1011351',
+        rif: '20918374',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'LAURA GARCIA MENDEZ',
     rifCedula: '20918374',
     bancoDestino: 'Provincial',
@@ -171,7 +227,14 @@ export const reports = [
     montoTransaccionBs: 2800.00,
     montoUSD: 38.89,
     tasa: '72.00',
-    contratos: '1011352',
+    contratos: [
+      {
+        nombre: 'DANIELA CASTILLO LINARES',
+        contrato: '1011352',
+        rif: '21109457',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'DANIELA CASTILLO LINARES',
     rifCedula: '21109457',
     bancoDestino: 'BNC',
@@ -188,7 +251,14 @@ export const reports = [
     montoTransaccionBs: 2500.00,
     montoUSD: 34.72,
     tasa: '72.00',
-    contratos: '1011353',
+    contratos: [
+      {
+        nombre: 'ANDREA GONZALEZ PAEZ',
+        contrato: '1011353',
+        rif: '19837465',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'ANDREA GONZALEZ PAEZ',
     rifCedula: '19837465',
     bancoDestino: 'Banesco',
@@ -205,7 +275,14 @@ export const reports = [
     montoTransaccionBs: 3200.00,
     montoUSD: 44.44,
     tasa: '72.00',
-    contratos: '1011354',
+    contratos: [
+      {
+        nombre: 'VICTOR HERNANDEZ SOTO',
+        contrato: '1011354',
+        rif: '18726593',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'VICTOR HERNANDEZ SOTO',
     rifCedula: '18726593',
     bancoDestino: 'Mercantil',
@@ -222,7 +299,14 @@ export const reports = [
     montoTransaccionBs: 1700.00,
     montoUSD: 23.61,
     tasa: '72.00',
-    contratos: '1011355',
+    contratos: [
+      {
+        nombre: 'BEATRIZ SALAZAR GARCIA',
+        contrato: '1011355',
+        rif: '20478345',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'BEATRIZ SALAZAR GARCIA',
     rifCedula: '20478345',
     bancoDestino: 'Provincial',
@@ -239,7 +323,14 @@ export const reports = [
     montoTransaccionBs: 3500.00,
     montoUSD: 48.61,
     tasa: '72.00',
-    contratos: '1011356',
+    contratos: [
+      {
+        nombre: 'JORGE DIAZ MONTILLA',
+        contrato: '1011356',
+        rif: '18392047',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'JORGE DIAZ MONTILLA',
     rifCedula: '18392047',
     bancoDestino: 'BOD',
@@ -256,7 +347,14 @@ export const reports = [
     montoTransaccionBs: 2950.00,
     montoUSD: 41.00,
     tasa: '72.00',
-    contratos: '1011357',
+    contratos: [
+      {
+        nombre: 'ELENA MARQUEZ REYES',
+        contrato: '1011357',
+        rif: '17483920',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'ELENA MARQUEZ REYES',
     rifCedula: '17483920',
     bancoDestino: 'Venezolano de Crédito',
@@ -273,7 +371,14 @@ export const reports = [
     montoTransaccionBs: 2600.00,
     montoUSD: 36.11,
     tasa: '72.00',
-    contratos: '1011358',
+    contratos: [
+      {
+        nombre: 'PABLO MARTINEZ LOBO',
+        contrato: '1011358',
+        rif: '19384756',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'PABLO MARTINEZ LOBO',
     rifCedula: '19384756',
     bancoDestino: 'Banesco',
@@ -290,7 +395,14 @@ export const reports = [
     montoTransaccionBs: 3100.00,
     montoUSD: 43.05,
     tasa: '72.00',
-    contratos: '1011359',
+    contratos: [
+      {
+        nombre: 'SUSANA RIVAS TORO',
+        contrato: '1011359',
+        rif: '20395827',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'SUSANA RIVAS TORO',
     rifCedula: '20395827',
     bancoDestino: 'Mercantil',
@@ -307,7 +419,14 @@ export const reports = [
     montoTransaccionBs: 4000.00,
     montoUSD: 55.55,
     tasa: '72.00',
-    contratos: '1011360',
+    contratos: [
+      {
+        nombre: 'FRANCISCO LEON JIMENEZ',
+        contrato: '1011360',
+        rif: '17283948',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'FRANCISCO LEON JIMENEZ',
     rifCedula: '17283948',
     bancoDestino: 'Provincial',
@@ -324,7 +443,14 @@ export const reports = [
     montoTransaccionBs: 2700.00,
     montoUSD: 37.50,
     tasa: '72.00',
-    contratos: '1011361',
+    contratos: [
+      {
+        nombre: 'CAMILA TORRES RUIZ',
+        contrato: '1011361',
+        rif: '20937485',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'CAMILA TORRES RUIZ',
     rifCedula: '20937485',
     bancoDestino: 'BOD',
@@ -341,7 +467,14 @@ export const reports = [
     montoTransaccionBs: 1950.00,
     montoUSD: 27.08,
     tasa: '72.00',
-    contratos: '1011362',
+    contratos: [
+      {
+        nombre: 'FERNANDO AVILA RIVERO',
+        contrato: '1011362',
+        rif: '19827364',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'FERNANDO AVILA RIVERO',
     rifCedula: '19827364',
     bancoDestino: 'BNC',
@@ -358,7 +491,14 @@ export const reports = [
     montoTransaccionBs: 3750.00,
     montoUSD: 52.08,
     tasa: '72.00',
-    contratos: '1011363',
+    contratos: [
+      {
+        nombre: 'NATALIA MORENO PEÑA',
+        contrato: '1011363',
+        rif: '20738495',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'NATALIA MORENO PEÑA',
     rifCedula: '20738495',
     bancoDestino: 'Banesco',
@@ -375,7 +515,14 @@ export const reports = [
     montoTransaccionBs: 3600.00,
     montoUSD: 50.00,
     tasa: '72.00',
-    contratos: '1011364',
+    contratos: [
+      {
+        nombre: 'RICARDO SERRANO BLANCO',
+        contrato: '1011364',
+        rif: '18374652',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'RICARDO SERRANO BLANCO',
     rifCedula: '18374652',
     bancoDestino: 'Mercantil',
@@ -392,7 +539,14 @@ export const reports = [
     montoTransaccionBs: 2400.00,
     montoUSD: 33.33,
     tasa: '72.00',
-    contratos: '1011365',
+    contratos: [
+      {
+        nombre: 'MIGUEL CAMPOS LINARES',
+        contrato: '1011365',
+        rif: '17584920',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'MIGUEL CAMPOS LINARES',
     rifCedula: '17584920',
     bancoDestino: 'Venezolano de Crédito',
@@ -409,7 +563,14 @@ export const reports = [
     montoTransaccionBs: 3100.00,
     montoUSD: 43.05,
     tasa: '72.00',
-    contratos: '1011366',
+    contratos: [
+      {
+        nombre: 'LILIANA AGUILAR VILLARROEL',
+        contrato: '1011366',
+        rif: '18927365',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'LILIANA AGUILAR VILLARROEL',
     rifCedula: '18927365',
     bancoDestino: 'BOD',
@@ -426,7 +587,14 @@ export const reports = [
     montoTransaccionBs: 2200.00,
     montoUSD: 30.55,
     tasa: '72.00',
-    contratos: '1011367',
+    contratos: [
+      {
+        nombre: 'JUAN CORDERO SANTANA',
+        contrato: '1011367',
+        rif: '19983746',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'JUAN CORDERO SANTANA',
     rifCedula: '19983746',
     bancoDestino: 'Banesco',
@@ -443,7 +611,14 @@ export const reports = [
     montoTransaccionBs: 3900.00,
     montoUSD: 54.17,
     tasa: '72.00',
-    contratos: '1011368',
+    contratos: [
+      {
+        nombre: 'ANGELICA BERMUDEZ PEREIRA',
+        contrato: '1011368',
+        rif: '20938476',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'ANGELICA BERMUDEZ PEREIRA',
     rifCedula: '20938476',
     bancoDestino: 'Banesco',
@@ -460,7 +635,14 @@ export const reports = [
     montoTransaccionBs: 2100.00,
     montoUSD: 29.17,
     tasa: '72.00',
-    contratos: '1011369',
+    contratos: [
+      {
+        nombre: 'JESUS ROJAS MORA',
+        contrato: '1011369',
+        rif: '18837465',
+        estado: 'N/D'
+      }
+    ],
     cliente: 'JESUS ROJAS MORA',
     rifCedula: '18837465',
     bancoDestino: 'Provincial',

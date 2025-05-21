@@ -137,7 +137,13 @@
       <tbody>
         <tr v-for="(report, index) in sortedAndFilteredData" :key="report.id">
             <td>{{ index + 1 }}</td>
-            <td v-for="(column, i) in VISIBLE_COLUMNS" :key="column.key">
+        
+            <td v-for="column in VISIBLE_COLUMNS" :key="column.key">
+              <div v-for="(item, index) in report[column.key]" v-if="column.key === 'contratos'">
+                <v-chip  variant="flat" size="small" color="blue">
+                   {{item.contrato }}
+                </v-chip>
+              </div>
 
               <td v-if="isATransactionOption(column.key)" >
                 {{ report.transaccions.find((e)=> e[column.key] !== undefined )?.[column.key]}}
