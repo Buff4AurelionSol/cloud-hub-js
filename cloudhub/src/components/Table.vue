@@ -90,35 +90,33 @@
       {key:'referencia', label:"REFERENCIA"},
       {key:'tipo_reporte',label:'TIPO REPORTE'},
       {key:'tipo', label:'TIPO TRANSACCIÓN'},
-      {key:'montoTransaccionBs', label:'MONTO TRANSACCIÓN'},
-      {key:'montoUSD', label:'MONTO USD'},
+      {key:'monto', label:'MONTO TRANSACCIÓN'},
+      {key:'monto_usd', label:'MONTO USD'},
       {key:'tasa', label:'TASA'},
-      {key:'contratos', label:'CONTRATOS'},
-      {key:'cliente', label:'CLIENTE'},
-      {key:'rifCedula', label:'RIF/CEDULA'},
+      {key:'contrato', label:'CONTRATOS'},
+      {key:'nombre', label:'CLIENTE'},
+      {key:'rif', label:'RIF/CEDULA'},
       {key:'banco_origen', label:'BANCO ORIGEN'},
       {key:'banco_destino', label:'BANCO DESTINO'},
-      {key:'fechaTransaccion', label:'FECHA TRANSACCIÓN'},
+      {key:'fecha', label:'FECHA TRANSACCIÓN'},
       {key:'created_at', label:'FECHA REPORTE'}
     ]
-
-    const getTransacctionData = (data, atributte) => {
-      const [aux]= data
-      return aux[atributte]
-
-    }
-
-
-
-
 
     const CONFIG_TRANSACCTION = ['id', 'referencia','pago_proveedor',
       'banco_destino', 'banco_origen', 'tasa_id', 'tasa', 'tipo', 'monto', 'monto_usd',
       'fecha', 'moneda', 'depositante', 'comprobante', 'id_comprobante'
     ]
 
+    const CONFIG_CONTRACTS = ['nombre', 'contrato', 'rif', 'estado']
 
 
+    const isATransactionOption = (data) => {
+       return CONFIG_TRANSACCTION.includes(data)
+    }
+
+    const isAContractOption = (data) => {
+      return CONFIG_CONTRACTS.includes(data)
+    }
 
     const VISIBLE_COLUMNS = computed(()=> CONFIG_COLUMN.filter(column => !props.columns.includes(column.label)))
 
@@ -127,7 +125,7 @@
 </script>
 
 <template>
-  <div class="table-container">
+  <div class="table-container box-filters-fade">
     <v-table v-if="thereAreRegisters" fixed-header>
       <thead>
         <tr>
@@ -141,12 +139,21 @@
             <td>{{ index + 1 }}</td>
             <td v-for="(column, i) in VISIBLE_COLUMNS" :key="column.key">
 
-              <td v-if="column.key === 'referencia' || column.key === 'banco_origen'" >
-                {{ getTransacctionData(report.transaccions, column.key) }}
+              <td v-if="isATransactionOption(column.key)" >
+                {{ report.transaccions.find((e)=> e[column.key] !== undefined )?.[column.key]}}
+              </td>
+              <td v-else-if="isAContractOption(column.key)" >
+                {{ report.contratos.find((e)=> e[column.key] !== undefined )?.[column.key]}}
               </td>
               <template v-else>
                 {{report[column.key]}}
               </template>
+            </td>
+            <td>
+              <Modal
+                :image-icon="DetailsIcon"
+                :reportsDate="report.created_at"
+              /> 
             </td>
         </tr>
       </tbody>
