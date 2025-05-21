@@ -36,9 +36,9 @@
     }
  
     const sortedAndFilteredData = computed(() => {
-      let data = reports.slice(0, props.indexState).filter(report => {
+      let data = REPORTS.slice(0, props.indexState).filter(report => {
         const transactionMatch = props.transactions.length === 0 || props.transactions.includes('TODOS') || 
-          props.transactions.includes(report.tipoTransaccion);
+          props.transactions.includes(report.transaccions.tipo);
         
         const searchMatch = !props.searchValue || 
           Object.values(report).some(value => 
@@ -59,7 +59,7 @@
           sortedData = [...data].sort((a, b) => a.referencia.localeCompare(b.referencia));
           break;
         case 'Monto Bs':
-          sortedData = [...data].sort((a,b) => a.montoTransaccionBs - b.montoTransaccionBs);
+          sortedData = [...data].sort((a,b) => a.transaccions[monto] - b.transaccions[monto]);
           break;
         case 'Contrato':
           sortedData = [...data].sort((a,b)=> a.contratos - b.contratos);
@@ -86,21 +86,37 @@
 
     const CONFIG_COLUMN = [
       {key:'id', label:'ID'},
-      {key:'estado', label:'ESTADO'},
+      {key:'reporte_estado', label:'ESTADO'},
       {key:'referencia', label:"REFERENCIA"},
-      {key:'tipoReporte',label:'TIPO REPORTE'},
-      {key:'tipoTransaccion', label:'TIPO TRANSACCIÓN'},
-      {key:'montoTransaccionBs', label:'MONTO TRANSACCIÓN'},
-      {key:'montoUSD', label:'MONTO USD'},
+      {key:'tipo_reporte',label:'TIPO REPORTE'},
+      {key:'tipo', label:'TIPO TRANSACCIÓN'},
+      {key:'monto', label:'MONTO TRANSACCIÓN'},
+      {key:'monto_usd', label:'MONTO USD'},
       {key:'tasa', label:'TASA'},
-      {key:'contratos', label:'CONTRATOS'},
-      {key:'cliente', label:'CLIENTE'},
-      {key:'rifCedula', label:'RIF/CEDULA'},
-      {key:'bancoOrigen', label:'BANCO ORIGEN'},
-      {key:'bancoDestino', label:'BANCO DESTINO'},
-      {key:'fechaTransaccion', label:'FECHA TRANSACCIÓN'},
-      {key:'fechaReporte', label:'FECHA REPORTE'}
+      {key:'contrato', label:'CONTRATOS'},
+      {key:'nombre', label:'CLIENTE'},
+      {key:'rif', label:'RIF/CEDULA'},
+      {key:'banco_origen', label:'BANCO ORIGEN'},
+      {key:'banco_destino', label:'BANCO DESTINO'},
+      {key:'fecha', label:'FECHA TRANSACCIÓN'},
+      {key:'created_at', label:'FECHA REPORTE'}
     ]
+
+    const CONFIG_TRANSACCTION = ['id', 'referencia','pago_proveedor',
+      'banco_destino', 'banco_origen', 'tasa_id', 'tasa', 'tipo', 'monto', 'monto_usd',
+      'fecha', 'moneda', 'depositante', 'comprobante', 'id_comprobante'
+    ]
+
+    const CONFIG_CONTRACTS = ['nombre', 'contrato', 'rif', 'estado']
+
+
+    const isATransactionOption = (data) => {
+       return CONFIG_TRANSACCTION.includes(data)
+    }
+
+    const isAContractOption = (data) => {
+      return CONFIG_CONTRACTS.includes(data)
+    }
 
     const VISIBLE_COLUMNS = computed(()=> CONFIG_COLUMN.filter(column => !props.columns.includes(column.label)))
 
@@ -109,7 +125,7 @@
 </script>
 
 <template>
-  <div class="table-container">
+  <div class="table-container box-filters-fade">
     <v-table v-if="thereAreRegisters" fixed-header>
       <thead>
         <tr>
@@ -119,23 +135,21 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(report, index) in sortedAndFilteredData" :key="index">
+        <tr v-for="(report, index) in sortedAndFilteredData" :key="report.id">
             <td>{{ index + 1 }}</td>
-        
-            <td v-for="column in VISIBLE_COLUMNS" :key="column.key">
-              <div v-for="(item, index) in report[column.key]" v-if="column.key === 'contratos'">
-                <v-chip  variant="flat" size="small" color="blue">
-                   {{item.contrato }}
-                </v-chip>
-              </div>
+            <td v-for="(column, i) in VISIBLE_COLUMNS" :key="column.key">
 
+              <td v-if="isATransactionOption(column.key)" >
+                {{ report.transaccions.find((e)=> e[column.key] !== undefined )?.[column.key]}}
+              </td>
+              <td v-else-if="isAContractOption(column.key)" >
+                {{ report.contratos.find((e)=> e[column.key] !== undefined )?.[column.key]}}
+              </td>
               <template v-else>
                 {{report[column.key]}}
               </template>
             </td>
-            <Modal :imageIcon="DetailsIcon" 
-              :reportData="report"
-            />
+           
         </tr>
       </tbody>
     </v-table>
@@ -144,7 +158,6 @@
       </div>
       <footer class="pt-2">
        <v-btn variant="outlined" @click="handleExport">Exportar</v-btn>
-
         Total de registros: {{reports.length}}
       </footer>
   </div>  

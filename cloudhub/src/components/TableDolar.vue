@@ -131,10 +131,6 @@
                 {{report[column.key]}}
               </template>
             </td>
-
-            <Modal :imageIcon="DetailsIcon" 
-              :reportsDate="report.reportDate"
-            />
         </tr>
       </tbody>
     </v-table>

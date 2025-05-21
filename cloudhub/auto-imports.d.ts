@@ -10,6 +10,7 @@ declare global {
   const LISTA_TASAS: typeof import('./src/stores/mockdata/tasas.js')['LISTA_TASAS']
   const OPTIONS_ORDER_BY: typeof import('./src/stores/const.js')['OPTIONS_ORDER_BY']
   const OPTIONS_TRANSACTION: typeof import('./src/stores/const.js')['OPTIONS_TRANSACTION']
+  const REPORTS: typeof import('./src/stores/mockdata/reports.js')['REPORTS']
   const REPORTS_DOLLAR: typeof import('./src/stores/const.js')['REPORTS_DOLLAR']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const computed: typeof import('vue')['computed']
@@ -118,6 +119,7 @@ declare module 'vue' {
     readonly LISTA_TASAS: UnwrapRef<typeof import('./src/stores/mockdata/tasas.js')['LISTA_TASAS']>
     readonly OPTIONS_ORDER_BY: UnwrapRef<typeof import('./src/stores/const.js')['OPTIONS_ORDER_BY']>
     readonly OPTIONS_TRANSACTION: UnwrapRef<typeof import('./src/stores/const.js')['OPTIONS_TRANSACTION']>
+    readonly REPORTS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS']>
     readonly REPORTS_DOLLAR: UnwrapRef<typeof import('./src/stores/const.js')['REPORTS_DOLLAR']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
