@@ -56,25 +56,25 @@
           sortedData = data;
           break;
         case 'Referencia':
-          sortedData = [...data].sort((a, b) => a.transaccions[0].referencia.localeCompare(b.transaccions[0].referencia)) 
+          sortedData = [...data].sort((a, b) => parseInt(a.transaccions[0].referencia) - parseInt(b.transaccions[0].referencia) ) 
           break;
         case 'Monto Bs':
-          sortedData = [...data].sort((a,b) => a.transaccions[0].monto.localeCompare(b.transaccions[0].monto));
+          sortedData = [...data].sort((a,b) => parseInt(a.transaccions[0].monto) - parseInt(b.transaccions[0].monto));
           break;
         case 'Contrato':
-          sortedData = [...data].sort((a,b)=> a.contratos - b.contratos);
+          sortedData = [...data].sort((a,b)=> parseInt(a.contratos[0].contrato) - parseInt(b.contratos[0].contrato));
           break;
         case 'Cliente':
-          sortedData = [...data].sort((a,b) => a.cliente.localeCompare(b.cliente));
+          sortedData = [...data].sort((a,b) => a.contratos[0].nombre.localeCompare(b.contratos[0].nombre));
           break;
         case 'Rif/Cedula':
-          sortedData = [...data].sort((a,b) => a.rifCedula - b.rifCedula);
+          sortedData = [...data].sort((a,b) => parseInt(a.contratos[0].rif) - parseInt(b.contratos[0].rif) );
           break;
         case 'Banco destino':
-          sortedData = [...data].sort((a,b) => a.bancoDestino.localeCompare(b.bancoDestino));
+          sortedData = [...data].sort((a,b) => a.transaccions[0].banco_destino.localeCompare(b.transaccions[0].banco_destino));
           break;
         case 'Banco origen':
-          sortedData = [...data].sort((a,b) => a.bancoOrigen.localeCompare(b.bancoOrigen));
+          sortedData = [...data].sort((a,b) => a.transaccions[0].banco_origen.localeCompare(b.transaccions[0].banco_origen));
           break;
         default:
           sortedData = data;
