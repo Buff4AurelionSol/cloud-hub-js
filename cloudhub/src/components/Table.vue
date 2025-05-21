@@ -59,7 +59,7 @@
           sortedData = [...data].sort((a, b) => a.transaccions[0].referencia.localeCompare(b.transaccions[0].referencia)) 
           break;
         case 'Monto Bs':
-          sortedData = [...data].sort((a,b) => a.transaccions[monto] - b.transaccions[monto]);
+          sortedData = [...data].sort((a,b) => a.transaccions[0].monto.localeCompare(b.transaccions[0].monto));
           break;
         case 'Contrato':
           sortedData = [...data].sort((a,b)=> a.contratos - b.contratos);
