@@ -36,9 +36,9 @@
     }
  
     const sortedAndFilteredData = computed(() => {
-      let data = reports.slice(0, props.indexState).filter(report => {
+      let data = AWAS.slice(0, props.indexState).filter(report => {
         const transactionMatch = props.transactions.length === 0 || props.transactions.includes('TODOS') || 
-          props.transactions.includes(report.tipoTransaccion);
+          props.transactions.includes(report.transaccions.tipo);
         
         const searchMatch = !props.searchValue || 
           Object.values(report).some(value => 
@@ -59,7 +59,7 @@
           sortedData = [...data].sort((a, b) => a.referencia.localeCompare(b.referencia));
           break;
         case 'Monto Bs':
-          sortedData = [...data].sort((a,b) => a.montoTransaccionBs - b.montoTransaccionBs);
+          sortedData = [...data].sort((a,b) => a.transaccions[monto] - b.transaccions[monto]);
           break;
         case 'Contrato':
           sortedData = [...data].sort((a,b)=> a.contratos - b.contratos);
@@ -86,21 +86,39 @@
 
     const CONFIG_COLUMN = [
       {key:'id', label:'ID'},
-      {key:'estado', label:'ESTADO'},
+      {key:'reporte_estado', label:'ESTADO'},
       {key:'referencia', label:"REFERENCIA"},
-      {key:'tipoReporte',label:'TIPO REPORTE'},
-      {key:'tipoTransaccion', label:'TIPO TRANSACCIÓN'},
+      {key:'tipo_reporte',label:'TIPO REPORTE'},
+      {key:'tipo', label:'TIPO TRANSACCIÓN'},
       {key:'montoTransaccionBs', label:'MONTO TRANSACCIÓN'},
       {key:'montoUSD', label:'MONTO USD'},
       {key:'tasa', label:'TASA'},
       {key:'contratos', label:'CONTRATOS'},
       {key:'cliente', label:'CLIENTE'},
       {key:'rifCedula', label:'RIF/CEDULA'},
-      {key:'bancoOrigen', label:'BANCO ORIGEN'},
-      {key:'bancoDestino', label:'BANCO DESTINO'},
+      {key:'banco_origen', label:'BANCO ORIGEN'},
+      {key:'banco_destino', label:'BANCO DESTINO'},
       {key:'fechaTransaccion', label:'FECHA TRANSACCIÓN'},
-      {key:'fechaReporte', label:'FECHA REPORTE'}
+      {key:'created_at', label:'FECHA REPORTE'}
     ]
+
+    const getTransacctionData = (data, atributte) => {
+      const [aux]= data
+      return aux[atributte]
+
+    }
+
+
+
+
+
+    const CONFIG_TRANSACCTION = ['id', 'referencia','pago_proveedor',
+      'banco_destino', 'banco_origen', 'tasa_id', 'tasa', 'tipo', 'monto', 'monto_usd',
+      'fecha', 'moneda', 'depositante', 'comprobante', 'id_comprobante'
+    ]
+
+
+
 
     const VISIBLE_COLUMNS = computed(()=> CONFIG_COLUMN.filter(column => !props.columns.includes(column.label)))
 
@@ -119,7 +137,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(report, index) in sortedAndFilteredData" :key="index">
+        <tr v-for="(report, index) in sortedAndFilteredData" :key="report.id">
             <td>{{ index + 1 }}</td>
         
             <td v-for="column in VISIBLE_COLUMNS" :key="column.key">
@@ -144,7 +162,6 @@
       </div>
       <footer class="pt-2">
        <v-btn variant="outlined" @click="handleExport">Exportar</v-btn>
-
         Total de registros: {{reports.length}}
       </footer>
   </div>  

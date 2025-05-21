@@ -16,7 +16,6 @@ declare module 'vue' {
     Modal: typeof import('./src/components/Modal.vue')['default']
     OrderByInput: typeof import('./src/components/OrderByInput.vue')['default']
     PayType: typeof import('./src/components/PayType.vue')['default']
-    ReportType: typeof import('./src/components/ReportType.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SearchInput: typeof import('./src/components/SearchInput.vue')['default']
