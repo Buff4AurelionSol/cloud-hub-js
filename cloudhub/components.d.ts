@@ -24,6 +24,9 @@ declare module 'vue' {
     Table: typeof import('./src/components/Table.vue')['default']
     TableDolar: typeof import('./src/components/TableDolar.vue')['default']
     TransactionInput: typeof import('./src/components/TransactionInput.vue')['default']
+    Transactions: typeof import('./src/components/Transactions.vue')['default']
+    TransactionsSpace: typeof import('./src/components/TransactionsSpace.vue')['default']
+    TransactionsTable: typeof import('./src/components/TransactionsTable.vue')['default']
     TypeReport: typeof import('./src/components/TypeReport.vue')['default']
   }
 }

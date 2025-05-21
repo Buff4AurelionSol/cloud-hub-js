@@ -15,7 +15,7 @@
 </script>
 
 <template>
-    <v-dialog max-width="500">
+    <v-dialog max-width="600">
         <template v-slot:activator="{ props: activatorProps }">
             <v-btn 
                 v-bind="activatorProps"
@@ -32,6 +32,7 @@
             <v-card-text>
                 <header>Creado el {{day}}-{{month}}-{{year}} a las: {{time }} </header>
                 <ContractsTable :itemsContracts="props.reportData.contratos"/>
+                <TransactionsSpace :dataTransacctions="props.reportData.transaccions"/> 
             </v-card-text>
 
             <v-card-actions>

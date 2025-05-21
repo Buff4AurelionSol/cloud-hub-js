@@ -60,6 +60,7 @@
 
       return baseMatch || transactionMatch || contractMatch;
     
+
     }
 
 
@@ -156,7 +157,7 @@
 
 </script>
 
-<template>
+<template>  
   <div class="table-container box-filters-fade">
     <v-table v-if="thereAreRegisters" fixed-header>
       <thead>
