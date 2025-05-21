@@ -36,9 +36,9 @@
     }
  
     const sortedAndFilteredData = computed(() => {
-      let data = REPORTS.slice(0, props.indexState).filter(report => {
+      let data = REPORTS.filter((report, i) => {
         const transactionMatch = props.transactions.length === 0 || props.transactions.includes('TODOS') || 
-          props.transactions.includes(report.transaccions.tipo);
+          props.transactions.includes( report.transaccions.find(e => e.tipo !== undefined)?.tipo);
   
         const searchMatch = !props.searchValue || 
           Object.values(report).some(value => 
@@ -47,6 +47,7 @@
           return transactionMatch && searchMatch;
       } 
        );
+       
       
 
       let sortedData;
@@ -118,9 +119,13 @@
       return CONFIG_CONTRACTS.includes(data)
     }
 
+    const recordsToShow = computed(() => 
+      sortedAndFilteredData.value.slice(0, props.indexState)
+    );
+
     const VISIBLE_COLUMNS = computed(()=> CONFIG_COLUMN.filter(column => !props.columns.includes(column.label)))
 
-    const thereAreRegisters = computed(()=> sortedAndFilteredData.value.length > 0)
+    const thereAreRegisters = computed(()=> recordsToShow.value.length > 0)
 
 </script>
 
@@ -135,7 +140,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(report, index) in sortedAndFilteredData" :key="report.id">
+        <tr v-for="(report, index) in recordsToShow" :key="report.id">
             <td>{{ index + 1 }}</td>
             <td v-for="(column, i) in VISIBLE_COLUMNS" :key="column.key">
               <td v-if="isATransactionOption(column.key)" >
