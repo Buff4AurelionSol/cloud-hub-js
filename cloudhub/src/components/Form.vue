@@ -1,5 +1,7 @@
 <script setup >
    import ExchangeIMG from '@/pics/exchangeIMG.png'
+   import arrowVerticle from '@/pics/arrows-verticle.svg'
+
    const emit = defineEmits(['numberToFilter','sendData', 'transactions', 'orderBy', 
     'isChangeDirectionOrderBy', 'isChangeDirectionTransaction', 'sendSearch', 'sendPayTypeState',
     'sendTypeReport','sendColumnsToFilter'])
@@ -124,10 +126,20 @@
         </v-col>
         <v-col cols="12" md="6" class="order-by-col" :class="{'box-filters-fade': showFormState}">
           <OrderByInput @sendOrdersBy="getOrders"/>
-          <button class="buttonExchange" name="changeDirectionOrderByButton" @click="isChangeDirectionOrderBy" type="button">
-            <span>
-              <img :src="ExchangeIMG" alt="Cambiar orden">
-            </span>
+          <button 
+            class="buttonExchange" 
+            name="changeDirectionOrderByButton" 
+            @click="isChangeDirectionOrderBy" 
+            type="button"
+          >
+             <svg 
+                fill="#000000" 
+                viewBox="0 0 16 16" 
+                xmlns="http://www.w3.org/2000/svg">
+                <path 
+                  d="M2 4H0l3-4 3 4H4v12H2V4zm12 8h2l-3 4-3-4h2V0h2v12z" 
+                  fill-rule="evenodd"/>
+            </svg>
           </button>
         </v-col>
       </v-row>
@@ -163,17 +175,17 @@
   }
 
   .buttonExchange{
-    height: 25px;
     width: 25px;
     position: absolute;
-    right: 20px;
-    bottom: 50px;
+    right: -20px;
+    bottom: 33px;
   }
 
   
-  .buttonExchange img {
-    width: 100%;
-    height: auto;
+  .buttonExchange svg{
+    width: 25px;
+    height: 40px;
+    fill: white;
   }
 
   .box-filters-move{

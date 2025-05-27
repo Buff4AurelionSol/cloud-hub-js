@@ -2,7 +2,6 @@
   
   import DetailsIcon from '@/pics/visible.png'
 
-
     const props = defineProps({
       indexState:{
         type: Number,
@@ -198,6 +197,8 @@
        <v-btn variant="outlined" rounded="xl" @click="handleExport">Exportar</v-btn>
         Total de registros: {{recordsToShow.length}}
       </footer>
+
+  
   </div>  
 </template>
 
