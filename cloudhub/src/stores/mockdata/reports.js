@@ -3654,3 +3654,859 @@ export const REPORTS = [
       created_at: "2025-05-05 10:00:20"
     }
   ]
+
+
+export const REPORTS_DOLAR = [
+    {
+      id: 449229,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 434052,
+          referencia: "jlm9d5r87",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1081,
+          tasa: 91.21,
+          tipo: "TRANSFERENCIA",
+          monto: "2.254,71",
+          monto_usd: "24,72",
+          fecha: "07/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IkFDaG5NWHIzSmFrWmJYM1d4VW05dVE9PSIsInZhbHVlIjoiTWVxZm0xXC95R3hcL2pRQ1wvYXZjU2t5QT09IiwibWFjIjoiOTlmOGNhMDUyYzU2MDUwY2Q4MmY1MzIwNzU3Mzc5NjNkNzQwMTU1ZDA1ZDNlZGU0YzA3OTY5ODRiODQ1MTNlMyJ9___IMG7083png.png",
+          id_comprobante: 175057
+        }
+      ],
+      total_usd: "24,72",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "YECSIT ACOSTA ROJAS ",
+          contrato: "1017335",
+          rif: "14291265",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-07 18:39:59"
+    },
+    {
+      id: 453793,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 438499,
+          referencia: "BACp0y3a5o96",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1083,
+          tasa: 92.83,
+          tipo: "TRANSFERENCIA",
+          monto: "1.396,16",
+          monto_usd: "15,04",
+          fecha: "10/05/2025",
+          moneda: "USD",
+          depositante: "2004215",
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "15,04",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "JUANA DEL CARMEN MOYA RAMIREZ",
+          contrato: "2004215",
+          rif: "4651139",
+          estado: "CORTADO"
+        }
+      ],
+      created_at: "2025-05-10 15:29:34"
+    },
+    {
+      id: 455077,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 439753,
+          referencia: "Izzoh4uwr",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1084,
+          tasa: 93.05,
+          tipo: "TRANSFERENCIA",
+          monto: "5.750,49",
+          monto_usd: "61,80",
+          fecha: "12/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "61,80",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "ANTONIO DA COSTA",
+          contrato: "1001907",
+          rif: "21324119",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-12 08:26:35"
+    },
+    {
+      id: 456906,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "PROMO DIA DE LAS MADRES",
+      transaccions: [
+        {
+          id: 441533,
+          referencia: "3987987259",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1084,
+          tasa: 93.05,
+          tipo: "TRANSFERENCIA",
+          monto: "4.559,45",
+          monto_usd: "49,00",
+          fecha: "12/05/2025",
+          moneda: "USD",
+          depositante: "11535395",
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "49,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "ARJADIS RAFAEL DUBEN FERNANDEZ",
+          contrato: "1030192",
+          rif: "11535395",
+          estado: "POR INSTALAR"
+        }
+      ],
+      created_at: "2025-05-13 11:21:16"
+    },
+    {
+      id: 456922,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "PROMO DIA DE LAS MADRES",
+      transaccions: [
+        {
+          id: 441549,
+          referencia: "24643961875",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1078,
+          tasa: 87.57,
+          tipo: "TRANSFERENCIA",
+          monto: "4.553,64",
+          monto_usd: "52,00",
+          fecha: "04/05/2025",
+          moneda: "USD",
+          depositante: "30548395",
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "52,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "STACY ELIZABETH MORENO ITANARE",
+          contrato: "1040780",
+          rif: "30548395",
+          estado: "POR INSTALAR"
+        }
+      ],
+      created_at: "2025-05-13 11:29:26"
+    },
+    {
+      id: 457057,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "PROMOCIÓN MES DE MAYO",
+      transaccions: [
+        {
+          id: 441681,
+          referencia: "CTIuasrJBx1M",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1084,
+          tasa: 93.05,
+          tipo: "TRANSFERENCIA",
+          monto: "4.559,45",
+          monto_usd: "49,00",
+          fecha: "12/05/2025",
+          moneda: "USD",
+          depositante: "5577552",
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "49,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "NEREIDA DE JESUS MENDEZ DE MOLERO",
+          contrato: "1033012",
+          rif: "5577552",
+          estado: "POR INSTALAR"
+        }
+      ],
+      created_at: "2025-05-13 13:16:32"
+    },
+    {
+      id: 458031,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 442636,
+          referencia: "ifu1obrxk",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1086,
+          tasa: 93.58,
+          tipo: "TRANSFERENCIA",
+          monto: "2.807,40",
+          monto_usd: "30,00",
+          fecha: "14/05/2025",
+          moneda: "USD",
+          depositante: "14815557",
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "30,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "FLORINELL AGUSTINA BRUZUAL RAMOS",
+          contrato: "1002513",
+          rif: "14815557",
+          estado: "ACTIVO"
+        }
+      ],
+      created_at: "2025-05-14 10:32:36"
+    },
+    {
+      id: 458032,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 442637,
+          referencia: "h6mqkbtoe",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1086,
+          tasa: 93.58,
+          tipo: "TRANSFERENCIA",
+          monto: "467,90",
+          monto_usd: "5,00",
+          fecha: "14/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "5,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "FLORINELL AGUSTINA BRUZUAL RAMOS",
+          contrato: "1002513",
+          rif: "14815557",
+          estado: "ACTIVO"
+        }
+      ],
+      created_at: "2025-05-14 10:33:59"
+    },
+    {
+      id: 458200,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 442803,
+          referencia: "WFCTOYTBVSDM",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1086,
+          tasa: 93.58,
+          tipo: "TRANSFERENCIA",
+          monto: "1.871,60",
+          monto_usd: "20,00",
+          fecha: "14/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6Im5Sc0JiWStEdW1oVDJQN2ZkbmVTM1E9PSIsInZhbHVlIjoiQWNYWkJhTndLWnR2dmlwNitNNzNtZz09IiwibWFjIjoiZjdlYjg2ZWY0NTQxMWQwYzc3MDg2MDRkN2Y2OTdiOTkwNGYyNWU0OTJjYWU2YTI0MGM1OWY5YWY0OGI1ZDIwNyJ9___Screenshot20250514120000Wells-Fargojpg.jpg",
+          id_comprobante: 176828
+        }
+      ],
+      total_usd: "20,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "SERSE MANCINI",
+          contrato: "1001880",
+          rif: "5330702",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-14 12:03:32"
+    },
+    {
+      id: 459404,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 443964,
+          referencia: "CTIzwH9Pryaб",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1087,
+          tasa: 94.16,
+          tipo: "TRANSFERENCIA",
+          monto: "3.766,40",
+          monto_usd: "40,00",
+          fecha: "15/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6InhnNm0ybUUyb1dkbThmWldhbktoamc9PSIsInZhbHVlIjoiOUZiTEdTZktYTU1lWkhGVXB3ZE1KUT09IiwibWFjIjoiOWY2MzU4NWQ4NjFiMGIzZmQ3YTI2NDEzZGM2ODI1N2M2ZGQ2YTZhYzIyMjg2YzY1NzA5MGFmYThkMmE1ZTc4NCJ9___Screenshot-20250515-at-095147jpeg.jpeg",
+          id_comprobante: 177056
+        }
+      ],
+      total_usd: "40,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "JEISON JOSE RODRIGUEZ SALAMANCA ",
+          contrato: "1004998",
+          rif: "23730755",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-15 09:53:32"
+    },
+    {
+      id: 459464,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 444024,
+          referencia: "BACj8wo779ez",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1087,
+          tasa: 94.16,
+          tipo: "TRANSFERENCIA",
+          monto: "5.620,41",
+          monto_usd: "59,69",
+          fecha: "15/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IlczK2ZHMGFJalBvYlVkXC92RVRnSkpBPT0iLCJ2YWx1ZSI6IkErRTBBZmZheFBvNFwvK3paUnh6WFFnPT0iLCJtYWMiOiI2YmRmOGI4YTIzNGYyZDQ1ZDE2ODcyODg5NWNiZGM1MThkN2U5MDRiNzY5Y2U5ZjdiNjE4MmU5ZWQwMzI0NTRlIn0=___7a84f7402dac448aae654a150fe32096jpg.jpg",
+          id_comprobante: 177068
+        }
+      ],
+      total_usd: "59,69",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "INVERSIONES MVV INSULAR, CA ",
+          contrato: "1005751",
+          rif: "403934690",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-15 10:27:39"
+    },
+    {
+      id: 459486,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 444046,
+          referencia: "chgf8q3jtc",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1087,
+          tasa: 94.16,
+          tipo: "TRANSFERENCIA",
+          monto: "3.765,46",
+          monto_usd: "39,99",
+          fecha: "15/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6Illlc3Q3UWZXcXhNMVMwd3EzaEV5cnc9PSIsInZhbHVlIjoieWJWVHZqSHZvVndnXC9JXC9pQkliQUZBPT0iLCJtYWMiOiI1MWI5OGVjZTlkZDNhZWJiNTczNzRhMTM0MmYxMDY4Mjc5MGViMWY2MThhMzFlYTUyM2M4OGUyZDZlNWU0OTNhIn0=___IMG6935png.png",
+          id_comprobante: 177071
+        }
+      ],
+      total_usd: "39,99",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "ARMANDO HENRIQUEZ ",
+          contrato: "1008208",
+          rif: "5378081",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-15 10:43:59"
+    },
+    {
+      id: 459616,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 444172,
+          referencia: "AA0RuT24W",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1087,
+          tasa: 94.16,
+          tipo: "TRANSFERENCIA",
+          monto: "4.909,50",
+          monto_usd: "52,14",
+          fecha: "15/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6Im9STG1KMW5aeDdGY2JjS1NPa3psWVE9PSIsInZhbHVlIjoiZEcwanJmOUZQWkJZRis2VnY5UWdzZz09IiwibWFjIjoiNDY0ZTlmN2M2MjgzYjllNDA4MDg5YjUyYWZiYWViMGM2Njk2OGFmZjQyYTZkYzhkY2U0ZWQ3NWFiZGQwMzE0MCJ9___7d671153687742108bbf0bdf73bf8f3djpeg.jpeg",
+          id_comprobante: 177096
+        }
+      ],
+      total_usd: "52,14",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "Isa Melina Porro Parraga ",
+          contrato: "1004296",
+          rif: "11040479",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-15 12:18:21"
+    },
+    {
+      id: 459861,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 444414,
+          referencia: "BACeoqwgszua",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1087,
+          tasa: 94.16,
+          tipo: "TRANSFERENCIA",
+          monto: "3.765,46",
+          monto_usd: "39,99",
+          fecha: "15/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6ImtjTWFReTVoWjdwTmJ1SzBHM0J2ZXc9PSIsInZhbHVlIjoidGtcLzQ3Z2FDR1dZXC81cjJXNjQwXC9xZz09IiwibWFjIjoiNzJlZThkMDIwN2NhYjliNGFhMjEwM2U2MmI5M2VkMTI2ODMwZTMzYzk4NTVlNDlkZDVjNTE3NmM2NjhmNTBlNCJ9___IMG6005png.png",
+          id_comprobante: 177145
+        }
+      ],
+      total_usd: "39,99",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "LA CASA DE LAS CARCASAS C.A. ",
+          contrato: "1004382",
+          rif: "408024411",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-15 15:18:48"
+    },
+    {
+      id: 459960,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 444506,
+          referencia: "Bacbi0aqlm",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1087,
+          tasa: 94.16,
+          tipo: "TRANSFERENCIA",
+          monto: "6.848,26",
+          monto_usd: "72,73",
+          fecha: "15/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "72,73",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "MATTHIAS ROBERTO HUSSMANN POERNER ",
+          contrato: "1022028",
+          rif: "20652977",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-15 16:24:50"
+    },
+    {
+      id: 460245,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 444779,
+          referencia: "p9fii",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1079,
+          tasa: 88.64,
+          tipo: "TRANSFERENCIA",
+          monto: "1.329,60",
+          monto_usd: "15,00",
+          fecha: "05/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IlFCU3ZNcjQ3aUlzekVRb1BxTjFITGc9PSIsInZhbHVlIjoiVmY0UXlyK0tIVFVqbktNMk5IQWJwUT09IiwibWFjIjoiYzQyNzFlZjg1MzZhNWE1NzU0NzJkNmJkNDJlOTZhNmU3OWZmMDVhZGU3NzAxYTMxNmFiNGJjYjAyNTlhODlmZiJ9___IMG4997png.png",
+          id_comprobante: 177215
+        }
+      ],
+      total_usd: "15,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "YASMIRA DEL VALLE VELIZ PLACENCIO ",
+          contrato: "1016233",
+          rif: "10882512",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-15 19:06:50"
+    },
+    {
+      id: 460249,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 444782,
+          referencia: "M4kfnwbJO",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1087,
+          tasa: 94.16,
+          tipo: "TRANSFERENCIA",
+          monto: "470,80",
+          monto_usd: "5,00",
+          fecha: "15/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6ImZGQmtNUFp4QnZQaEs1VnRcLzk5VmR3PT0iLCJ2YWx1ZSI6IlR2WVdlWHJsYWpZYldiWTZrd3ljVnc9PSIsIm1hYyI6IjA4NWI4M2Q0MGQ1YmI2MTdmZmVhYjM5YWRmZjhmNWU5YmEzN2FiMDJkZWM3ZWZkY2Y4YWNlODVhYTAxNDgzMjMifQ==___IMG4998png.png",
+          id_comprobante: 177218
+        }
+      ],
+      total_usd: "5,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "YASMIRA DEL VALLE VELIZ PLACENCIO ",
+          contrato: "1016233",
+          rif: "10882512",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-15 19:09:44"
+    },
+    {
+      id: 460924,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 445443,
+          referencia: "prkkOyzu3",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1088,
+          tasa: 94.32,
+          tipo: "TRANSFERENCIA",
+          monto: "3.771,86",
+          monto_usd: "39,99",
+          fecha: "16/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IkdLdWhFcFRNYVdxSzEzXC9jNklzTzV3PT0iLCJ2YWx1ZSI6Iml2OUUxXC9CZDJSVnhcL213NGVNNXlBdz09IiwibWFjIjoiMDNkYTYwZTk0OWYxMWUxMjgwODc5NDIwZGNjY2M2MjE0N2JlY2I1YTk5YmQ4OTc0NTYzNTc4ZmExNzg3NzRlNyJ9___IMG2793png.png",
+          id_comprobante: 177324
+        }
+      ],
+      total_usd: "39,99",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "PERFUMERIA HERMANOS MATTAR C.A",
+          contrato: "1001221",
+          rif: "400628091",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-16 12:28:13"
+    },
+    {
+      id: 460925,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 445444,
+          referencia: "JGG08KODFHFY",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1088,
+          tasa: 94.32,
+          tipo: "TRANSFERENCIA",
+          monto: "4.223,65",
+          monto_usd: "44,78",
+          fecha: "16/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6Ikc0eFRyK2ZLOWVNeGgrMm1tQU5hMmc9PSIsInZhbHVlIjoicTRGZUM1SVFzSUtSUnc2bEtFZXRmZz09IiwibWFjIjoiZDg0YTM5NGM4YWI3MmE1NjM4YjAxODQwMmMyNTZhNDk5YjFiMDNkMzE0YTNkZjhlNmI5MGRhYWNiZDRmOWIxOSJ9___Screenshot20250516122724myMcCoyjpg.jpg",
+          id_comprobante: 177325
+        }
+      ],
+      total_usd: "44,78",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "ANDRES ALFONZO MOTA ARTEAGA ",
+          contrato: "2042954",
+          rif: "7271718",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-16 12:29:49"
+    },
+    {
+      id: 461824,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 446313,
+          referencia: "WFCTOYTM2ZKX",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1088,
+          tasa: 94.32,
+          tipo: "TRANSFERENCIA",
+          monto: "2.923,92",
+          monto_usd: "31,00",
+          fecha: "16/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "31,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "AURIMAR DIAZ ",
+          contrato: "4001231",
+          rif: "16852177",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-16 20:48:14"
+    },
+    {
+      id: 462042,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 446519,
+          referencia: "WFCT0YTB2S5V",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1085,
+          tasa: 93.06,
+          tipo: "TRANSFERENCIA",
+          monto: "13.006,07",
+          monto_usd: "139,76",
+          fecha: "13/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IkRZWFJIQ2RSaE96eHZjb3lxa3JPMlE9PSIsInZhbHVlIjoiM0lJdzhCeE5cL2ErSk1PQytod0t5ZEE9PSIsIm1hYyI6ImRlNDRlNGUzMjMyNjNiYzI2MDVkYmYwNmFkOWY1Y2FhMjFhMWRlNzllNDAwYTQ5NmU5NTE4ZWE1MmY5NGMzNmIifQ==___IMG4444png.png",
+          id_comprobante: 177514
+        }
+      ],
+      total_usd: "139,76",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "LILIANA MALAVE VILLARROEL ",
+          contrato: "1004390",
+          rif: "10379628",
+          estado: "N/D"
+        },
+        {
+          nombre: "LILIANA MALAVE VILLARROEL",
+          contrato: "1014241",
+          rif: "10379628",
+          estado: "N/D"
+        },
+        {
+          nombre: "LILIANA MALAVE VILLARROEL",
+          contrato: "1016102",
+          rif: "10379628",
+          estado: "N/D"
+        },
+        {
+          nombre: "LILIANA MALAVE VILLARROEL ",
+          contrato: "1005975",
+          rif: "10379628",
+          estado: "N/D"
+        },
+        {
+          nombre: "Jorge Leonardo Barbera Bellorin ",
+          contrato: "1005845",
+          rif: "26469850",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-17 09:32:37"
+    },
+    {
+      id: 462472,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 446926,
+          referencia: "WFCTOYTNWV8S",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1088,
+          tasa: 94.32,
+          tipo: "TRANSFERENCIA",
+          monto: "4.666,95",
+          monto_usd: "49,48",
+          fecha: "17/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6ImNBYTREdmVESjBIWG9JeFh5NWI1MHc9PSIsInZhbHVlIjoiTDVwSERRcHgwRFNhRkcxcnhTQUI4dz09IiwibWFjIjoiNzUwN2IyODE1MTc2YTU0ZTQ4OGZiYTNlNTA1YmVmY2Y1ZDE5YTM5NDIwMmMzYjY2MTIzYTdkOWUyYzU3ZjFhYSJ9___IMG7710png.png",
+          id_comprobante: 177566
+        }
+      ],
+      total_usd: "49,48",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "BEATRIZ LEAL CANELÓN ",
+          contrato: "1018860",
+          rif: "5073880",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-17 19:22:40"
+    },
+    {
+      id: 464707,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 449058,
+          referencia: "aoxichbdj",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1093,
+          tasa: 95.02,
+          tipo: "TRANSFERENCIA",
+          monto: "4.467,84",
+          monto_usd: "47,02",
+          fecha: "23/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IkluUkptXC9MR2FpbFwvQ2Y0TTM2Mm5kQT09IiwidmFsdWUiOiJ2b3pIUlpEdHRzbHZPVU5mSW1NMjZ3PT0iLCJtYWMiOiJkNDNjYjFiYjM3MTg3ZmNmZGM2MDE2MjVkZTRkZjg2MzZiNTJiZjM1MDUzNjdlMzhhODFhODM5MDdmMzgxOGM0In0=___IMG8198png.png",
+          id_comprobante: 177824
+        }
+      ],
+      total_usd: "47,02",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "ROSALBA PEREZ DE GARCIA",
+          contrato: "1000471",
+          rif: "13773125",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-23 14:50:09"
+    }
+  ]

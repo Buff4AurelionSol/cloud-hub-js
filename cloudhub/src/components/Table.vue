@@ -2,6 +2,7 @@
   
   import DetailsIcon from '@/pics/visible.png'
 
+
     const props = defineProps({
       indexState:{
         type: Number,

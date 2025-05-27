@@ -28,6 +28,40 @@
       }
     })
 
+   const CONFIG_TRANSACCTION = ['id', 'referencia','pago_proveedor',
+      'banco_destino', 'banco_origen', 'tasa_id', 'tasa', 'tipo', 'monto', 'monto_usd',
+      'fecha', 'moneda', 'depositante', 'comprobante', 'id_comprobante'
+    ]
+
+   const CONFIG_CONTRACTS = ['nombre', 'contrato', 'rif', 'estado']
+
+   const searchInObject = (report, search) => {
+      const BASE_FIELDS = ['id', 'reporte_estado', 'tipo_reporte', 'nota', 'total_usd', 'created_at'];
+      
+      //Se revisa primero los values base
+      const baseMatch =  BASE_FIELDS.some(field => 
+        String(report[field] || '').toLowerCase().includes(search)
+      );
+
+      //Sino, se revisa en el array de transacciones
+      const transactionMatch = report?.transaccions.some(transaction => 
+        CONFIG_TRANSACCTION.some(field =>
+          String(transaction[field] || '').toLowerCase().includes(search)
+        )
+      )
+
+      //Sino, se revisa en el array de contratos
+      const contractMatch = report?.contratos.some( contract =>
+        CONFIG_CONTRACTS.some(field =>
+          String(contract[field] || '').toLowerCase().includes(search)
+        ) 
+      )
+
+      return baseMatch || transactionMatch || contractMatch;
+    
+
+    }
+
     const handleExport = () => {
       const fileName = prompt('Introduce el nombre del archivo Excel:', 'Reporte');
       if (!fileName) return; 
@@ -35,18 +69,16 @@
     }
     
     const sortedAndFilteredData = computed(() => {
-      let data = REPORTS_DOLLAR.slice(0, props.indexState).filter(report => {
+      let data = REPORTS_DOLAR.filter((report, i) => {
         const transactionMatch = props.transactions.length === 0 || props.transactions.includes('TODOS') || 
-          props.transactions.includes(report.transactionType);
-        
-        const searchMatch = !props.searchValue || 
-          Object.values(report).some(value => 
-            String(value).toLowerCase().includes(props.searchValue.toLocaleLowerCase())
-          )
-          return transactionMatch && searchMatch;
+          props.transactions.includes( report.transaccions.find(e => e.tipo !== undefined)?.tipo);
+  
+        const searchMatch = !props.searchValue || searchInObject(report, props.searchValue.toLowerCase())
+
+        return transactionMatch && searchMatch; 
       } 
        );
-      
+       
       
 
       let sortedData;
@@ -56,81 +88,103 @@
           sortedData = data;
           break;
         case 'Referencia':
-          sortedData = [...data].sort((a, b) => a.bankRef.localeCompare(b.bankRef));
+          sortedData = [...data].sort((a, b) => parseInt(a.transaccions[0].referencia) - parseInt(b.transaccions[0].referencia) ) 
           break;
         case 'Monto Bs':
-          sortedData = [...data].sort((a,b) => a.amount - b.amount);
+          sortedData = [...data].sort((a,b) => parseInt(a.transaccions[0].monto) - parseInt(b.transaccions[0].monto));
           break;
         case 'Contrato':
-          sortedData = [...data].sort((a,b)=> a.contracts - b.contracts);
+          sortedData = [...data].sort((a,b)=> parseInt(a.contratos[0].contrato) - parseInt(b.contratos[0].contrato));
           break;
         case 'Cliente':
-          sortedData = [...data].sort((a,b) => a.client.localeCompare(b.client));
+          sortedData = [...data].sort((a,b) => a.contratos[0].nombre.localeCompare(b.contratos[0].nombre));
           break;
         case 'Rif/Cedula':
-          sortedData = [...data].sort((a,b) => a.idNumber - b.idNumber);
+          sortedData = [...data].sort((a,b) => parseInt(a.contratos[0].rif) - parseInt(b.contratos[0].rif) );
           break;
         case 'Banco destino':
-          sortedData = [...data].sort((a,b) => a.bankDest.localeCompare(b.bankDest));
+          sortedData = [...data].sort((a,b) => a.transaccions[0].banco_destino.localeCompare(b.transaccions[0].banco_destino));
           break;
         case 'Banco origen':
-          sortedData = [...data].sort((a,b) => a.bankOrigin.localeCompare(b.bankOrigin));
+          sortedData = [...data].sort((a,b) => a.transaccions[0].banco_origen.localeCompare(b.transaccions[0].banco_origen));
           break;
         default:
           sortedData = data;
       }
 
-      return props.haveIChangeDirectionOrderBy ? [...sortedData].reverse() : sortedData;
+      return props.haveIChangeDirectionOrderBy ? [...sortedData].reverse(): sortedData;
       
     });
 
     
     const CONFIG_COLUMN = [
       {key:'id', label:'ID'},
-      {key:'bankRef', label:'REFERENCIA BANCARIA'},
-      {key:'type', label:'TIPO REPORTE'},
-      {key:'transactionType', label:'TIPO TRANSACCIÓN'},
-      {key:'amount', label:'MONTO ($)'},
-      {key:'rate', label:'TASA'},
-      {key:'contracts', label:'CONTRATO(S)'},
-      {key:'invoices', label:'FACTURA(S)'},
-      {key:'billingDate', label:'FECHA FACTURADO(S)'},
-      {key:'client', label:'CLIENTE'},
-      {key:'idNumber', label:'RIF/CEDULA'},
-      {key:'bankDest', label:'BANCO ORIGEN'},
-      {key:'bankOrigin', label:'BANCO DESTINO'},
-      {key:'transactionDate', label:'FECHA TRANSACCIÓN'},
-      {key:'reportDate', label:'FECHA REPORTE'}
+      {key:'reporte_estado', label:'ESTADO'},
+      {key:'referencia', label:"REFERENCIA"},
+      {key:'tipo_reporte',label:'TIPO REPORTE'},
+      {key:'tipo', label:'TIPO TRANSACCIÓN'},
+      {key:'monto', label:'MONTO TRANSACCIÓN'},
+      {key:'monto_usd', label:'MONTO USD'},
+      {key:'tasa', label:'TASA'},
+      {key:'contrato', label:'CONTRATOS'},
+      {key:'nombre', label:'CLIENTE'},
+      {key:'rif', label:'RIF/CEDULA'},
+      {key:'banco_origen', label:'BANCO ORIGEN'},
+      {key:'banco_destino', label:'BANCO DESTINO'},
+      {key:'fecha', label:'FECHA TRANSACCIÓN'},
+      {key:'created_at', label:'FECHA REPORTE'}
     ]
+
+    const isATransactionOption = (data) => {
+       return CONFIG_TRANSACCTION.includes(data)
+    }
+
+    const isAContractOption = (data) => {
+      return CONFIG_CONTRACTS.includes(data)
+    }
+
+    
+    const recordsToShow = computed(() => 
+      sortedAndFilteredData.value.slice(0, props.indexState)
+    );
 
     const VISIBLE_COLUMNS = computed(()=> CONFIG_COLUMN.filter(column => !props.columns.includes(column.label)))
 
-    const thereAreRegisters = computed(()=> sortedAndFilteredData.value.length > 0)
+    const thereAreRegisters = computed(()=> recordsToShow.value.length > 0)
 
 </script>
 
-<template>
-  <div class="table-container">
+<template>  
+  <div class="table-container box-filters-fade rounded-xl">
     <v-table v-if="thereAreRegisters" fixed-header>
       <thead>
         <tr>
           <th>#</th>
-          <th v-for="column in VISIBLE_COLUMNS">{{column.label}}</th>
+          <th v-for="column in VISIBLE_COLUMNS" :key="column.key">{{column.label}}</th>
+          <th>Ver detalles</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(report, index) in sortedAndFilteredData" :key="index">
+        <tr v-for="(report, index) in recordsToShow" :key="report.id">
             <td>{{ index + 1 }}</td>
-            <td v-for="column in VISIBLE_COLUMNS" :key="column.key" >
-              <div v-for="(item, index) in report[column.key]" v-if="column.key === 'contracts' || column.key === 'invoices'" class="d-flex justify-center gap-2 mt-2" >
-                <v-chip variant="flat" size="small" color="blue">
-                  {{item}}
-                </v-chip>
-              </div>
+            <td v-for="(column, i) in VISIBLE_COLUMNS" :key="column.key">
+              <td v-if="isATransactionOption(column.key)" >
+                {{ report.transaccions.find((e)=> e[column.key] !== undefined )?.[column.key]}}
+              </td>
+              <td v-else-if="isAContractOption(column.key)" >
+                {{ report.contratos.find((e)=> e[column.key] !== undefined )?.[column.key]}}
+              </td>
               <template v-else>
                 {{report[column.key]}}
               </template>
             </td>
+            <td>
+              <Modal
+                :image-icon="DetailsIcon"
+                :reportData="report"
+              />
+            </td>
+           
         </tr>
       </tbody>
     </v-table>
@@ -138,12 +192,13 @@
             <h2>No se encontraron registros</h2>
       </div>
       <footer class="pt-2">
-        <v-btn variant="outlined" @click="handleExport">Exportar</v-btn>
-        Total de registros: {{REPORTS_DOLLAR.length}}
+       <v-btn variant="outlined" rounded="xl" @click="handleExport">Exportar</v-btn>
+        Total de registros: {{recordsToShow.length}}
       </footer>
+
+  
   </div>  
 </template>
-
 <style>
   
   td{

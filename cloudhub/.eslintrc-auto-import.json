@@ -111,6 +111,7 @@
     "useVerificacionesServices": true,
     "useUserServices": true,
     "LISTA_TASAS": true,
-    "REPORTS": true
+    "REPORTS": true,
+    "REPORTS_DOLAR": true
   }
 }
