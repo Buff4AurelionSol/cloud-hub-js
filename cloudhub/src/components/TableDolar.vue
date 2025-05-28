@@ -62,6 +62,8 @@
 
     }
 
+     
+
     const handleExport = () => {
       const fileName = prompt('Introduce el nombre del archivo Excel:', 'Reporte');
       if (!fileName) return; 
@@ -69,6 +71,7 @@
     }
     
     const sortedAndFilteredData = computed(() => {
+      
       let data = REPORTS_DOLAR.filter((report, i) => {
         const transactionMatch = props.transactions.length === 0 || props.transactions.includes('TODOS') || 
           props.transactions.includes( report.transaccions.find(e => e.tipo !== undefined)?.tipo);
@@ -143,12 +146,13 @@
       return CONFIG_CONTRACTS.includes(data)
     }
 
-    
+  
+
     const recordsToShow = computed(() => 
       sortedAndFilteredData.value.slice(0, props.indexState)
     );
 
-    const VISIBLE_COLUMNS = computed(()=> CONFIG_COLUMN.filter(column => !props.columns.includes(column.label)))
+    const VISIBLE_COLUMNS = computed(()=> CONFIG_COLUMN.filter(column => !props.columns.includes(column.label) && column.key !== 'monto'))
 
     const thereAreRegisters = computed(()=> recordsToShow.value.length > 0)
 
@@ -169,7 +173,7 @@
             <td>{{ index + 1 }}</td>
             <td v-for="(column, i) in VISIBLE_COLUMNS" :key="column.key">
               <td v-if="isATransactionOption(column.key)" >
-                {{ report.transaccions.find((e)=> e[column.key] !== undefined )?.[column.key]}}
+                {{ report.transaccions.find((e)=> e[column.key] !== undefined)?.[column.key]}}
               </td>
               <td v-else-if="isAContractOption(column.key)" >
                 {{ report.contratos.find((e)=> e[column.key] !== undefined )?.[column.key]}}
@@ -194,19 +198,21 @@
       <footer class="pt-2">
        <v-btn variant="outlined" rounded="xl" @click="handleExport">Exportar</v-btn>
         Total de registros: {{recordsToShow.length}}
+        <button @click="filterCampsTable">si</button>
       </footer>
 
   
   </div>  
 </template>
-<style>
+
+<style scoped>
   
   td{
     font-size: small;
   }
 
   .table-container {
-    padding: 20px;
+    padding: 10px;
     overflow-x: auto;
   }
 

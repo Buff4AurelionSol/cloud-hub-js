@@ -13,6 +13,7 @@ declare global {
   const REPORTS: typeof import('./src/stores/mockdata/reports.js')['REPORTS']
   const REPORTS_DOLAR: typeof import('./src/stores/mockdata/reports.js')['REPORTS_DOLAR']
   const REPORTS_DOLLAR: typeof import('./src/stores/const.js')['REPORTS_DOLLAR']
+  const REPORTS_FACTURADOS: typeof import('./src/stores/mockdata/reports.js')['REPORTS_FACTURADOS']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
@@ -123,6 +124,7 @@ declare module 'vue' {
     readonly REPORTS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS']>
     readonly REPORTS_DOLAR: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_DOLAR']>
     readonly REPORTS_DOLLAR: UnwrapRef<typeof import('./src/stores/const.js')['REPORTS_DOLLAR']>
+    readonly REPORTS_FACTURADOS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_FACTURADOS']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>

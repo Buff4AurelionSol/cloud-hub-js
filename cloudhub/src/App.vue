@@ -8,6 +8,7 @@
   const payTypeState = ref('BOLIVARES')
   const reportTypeState = ref('POR FACTURAR')
   const columnsToFilter = ref([])
+  const tableType = ref('Por facturar')
 
   const COLUMNS_TABLE = [
       {reportType: 'BOLIVARES', values: ['ID','ESTADO','REFERENCIA','TIPO REPORTE','TIPO TRANSACCIÓN',
@@ -76,6 +77,39 @@
     }
   }
 
+ 
+  watchEffect(()=>{
+    if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'POR FACTURAR'){
+      tableType.value = 'Por facturar'
+    }
+    if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'FACTURADOS'){
+      tableType.value = 'Facturados'
+    }
+    if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'RECHAZADOS'){
+      tableType.value = 'Rechazados'
+    }
+    if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'POR VERIFICAR'){
+      tableType.value = 'Por verificar'
+    }
+    
+    if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'POR FACTURAR'){
+      tableType.value = 'Divisas/Por facturar'
+    }
+    if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'FACTURADOS'){
+      tableType.value = 'Divisas/Facturados'
+    }
+    if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'RECHAZADOS'){
+      tableType.value = 'Divisas/Rechazados'
+    }
+    if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'POR VERIFICAR'){
+      tableType.value = 'Divisas/Por verificar'
+    }
+    
+  })
+
+
+
+
 </script>
 
 
@@ -97,15 +131,10 @@
         @sendTypeReport="getTypeReport"
   />
     
-  <div v-if="payTypeState === 'BOLIVARES' && reportTypeState === 'POR FACTURAR'">
+  <div>
     <Table :indexState="indexState" :filters="filters" :transactions="transactions" :orderBy="orderBy"
       :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy" :searchValue="searchValue" :columns="columnsToFilter"
-    />
-  </div>
-  <div v-else-if="payTypeState === 'DIVISAS' && reportTypeState === 'POR FACTURAR'">
-    <TableDolar :indexState="indexState" :filters="filters" :transactions="transactions" :orderBy="orderBy"
-      :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy" :searchValue="searchValue"
-      :columns="columnsToFilter" 
+      :type="tableType"
     />
   </div>
 
