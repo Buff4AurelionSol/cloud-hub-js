@@ -112,6 +112,7 @@
     "useUserServices": true,
     "LISTA_TASAS": true,
     "REPORTS": true,
-    "REPORTS_DOLAR": true
+    "REPORTS_DOLAR": true,
+    "REPORTS_FACTURADOS": true
   }
 }
