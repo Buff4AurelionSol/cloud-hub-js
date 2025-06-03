@@ -6,10 +6,6 @@
       indexState:{
         type: Number,
       },
-      filters:{
-        type: Array,
-        default: () => []
-      },
       transactions:{
         type: Array,
         default: () => []
@@ -227,12 +223,12 @@
         <tr v-for="(report, index) in recordsToShow" :key="report.id">
             <td>{{ index + 1 }}</td>
             <td v-for="(column, i) in VISIBLE_COLUMNS" :key="column.key">
-              <td v-if="isATransactionOption(column.key)" >
+              <template v-if="isATransactionOption(column.key)" >
                 {{ report.transaccions.find((e)=> e[column.key] !== undefined )?.[column.key]}}
-              </td>
-              <td v-else-if="isAContractOption(column.key)" >
+              </template>
+              <template v-else-if="isAContractOption(column.key)" >
                 {{ report.contratos.find((e)=> e[column.key] !== undefined )?.[column.key]}}
-              </td>
+              </template>
               <template v-else>
                 {{report[column.key]}}
               </template>
@@ -262,6 +258,11 @@
 <style>
   
   td{
+    font-size: small;
+    white-space: nowrap;
+  }
+
+  th{
     font-size: small;
   }
 

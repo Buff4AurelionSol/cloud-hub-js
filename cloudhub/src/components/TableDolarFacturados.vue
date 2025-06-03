@@ -172,12 +172,12 @@
         <tr v-for="(report, index) in recordsToShow" :key="report.id">
             <td>{{ index + 1 }}</td>
             <td v-for="(column, i) in VISIBLE_COLUMNS" :key="column.key">
-              <td v-if="isATransactionOption(column.key)" >
+              <template v-if="isATransactionOption(column.key)" >
                 {{ report.transaccions.find((e)=> e[column.key] !== undefined)?.[column.key]}}
-              </td>
-              <td v-else-if="isAContractOption(column.key)" >
+              </template>
+              <template v-else-if="isAContractOption(column.key)" >
                 {{ report.contratos.find((e)=> e[column.key] !== undefined )?.[column.key]}}
-              </td>
+              </template>
               <template v-else>
                 {{report[column.key]}}
               </template>
@@ -188,12 +188,11 @@
                 :reportData="report"
               />
             </td>
-           
         </tr>
       </tbody>
     </v-table>
       <div v-else class="not-found">
-            <h2>No se encontraron registros</h2>
+          <h2>No se encontraron registros</h2>
       </div>
       <footer class="pt-2">
        <v-btn variant="outlined" rounded="xl" @click="handleExport">Exportar</v-btn>

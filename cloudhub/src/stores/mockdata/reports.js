@@ -4514,433 +4514,433 @@ export const REPORTS_DOLAR = [
 
 export const REPORTS_FACTURADOS = [
     {
-      "id": 465454,
-      "reporte_estado": "Facturado",
-      "tipo_reporte": "MENSUALIDAD",
-      "nota": "-",
-      "transaccions": [
+      id: 465454,
+      reporte_estado: "Facturado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
         {
-          "id": 449769,
-          "referencia": "707588",
-          "pago_proveedor": false,
-          "banco_destino": "DEL TESORO",
-          "banco_origen": "BANCAMIGA",
-          "tipo": "PAGO MOVIL",
-          "monto": "2.585,91",
-          "monto_usd": "26,99",
-          "tasa_id": 1096,
-          "tasa": 95.81,
-          "fecha": "28/05/2025",
-          "moneda": "BS",
-          "depositante": "04141060855",
-          "comprobante": false
+          id: 449769,
+          referencia: "707588",
+          pago_proveedor: false,
+          banco_destino: "DEL TESORO",
+          banco_origen: "BANCAMIGA",
+          tipo: "PAGO MOVIL",
+          monto: "2.585,91",
+          monto_usd: "26,99",
+          tasa_id: 1096,
+          tasa: 95.81,
+          fecha: "28/05/2025",
+          moneda: "BS",
+          depositante: "04141060855",
+          comprobante: false
         }
       ],
-      "total_usd": "26,99",
-      "contratos": [
+      total_usd: "26,99",
+      contratos: [
         {
-          "nombre": "MEYER MILGRAM LATERMAN ",
-          "contrato": "1021263",
-          "rif": "3566170",
-          "estado": "N/D"
+          nombre: "MEYER MILGRAM LATERMAN ",
+          contrato: "1021263",
+          rif: "3566170",
+          estado: "N/D"
+        } 
+      ],
+      facturas: [
+        {
+          factura: "B00079089",
+          fecha: "28/05/2025",
+          monto: "2585.91",
+          nro_contrato: "1021263",
+          id_contrato: 33456
         }
       ],
-      "facturas": [
-        {
-          "factura": "B00079089",
-          "fecha": "28/05/2025",
-          "monto": "2585.91",
-          "nro_contrato": "1021263",
-          "id_contrato": 33456
-        }
-      ],
-      "created_at": "2025-05-28 10:25:09"
+      created_at: "2025-05-28 10:25:09"
     },
     {
-      "id": 465453,
-      "reporte_estado": "Facturado",
-      "tipo_reporte": "MENSUALIDAD",
-      "nota": "Reporte creado mediante opción de BanescoPagos.",
-      "transaccions": [
+      id: 465453,
+      reporte_estado: "Facturado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "Reporte creado mediante opción de BanescoPagos.",
+      transaccions: [
         {
-          "id": 449768,
-          "referencia": "51488501742",
-          "pago_proveedor": false,
-          "banco_destino": "BANESCO",
-          "banco_origen": "BANESCO",
-          "tipo": "BANESCO PAGOS",
-          "monto": "2.585,91",
-          "monto_usd": "26,99",
-          "tasa_id": 1096,
-          "tasa": 95.81,
-          "fecha": "28/05/2025",
-          "moneda": "BS",
-          "depositante": "3252200",
-          "comprobante": false
+          id: 449768,
+          referencia: "51488501742",
+          pago_proveedor: false,
+          banco_destino: "BANESCO",
+          banco_origen: "BANESCO",
+          tipo: "BANESCO PAGOS",
+          monto: "2.585,91",
+          monto_usd: "26,99",
+          tasa_id: 1096,
+          tasa: 95.81,
+          fecha: "28/05/2025",
+          moneda: "BS",
+          depositante: "3252200",
+          comprobante: false
         }
       ],
-      "total_usd": "26,99",
-      "contratos": [
+      total_usd: "26,99",
+      contratos: [
         {
-          "nombre": "IVAN ARTURO MANZANO MISILE ",
-          "contrato": "1011698",
-          "rif": "25764988",
-          "estado": "ACTIVO"
+          nombre: "IVAN ARTURO MANZANO MISILE ",
+          contrato: "1011698",
+          rif: "25764988",
+          estado: "ACTIVO"
         }
       ],
-      "facturas": [
+      facturas: [
         {
-          "factura": "B00079088",
-          "fecha": "28/05/2025",
-          "monto": "2585.91",
-          "nro_contrato": "1011698",
-          "id_contrato": 14093
+          factura: "B00079088",
+          fecha: "28/05/2025",
+          monto: "2585.91",
+          nro_contrato: "1011698",
+          id_contrato: 14093
         }
       ],
-      "created_at": "2025-05-28 10:23:14"
+      created_at: "2025-05-28 10:23:14"
     },
     {
-      "id": 465451,
-      "reporte_estado": "Facturado",
-      "tipo_reporte": "MENSUALIDAD",
-      "nota": "Reporte creado mediante opción de BanescoPagos.",
-      "transaccions": [
+      id: 465451,
+      reporte_estado: "Facturado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "Reporte creado mediante opción de BanescoPagos.",
+      transaccions: [
         {
-          "id": 449766,
-          "referencia": "51488490771",
-          "pago_proveedor": false,
-          "banco_destino": "BANESCO",
-          "banco_origen": "BANESCO",
-          "tipo": "BANESCO PAGOS",
-          "monto": "5.747,64",
-          "monto_usd": "59,99",
-          "tasa_id": 1096,
-          "tasa": 95.81,
-          "fecha": "28/05/2025",
-          "moneda": "BS",
-          "depositante": "300290590",
-          "comprobante": false
+          id: 449766,
+          referencia: "51488490771",
+          pago_proveedor: false,
+          banco_destino: "BANESCO",
+          banco_origen: "BANESCO",
+          tipo: "BANESCO PAGOS",
+          monto: "5.747,64",
+          monto_usd: "59,99",
+          tasa_id: 1096,
+          tasa: 95.81,
+          fecha: "28/05/2025",
+          moneda: "BS",
+          depositante: "300290590",
+          comprobante: false
         }
       ],
-      "total_usd": "59,99",
-      "contratos": [
+      total_usd: "59,99",
+      contratos: [
         {
-          "nombre": "PEDRO ANTONIO LOPEZ LINARES",
-          "contrato": "1024490",
-          "rif": "14140610",
-          "estado": "CORTADO"
+          nombre: "PEDRO ANTONIO LOPEZ LINARES",
+          contrato: "1024490",
+          rif: "14140610",
+          estado: "CORTADO"
         }
       ],
-      "facturas": [
+      facturas: [
         {
-          "factura": "B00079087",
-          "fecha": "28/05/2025",
-          "monto": "5747.64",
-          "nro_contrato": "1024490",
-          "id_contrato": 33727
+          factura: "B00079087",
+          fecha: "28/05/2025",
+          monto: "5747.64",
+          nro_contrato: "1024490",
+          id_contrato: 33727
         }
       ],
-      "created_at": "2025-05-28 10:17:46"
+      created_at: "2025-05-28 10:17:46"
     },
     {
-      "id": 465433,
-      "reporte_estado": "Facturado",
-      "tipo_reporte": "MENSUALIDAD",
-      "nota": "Multipago creado desde transacciones bancarias",
-      "transaccions": [
+      id: 465433,
+      reporte_estado: "Facturado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "Multipago creado desde transacciones bancarias",
+      transaccions: [
         {
-          "id": 449748,
-          "referencia": "3541105139",
-          "pago_proveedor": false,
-          "banco_destino": "BANESCO",
-          "banco_origen": "BANESCO",
-          "tipo": "MULTIPAGO",
-          "monto": "4.535,00",
-          "monto_usd": "47,62",
-          "tasa_id": 1095,
-          "tasa": 95.24,
-          "fecha": "27/05/2025",
-          "moneda": "BS",
-          "depositante": "17898560",
-          "comprobante": false
+          id: 449748,
+          referencia: "3541105139",
+          pago_proveedor: false,
+          banco_destino: "BANESCO",
+          banco_origen: "BANESCO",
+          tipo: "MULTIPAGO",
+          monto: "4.535,00",
+          monto_usd: "47,62",
+          tasa_id: 1095,
+          tasa: 95.24,
+          fecha: "27/05/2025",
+          moneda: "BS",
+          depositante: "17898560",
+          comprobante: false
         }
       ],
-      "total_usd": "47,62",
-      "contratos": [
+      total_usd: "47,62",
+      contratos: [
         {
-          "nombre": "VIS ENERTI, C.A ",
-          "contrato": "1001600",
-          "rif": "407035207",
-          "estado": "ACTIVO"
+          nombre: "VIS ENERTI, C.A ",
+          contrato: "1001600",
+          rif: "407035207",
+          estado: "ACTIVO"
         }
       ],
-      "facturas": [
+      facturas: [
         {
-          "factura": "A00326916",
-          "fecha": "28/05/2025",
-          "monto": "4535",
-          "nro_contrato": "1001600",
-          "id_contrato": 968
+          factura: "A00326916",
+          fecha: "28/05/2025",
+          monto: "4535",
+          nro_contrato: "1001600",
+          id_contrato: 968
         }
       ],
-      "created_at": "2025-05-28 09:58:06"
+      created_at: "2025-05-28 09:58:06"
     },
     {
-      "id": 465414,
-      "reporte_estado": "Facturado",
-      "tipo_reporte": "MENSUALIDAD",
-      "nota": "-",
-      "transaccions": [
+      id: 465414,
+      reporte_estado: "Facturado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
         {
-          "id": 449729,
-          "referencia": "958855",
-          "pago_proveedor": false,
-          "banco_destino": "MI BANCO",
-          "banco_origen": "MI BANCO",
-          "tipo": "PDV",
-          "monto": "2.328,18",
-          "monto_usd": "24,30",
-          "tasa_id": 1096,
-          "tasa": 95.81,
-          "fecha": "28/05/2025",
-          "moneda": "BS",
-          "depositante": null,
-          "comprobante": false
+          id: 449729,
+          referencia: "958855",
+          pago_proveedor: false,
+          banco_destino: "MI BANCO",
+          banco_origen: "MI BANCO",
+          tipo: "PDV",
+          monto: "2.328,18",
+          monto_usd: "24,30",
+          tasa_id: 1096,
+          tasa: 95.81,
+          fecha: "28/05/2025",
+          moneda: "BS",
+          depositante: null,
+          comprobante: false
         }
       ],
-      "total_usd": "24,30",
-      "contratos": [
+      total_usd: "24,30",
+      contratos: [
         {
-          "nombre": "ALBANY GABRIELA MILLAN VALERIO",
-          "contrato": "2002926",
-          "rif": "20326374",
-          "estado": "N/D"
+          nombre: "ALBANY GABRIELA MILLAN VALERIO",
+          contrato: "2002926",
+          rif: "20326374",
+          estado: "N/D"
         }
       ],
-      "facturas": [
+      facturas: [
         {
-          "factura": "B00079086",
-          "fecha": "28/05/2025",
-          "monto": "2328.2",
-          "nro_contrato": "2002926",
-          "id_contrato": 37298
+          factura: "B00079086",
+          fecha: "28/05/2025",
+          monto: "2328.2",
+          nro_contrato: "2002926",
+          id_contrato: 37298
         }
       ],
-      "created_at": "2025-05-28 09:42:28"
+      created_at: "2025-05-28 09:42:28"
     },
     {
-      "id": 465400,
-      "reporte_estado": "Facturado",
-      "tipo_reporte": "MENSUALIDAD",
-      "nota": "-",
-      "transaccions": [
+      id: 465400,
+      reporte_estado: "Facturado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
         {
-          "id": 449715,
-          "referencia": "230400",
-          "pago_proveedor": false,
-          "banco_destino": "MI BANCO",
-          "banco_origen": "VENEZUELA",
-          "tipo": "PDV",
-          "monto": "1.142,88",
-          "monto_usd": "12,00",
-          "tasa_id": 1095,
-          "tasa": 95.24,
-          "fecha": "27/05/2025",
-          "moneda": "BS",
-          "depositante": null,
-          "comprobante": false
+          id: 449715,
+          referencia: "230400",
+          pago_proveedor: false,
+          banco_destino: "MI BANCO",
+          banco_origen: "VENEZUELA",
+          tipo: "PDV",
+          monto: "1.142,88",
+          monto_usd: "12,00",
+          tasa_id: 1095,
+          tasa: 95.24,
+          fecha: "27/05/2025",
+          moneda: "BS",
+          depositante: null,
+          comprobante: false
         }
       ],
-      "total_usd": "12,00",
-      "contratos": [
+      total_usd: "12,00",
+      contratos: [
         {
-          "nombre": "LUISA FELICIA ORFILA ALFONZO",
-          "contrato": "2002389",
-          "rif": "5899191",
-          "estado": "N/D"
+          nombre: "LUISA FELICIA ORFILA ALFONZO",
+          contrato: "2002389",
+          rif: "5899191",
+          estado: "N/D"
         }
       ],
-      "facturas": [
+      facturas: [
         {
-          "factura": "B00079085",
-          "fecha": "27/05/2025",
-          "monto": "1142.88",
-          "nro_contrato": "2002389",
-          "id_contrato": 33995
+          factura: "B00079085",
+          fecha: "27/05/2025",
+          monto: "1142.88",
+          nro_contrato: "2002389",
+          id_contrato: 33995
         }
       ],
-      "created_at": "2025-05-27 22:23:47"
+      created_at: "2025-05-27 22:23:47"
     },
     {
-      "id": 465399,
-      "reporte_estado": "Facturado",
-      "tipo_reporte": "MENSUALIDAD",
-      "nota": "-",
-      "transaccions": [
+      id: 465399,
+      reporte_estado: "Facturado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
         {
-          "id": 449714,
-          "referencia": "985172",
-          "pago_proveedor": false,
-          "banco_destino": "DEL TESORO",
-          "banco_origen": "BANESCO",
-          "tipo": "PAGO MOVIL",
-          "monto": "2.570,53",
-          "monto_usd": "26,99",
-          "tasa_id": 1095,
-          "tasa": 95.24,
-          "fecha": "27/05/2025",
-          "moneda": "BS",
-          "depositante": "04246461485",
-          "comprobante": false
+          id: 449714,
+          referencia: "985172",
+          pago_proveedor: false,
+          banco_destino: "DEL TESORO",
+          banco_origen: "BANESCO",
+          tipo: "PAGO MOVIL",
+          monto: "2.570,53",
+          monto_usd: "26,99",
+          tasa_id: 1095,
+          tasa: 95.24,
+          fecha: "27/05/2025",
+          moneda: "BS",
+          depositante: "04246461485",
+          comprobante: false
         }
       ],
-      "total_usd": "26,99",
-      "contratos": [
+      total_usd: "26,99",
+      contratos: [
         {
-          "nombre": "LERGUINS RAFAEL LAREZ CASTILLO ",
-          "contrato": "1012620",
-          "rif": "14850966",
-          "estado": "N/D"
+          nombre: "LERGUINS RAFAEL LAREZ CASTILLO ",
+          contrato: "1012620",
+          rif: "14850966",
+          estado: "N/D"
         }
       ],
-      "facturas": [
+      facturas: [
         {
-          "factura": "B00079084",
-          "fecha": "27/05/2025",
-          "monto": "2570.53",
-          "nro_contrato": "1012620",
-          "id_contrato": 15307
+          factura: "B00079084",
+          fecha: "27/05/2025",
+          monto: "2570.53",
+          nro_contrato: "1012620",
+          id_contrato: 15307
         }
       ],
-      "created_at": "2025-05-27 21:59:27"
+      created_at: "2025-05-27 21:59:27"
     },
     {
-      "id": 465393,
-      "reporte_estado": "Facturado",
-      "tipo_reporte": "MENSUALIDAD",
-      "nota": "-",
-      "transaccions": [
+      id: 465393,
+      reporte_estado: "Facturado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
         {
-          "id": 449708,
-          "referencia": "000253436000",
-          "pago_proveedor": false,
-          "banco_destino": "DEL TESORO",
-          "banco_origen": "DEL TESORO",
-          "tipo": "PAGO MOVIL",
-          "monto": "3.427,69",
-          "monto_usd": "35,99",
-          "tasa_id": 1095,
-          "tasa": 95.24,
-          "fecha": "27/05/2025",
-          "moneda": "BS",
-          "depositante": null,
-          "comprobante": false
+          id: 449708,
+          referencia: "000253436000",
+          pago_proveedor: false,
+          banco_destino: "DEL TESORO",
+          banco_origen: "DEL TESORO",
+          tipo: "PAGO MOVIL",
+          monto: "3.427,69",
+          monto_usd: "35,99",
+          tasa_id: 1095,
+          tasa: 95.24,
+          fecha: "27/05/2025",
+          moneda: "BS",
+          depositante: null,
+          comprobante: false
         }
       ],
-      "total_usd": "35,99",
-      "contratos": [
+      total_usd: "35,99",
+      contratos: [
         {
-          "nombre": "HECTOR JOSE CARRILLO REJON ",
-          "contrato": "1018654",
-          "rif": "17899736",
-          "estado": "N/D"
+          nombre: "HECTOR JOSE CARRILLO REJON ",
+          contrato: "1018654",
+          rif: "17899736",
+          estado: "N/D"
         }
       ],
-      "facturas": [
+      facturas: [
         {
-          "factura": "B00079083",
-          "fecha": "27/05/2025",
-          "monto": "3427.69",
-          "nro_contrato": "1018654",
-          "id_contrato": 20417
+          factura: "B00079083",
+          fecha: "27/05/2025",
+          monto: "3427.69",
+          nro_contrato: "1018654",
+          id_contrato: 20417
         }
       ],
-      "created_at": "2025-05-27 19:59:15"
+      created_at: "2025-05-27 19:59:15"
     },
     {
-      "id": 465387,
-      "reporte_estado": "Facturado",
-      "tipo_reporte": "MENSUALIDAD",
-      "nota": "-",
-      "transaccions": [
+      id: 465387,
+      reporte_estado: "Facturado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
         {
-          "id": 449702,
-          "referencia": "126442373",
-          "pago_proveedor": false,
-          "banco_destino": "DEL TESORO",
-          "banco_origen": "DEL TESORO",
-          "tipo": "PAGO MOVIL",
-          "monto": "2.761,96",
-          "monto_usd": "29,00",
-          "tasa_id": 1095,
-          "tasa": 95.24,
-          "fecha": "27/05/2025",
-          "moneda": "BS",
-          "depositante": null,
-          "comprobante": false
+          id: 449702,
+          referencia: "126442373",
+          pago_proveedor: false,
+          banco_destino: "DEL TESORO",
+          banco_origen: "DEL TESORO",
+          tipo: "PAGO MOVIL",
+          monto: "2.761,96",
+          monto_usd: "29,00",
+          tasa_id: 1095,
+          tasa: 95.24,
+          fecha: "27/05/2025",
+          moneda: "BS",
+          depositante: null,
+          comprobante: false
         }
       ],
-      "total_usd": "29,00",
-      "contratos": [
+      total_usd: "29,00",
+      contratos: [
         {
-          "nombre": "TIRSO JOSÉ CALDERIN BONILLO ",
-          "contrato": "2053341",
-          "rif": "4651673",
-          "estado": "N/D"
+          nombre: "TIRSO JOSÉ CALDERIN BONILLO ",
+          contrato: "2053341",
+          rif: "4651673",
+          estado: "N/D"
         }
       ],
-      "facturas": [
+      facturas: [
         {
-          "factura": "A00326902",
-          "fecha": "28/05/2025",
-          "monto": "2761.96",
-          "nro_contrato": "2053341",
-          "id_contrato": 33773
+          factura: "A00326902",
+          fecha: "28/05/2025",
+          monto: "2761.96",
+          nro_contrato: "2053341",
+          id_contrato: 33773
         }
       ],
-      "created_at": "2025-05-27 19:07:28"
+      created_at: "2025-05-27 19:07:28"
     },
     {
-      "id": 465383,
-      "reporte_estado": "Facturado",
-      "tipo_reporte": "MENSUALIDAD",
-      "nota": "-",
-      "transaccions": [
+      id: 465383,
+      reporte_estado: "Facturado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
         {
-          "id": 449700,
-          "referencia": "000253374587",
-          "pago_proveedor": false,
-          "banco_destino": "DEL TESORO",
-          "banco_origen": "DEL TESORO",
-          "tipo": "PAGO MOVIL",
-          "monto": "1.000,00",
-          "monto_usd": "10,50",
-          "tasa_id": 1095,
-          "tasa": 95.24,
-          "fecha": "27/05/2025",
-          "moneda": "BS",
-          "depositante": null,
-          "comprobante": false
+          id: 449700,
+          referencia: "000253374587",
+          pago_proveedor: false,
+          banco_destino: "DEL TESORO",
+          banco_origen: "DEL TESORO",
+          tipo: "PAGO MOVIL",
+          monto: "1.000,00",
+          monto_usd: "10,50",
+          tasa_id: 1095,
+          tasa: 95.24,
+          fecha: "27/05/2025",
+          moneda: "BS",
+          depositante: null,
+          comprobante: false
         }
       ],
-      "total_usd": "10,50",
-      "contratos": [
+      total_usd: "10,50",
+      contratos: [
         {
-          "nombre": "GLIMER COROMOTO GÓMEZ FARIAS ",
-          "contrato": "1041874",
-          "rif": "14054383",
-          "estado": "N/D"
+          nombre: "GLIMER COROMOTO GÓMEZ FARIAS ",
+          contrato: "1041874",
+          rif: "14054383",
+          estado: "N/D"
         }
       ],
-      "facturas": [
+      facturas: [
         {
-          "factura": "adel cobro 0000519757",
-          "fecha": "28/05/2025",
-          "monto": "1000",
-          "nro_contrato": "1041874",
-          "id_contrato": 46757
+          factura: "adel cobro 0000519757",
+          fecha: "28/05/2025",
+          monto: "1000",
+          nro_contrato: "1041874",
+          id_contrato: 46757
         }
       ],
-      "created_at": "2025-05-27 18:53:48"
+      created_at: "2025-05-27 18:53:48"
     }
   ]

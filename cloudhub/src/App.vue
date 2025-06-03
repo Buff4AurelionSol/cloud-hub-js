@@ -1,4 +1,6 @@
 <script setup>
+import TableFacturados from './components/TableFacturados.vue'
+
   const indexState = ref(10)
   const filters = ref([])
   const transactions = ref([])
@@ -131,12 +133,56 @@
         @sendTypeReport="getTypeReport"
   />
     
-  <div>
-    <Table :indexState="indexState" :filters="filters" :transactions="transactions" :orderBy="orderBy"
-      :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy" :searchValue="searchValue" :columns="columnsToFilter"
+  <template v-if="tableType === 'Por facturar'">
+    <Table 
+      :indexState="indexState" 
+      :transactions="transactions" 
+      :orderBy="orderBy"
+      :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy" 
+      :searchValue="searchValue" 
+      :columns="columnsToFilter"
       :type="tableType"
     />
-  </div>
+  </template>
+  <template v-if="tableType === 'Facturados'">
+    <TableFacturados
+       :columns="columnsToFilter"
+       :type="tableType"
+    />
+  </template>
+  <template v-if="tableType=== 'Rechazados'">
+    Rechazados
+  </template>
+  <template v-if="tableType === 'Por verificar'">
+    Por verificar
+  </template>
+
+  <template v-if="tableType === 'Divisas/Por facturar'">
+    Divisas/Por facturar
+  </template>
+
+  <template v-if="tableType === 'Divisas/Facturados'">
+    <TableDolarFacturados
+      :indexState="indexState" 
+      :filters="filters" 
+      :transactions="transactions" 
+      :orderBy="orderBy"
+      :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy" 
+      :searchValue="searchValue" 
+      :columns="columnsToFilter"
+      :type="tableType"
+    />
+  </template>
+
+  <template v-if="tableType === 'Divisas/Rechazados'">
+    Divisas/Rechazados
+  </template>
+
+  <template v-if="tableType === 'Divisas/Por verificar'">
+    Divisas/Por verificar
+  </template>
+
+
 
 </v-app>
    
