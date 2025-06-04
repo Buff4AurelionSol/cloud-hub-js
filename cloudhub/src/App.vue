@@ -96,11 +96,11 @@ import TableFacturados from './components/TableFacturados.vue'
   const changeColumnsItems = () => {
     switch (payTypeState.value) {
       case 'BOLIVARES':
-        columnsItems.value = COLUMNS_TABLE[0].values;
+        columnsItems.value = COLUMNS_TABLE2[0].values;
         break;
       
       case 'DIVISAS':
-        columnsItems.value = COLUMNS_TABLE[1].values;
+        columnsItems.value = COLUMNS_TABL2[1].values;
         break; 
 
       default:
