@@ -1,5 +1,6 @@
 <script setup>
 
+    import DetailsIcon from '@/pics/visible.png'
 
     const props = defineProps({
         indexState: {
@@ -36,22 +37,28 @@
         {title:'created_at', value: 'FECHA REPORTE'}
     ]
 
-     const validCells = computed(() => {
-        return REPORTS_FACTURADOS.filter(item =>
-            Object.values(item).some(value => typeof value === 'object' && value !== null)
-        );
-    });
+    const DATA_FILTER = () => {
+     
+    
+        console.log("Esto es lo que obtengo: ", props.columns)
+        
+      
+    }
 
             
    
 </script>
 
 <template>
-    <v-table>
+    <v-table class="table-container box-filters-fade rounded-xl">
         <thead>
             <tr>
+                 <th>
+                    #
+                </th>
                 <template v-for="head in HEADERS" :key="head.title">
                     <template v-if="!head.children">
+                       
                         <th :key="head.title">
                             {{head.value }}
                         </th>
@@ -63,17 +70,31 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="(report, index) in validCells" :key="index">
+            <tr v-for="(report, index) in REPORTS_FACTURADOS" :key="index">
+                <td>
+                    {{ index  + 1}}
+                </td>
                 <template v-for="head in HEADERS" :key="head.title">
-                    <!-- Si NO tiene hijos (campos simples) -->
                     <td v-if="!head.children">
                         {{ report[head.title] ?? '—' }}
                     </td>
-
-                    <!-- Si tiene hijos (campos anidados como facturas, contratos...) -->
+                    
                     <template v-else>
-                        <td v-for="child in head.children" :key="child.title">
-                        {{ report[head.title]?.[0]?.[child.title] }}
+                        <td v-for="child in head.children" :key="child.title" >
+                            <template v-if="child.title === 'contrato'">
+                              <div class="d-flex flex-column ga-1">
+                                  <v-chip v-for="(item, i) in report[head.title]" 
+                                    class="bg-blue" 
+                                    :class="{'mb-1': i === report[head.title].length - 1 }"
+                                   >
+                                        {{item[child.title]}}
+                                  </v-chip>
+                              </div>
+                            </template>
+
+                            <template v-else>
+                                {{ report[head.title].map(item => item[child.title]).join(" ; ")}}
+                            </template>
                         </td>
                     </template>
                 </template>
@@ -90,4 +111,9 @@
         </tbody>
 
     </v-table>
+    <div class="d-flex justify-center ma-2">
+          <v-btn @click="DATA_FILTER" size="large" class="bg-blue">
+                PRUEBA
+          </v-btn>
+    </div>
 </template>
