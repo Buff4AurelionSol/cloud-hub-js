@@ -26,30 +26,35 @@ export const OPTIONS_TRANSACTION = [
   "BIOPAGO"
 ]
 
-    export const HEADERS = [
-        {title: 'id', value:'ID'},
-        {title: 'transaccions', children: [
-            {title:'referencia', value:'REFERENCIA'},
-            {title:'banco_origen', value:'BANCO ORIGEN'},
-            {title:'banco_destino', value:'BANCO DESTINO'},
-            {title:'monto', value: 'MONTO'},
-            {title:'monto_usd', value: 'MONTO USD'},
-            {title: 'tasa', value: 'TASA'},
-            {title:'tipo', value: 'TIPO TRANSACCIÓN'},
-            {title:'fecha', value:'FECHA TRANSACCIÓN'}
-         ]
-        },
-        {title: 'contratos', children:[
-            {title:'nombre', value:'CLIENTE'},
-            {title: 'contrato', value:'CONTRATO(S)'},
-            {title:'rif', value:'RIF/CEDULA'}
-        ]},
-        {title:'facturas', children:[
-            {title:'factura', value:'FACTURA(S)'},
-            {title:'fecha', value:'FECHA FACTURA'}
-        ]},
-        {title:'created_at', value: 'FECHA REPORTE'}
+export const HEADERS = [
+  { title: 'id', value: 'ID' },
+  {
+    title: 'transaccions', children: [
+      { title: 'referencia', value: 'REFERENCIA' },
+      { title: 'banco_origen', value: 'BANCO ORIGEN' },
+      { title: 'banco_destino', value: 'BANCO DESTINO' },
+      { title: 'monto', value: 'MONTO' },
+      { title: 'monto_usd', value: 'MONTO USD' },
+      { title: 'tasa', value: 'TASA' },
+      { title: 'tipo', value: 'TIPO TRANSACCIÓN' },
+      { title: 'fecha', value: 'FECHA TRANSACCIÓN' }
     ]
+  },
+  {
+    title: 'contratos', children: [
+      { title: 'nombre', value: 'CLIENTE' },
+      { title: 'contrato', value: 'CONTRATO(S)' },
+      { title: 'rif', value: 'RIF/CEDULA' }
+    ]
+  },
+  {
+    title: 'facturas', children: [
+      { title: 'factura', value: 'FACTURA(S)' },
+      { title: 'fecha', value: 'FECHA FACTURA' }
+    ]
+  },
+  { title: 'created_at', value: 'FECHA REPORTE' }
+]
 
 
 export const reports = [

@@ -11,6 +11,7 @@ import TableFacturados from './components/TableFacturados.vue'
   const reportTypeState = ref('POR FACTURAR')
   const columnsToFilter = ref([])
   const tableType = ref('Por facturar')
+  const dataTable = ref(REPORTS)
 
   const COLUMNS_TABLE = [
       {reportType: 'BOLIVARES', values: ['ID','ESTADO','REFERENCIA','TIPO REPORTE','TIPO TRANSACCIÓN',
@@ -34,6 +35,30 @@ import TableFacturados from './components/TableFacturados.vue'
             {title: 'tasa', value: 'TASA'},
             {title:'tipo', value: 'TIPO TRANSACCIÓN'},
             {title:'fecha', value:'FECHA TRANSACCIÓN'}
+         ]
+        },
+        {title: 'contratos', children:[
+            {title:'nombre', value:'CLIENTE'},
+            {title: 'contrato', value:'CONTRATO(S)'},
+            {title:'rif', value:'RIF/CEDULA'}
+        ]},
+        {title:'facturas', children:[
+            {title:'factura', value:'FACTURA(S)'},
+            {title:'fecha', value:'FECHA FACTURA'}
+        ]},
+        {title:'created_at', value: 'FECHA REPORTE'}
+      ]},
+      {reporType: 'Facturados', values: [
+        {title: 'id', value:'ID'},
+        {title: 'transaccions', children: [
+            {title:'referencia', value:'REFERENCIA'},
+            {title:'banco_origen', value:'BANCO ORIGEN'},
+            {title:'banco_destino', value:'BANCO DESTINO'},
+            {title:'monto', value: 'MONTO'},
+            {title:'monto_usd', value: 'MONTO USD'},
+            {title: 'tasa', value: 'TASA'},
+            {title:'tipo', value: 'TIPO TRANSACCIÓN'},
+            {title:'fecha', value:'FECHA TRANSACCIÓN'}
 
          ]
         },
@@ -47,7 +72,157 @@ import TableFacturados from './components/TableFacturados.vue'
             {title:'fecha', value:'FECHA FACTURA'}
         ]},
         {title:'created_at', value: 'FECHA REPORTE'}
-      ]}
+      ]},
+      {reporType: 'Rechazados', values: [
+        {title: 'id', value:'ID'},
+        {title: 'transaccions', children: [
+            {title:'referencia', value:'REFERENCIA'},
+            {title:'banco_origen', value:'BANCO ORIGEN'},
+            {title:'banco_destino', value:'BANCO DESTINO'},
+            {title:'monto', value: 'MONTO'},
+            {title:'monto_usd', value: 'MONTO USD'},
+            {title: 'tasa', value: 'TASA'},
+            {title:'tipo', value: 'TIPO TRANSACCIÓN'},
+            {title:'fecha', value:'FECHA TRANSACCIÓN'}
+
+         ]
+        },
+        {title: 'contratos', children:[
+            {title:'nombre', value:'CLIENTE'},
+            {title: 'contrato', value:'CONTRATO(S)'},
+            {title:'rif', value:'RIF/CEDULA'}
+        ]},
+        {title:'facturas', children:[
+            {title:'factura', value:'FACTURA(S)'},
+            {title:'fecha', value:'FECHA FACTURA'}
+        ]},
+        {title:'created_at', value: 'FECHA REPORTE'}
+      ]},
+      {reporType: 'Por verificar', values: [
+        {title: 'id', value:'ID'},
+        {title: 'transaccions', children: [
+            {title:'referencia', value:'REFERENCIA'},
+            {title:'banco_origen', value:'BANCO ORIGEN'},
+            {title:'banco_destino', value:'BANCO DESTINO'},
+            {title:'monto', value: 'MONTO'},
+            {title:'monto_usd', value: 'MONTO USD'},
+            {title: 'tasa', value: 'TASA'},
+            {title:'tipo', value: 'TIPO TRANSACCIÓN'},
+            {title:'fecha', value:'FECHA TRANSACCIÓN'}
+
+         ]
+        },
+        {title: 'contratos', children:[
+            {title:'nombre', value:'CLIENTE'},
+            {title: 'contrato', value:'CONTRATO(S)'},
+            {title:'rif', value:'RIF/CEDULA'}
+        ]},
+        {title:'facturas', children:[
+            {title:'factura', value:'FACTURA(S)'},
+            {title:'fecha', value:'FECHA FACTURA'}
+        ]},
+        {title:'created_at', value: 'FECHA REPORTE'}
+      ]},
+      
+      {reporType: 'Divisas/Por facturar', values: [
+        {title: 'id', value:'ID'},
+        {title: 'transaccions', children: [
+            {title:'referencia', value:'REFERENCIA'},
+            {title:'banco_origen', value:'BANCO ORIGEN'},
+            {title:'banco_destino', value:'BANCO DESTINO'},
+            {title:'monto', value: 'MONTO'},
+            {title:'monto_usd', value: 'MONTO USD'},
+            {title: 'tasa', value: 'TASA'},
+            {title:'tipo', value: 'TIPO TRANSACCIÓN'},
+            {title:'fecha', value:'FECHA TRANSACCIÓN'}
+         ]
+        },
+        {title: 'contratos', children:[
+            {title:'nombre', value:'CLIENTE'},
+            {title: 'contrato', value:'CONTRATO(S)'},
+            {title:'rif', value:'RIF/CEDULA'}
+        ]},
+        {title:'facturas', children:[
+            {title:'factura', value:'FACTURA(S)'},
+            {title:'fecha', value:'FECHA FACTURA'}
+        ]},
+        {title:'created_at', value: 'FECHA REPORTE'}
+      ]},
+      {reporType: 'Divisas/Facturados', values: [
+        {title: 'id', value:'ID'},
+        {title: 'transaccions', children: [
+            {title:'referencia', value:'REFERENCIA'},
+            {title:'banco_origen', value:'BANCO ORIGEN'},
+            {title:'banco_destino', value:'BANCO DESTINO'},
+            {title:'monto', value: 'MONTO'},
+            {title:'monto_usd', value: 'MONTO USD'},
+            {title: 'tasa', value: 'TASA'},
+            {title:'tipo', value: 'TIPO TRANSACCIÓN'},
+            {title:'fecha', value:'FECHA TRANSACCIÓN'}
+
+         ]
+        },
+        {title: 'Divisas/contratos', children:[
+            {title:'nombre', value:'CLIENTE'},
+            {title: 'contrato', value:'CONTRATO(S)'},
+            {title:'rif', value:'RIF/CEDULA'}
+        ]},
+        {title:'facturas', children:[
+            {title:'factura', value:'FACTURA(S)'},
+            {title:'fecha', value:'FECHA FACTURA'}
+        ]},
+        {title:'created_at', value: 'FECHA REPORTE'}
+      ]},
+      {reporType: 'Divisas/Rechazados', values: [
+        {title: 'id', value:'ID'},
+        {title: 'transaccions', children: [
+            {title:'referencia', value:'REFERENCIA'},
+            {title:'banco_origen', value:'BANCO ORIGEN'},
+            {title:'banco_destino', value:'BANCO DESTINO'},
+            {title:'monto', value: 'MONTO'},
+            {title:'monto_usd', value: 'MONTO USD'},
+            {title: 'tasa', value: 'TASA'},
+            {title:'tipo', value: 'TIPO TRANSACCIÓN'},
+            {title:'fecha', value:'FECHA TRANSACCIÓN'}
+
+         ]
+        },
+        {title: 'contratos', children:[
+            {title:'nombre', value:'CLIENTE'},
+            {title: 'contrato', value:'CONTRATO(S)'},
+            {title:'rif', value:'RIF/CEDULA'}
+        ]},
+        {title:'facturas', children:[
+            {title:'factura', value:'FACTURA(S)'},
+            {title:'fecha', value:'FECHA FACTURA'}
+        ]},
+        {title:'created_at', value: 'FECHA REPORTE'}
+      ]},
+      {reporType: 'Divisas/Por verificar', values: [
+        {title: 'id', value:'ID'},
+        {title: 'transaccions', children: [
+            {title:'referencia', value:'REFERENCIA'},
+            {title:'banco_origen', value:'BANCO ORIGEN'},
+            {title:'banco_destino', value:'BANCO DESTINO'},
+            {title:'monto', value: 'MONTO'},
+            {title:'monto_usd', value: 'MONTO USD'},
+            {title: 'tasa', value: 'TASA'},
+            {title:'tipo', value: 'TIPO TRANSACCIÓN'},
+            {title:'fecha', value:'FECHA TRANSACCIÓN'}
+
+         ]
+        },
+        {title: 'contratos', children:[
+            {title:'nombre', value:'CLIENTE'},
+            {title: 'contrato', value:'CONTRATO(S)'},
+            {title:'rif', value:'RIF/CEDULA'}
+        ]},
+        {title:'facturas', children:[
+            {title:'factura', value:'FACTURA(S)'},
+            {title:'fecha', value:'FECHA FACTURA'}
+        ]},
+        {title:'created_at', value: 'FECHA REPORTE'}
+      ]},
     ]
 
     
@@ -100,7 +275,7 @@ import TableFacturados from './components/TableFacturados.vue'
         break;
       
       case 'DIVISAS':
-        columnsItems.value = COLUMNS_TABL2[1].values;
+        columnsItems.value = COLUMNS_TABLE2[6].values;
         break; 
 
       default:
@@ -112,9 +287,11 @@ import TableFacturados from './components/TableFacturados.vue'
   watchEffect(()=>{
     if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'POR FACTURAR'){
       tableType.value = 'Por facturar'
+      dataTable.value = REPORTS
     }
     if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'FACTURADOS'){
       tableType.value = 'Facturados'
+     
     }
     if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'RECHAZADOS'){
       tableType.value = 'Rechazados'
@@ -128,6 +305,7 @@ import TableFacturados from './components/TableFacturados.vue'
     }
     if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'FACTURADOS'){
       tableType.value = 'Divisas/Facturados'
+      dataTable.value = REPORTS_FACTURADOS
     }
     if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'RECHAZADOS'){
       tableType.value = 'Divisas/Rechazados'
@@ -137,9 +315,6 @@ import TableFacturados from './components/TableFacturados.vue'
     }
     
   })
-
-
-
 
 </script>
 
@@ -162,56 +337,14 @@ import TableFacturados from './components/TableFacturados.vue'
         @sendTypeReport="getTypeReport"
   />
     
-  <template v-if="tableType === 'Por facturar'">
-    <Table 
+  <section>
+      <TableFacturados
       :indexState="indexState" 
-      :transactions="transactions" 
-      :orderBy="orderBy"
-      :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy" 
-      :searchValue="searchValue" 
       :columns="columnsToFilter"
       :type="tableType"
+      :dataTable="dataTable"
     />
-  </template>
-  <template v-if="tableType === 'Facturados'">
-    <TableFacturados
-       :columns="columnsToFilter"
-       :type="tableType"
-    />
-  </template>
-  <template v-if="tableType=== 'Rechazados'">
-    Rechazados
-  </template>
-  <template v-if="tableType === 'Por verificar'">
-    Por verificar
-  </template>
-
-  <template v-if="tableType === 'Divisas/Por facturar'">
-    Divisas/Por facturar
-  </template>
-
-  <template v-if="tableType === 'Divisas/Facturados'">
-    <TableDolarFacturados
-      :indexState="indexState" 
-      :filters="filters" 
-      :transactions="transactions" 
-      :orderBy="orderBy"
-      :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy" 
-      :searchValue="searchValue" 
-      :columns="columnsToFilter"
-      :type="tableType"
-    />
-  </template>
-
-  <template v-if="tableType === 'Divisas/Rechazados'">
-    Divisas/Rechazados
-  </template>
-
-  <template v-if="tableType === 'Divisas/Por verificar'">
-    Divisas/Por verificar
-  </template>
-
-
+  </section>
 
 </v-app>
    

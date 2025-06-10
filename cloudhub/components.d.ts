@@ -22,16 +22,10 @@ declare module 'vue' {
     ShowPaysInput: typeof import('./src/components/ShowPaysInput.vue')['default']
     SideNav: typeof import('./src/components/SideNav.vue')['default']
     Table: typeof import('./src/components/Table.vue')['default']
-    TableComponent: typeof import('./src/components/Table/TableComponent.vue')['default']
-    TableDolar: typeof import('./src/components/TableDolarFacturados.vue')['default']
     TableDolarFacturados: typeof import('./src/components/TableDolarFacturados.vue')['default']
     TableFacturados: typeof import('./src/components/TableFacturados.vue')['default']
-    TBodyComponent: typeof import('./src/components/Table/TBodyComponent.vue')['default']
-    THeadersComponent: typeof import('./src/components/Table/THeadersComponent.vue')['default']
     TransactionInput: typeof import('./src/components/TransactionInput.vue')['default']
-    Transactions: typeof import('./src/components/Transactions.vue')['default']
     TransactionsSpace: typeof import('./src/components/TransactionsSpace.vue')['default']
-    TransactionsTable: typeof import('./src/components/TransactionsTable.vue')['default']
     TypeReport: typeof import('./src/components/TypeReport.vue')['default']
   }
 }
