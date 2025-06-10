@@ -3655,6 +3655,1185 @@ export const REPORTS = [
   }
 ]
 
+export const REPORTS_FACTURADOS = [
+  {
+    id: 478123,
+    reporte_estado: "Facturado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "Reporte creado mediante opción de BanescoPagos.",
+    transaccions: [
+      {
+        id: 462230,
+        referencia: "51610018454",
+        pago_proveedor: false,
+        banco_destino: "BANESCO",
+        banco_origen: "BANESCO",
+        tipo: "BANESCO PAGOS",
+        monto: "3.567,33",
+        monto_usd: "35,99",
+        tasa_id: 1104,
+        tasa: 99.12,
+        fecha: "10/06/2025",
+        moneda: "BS",
+        depositante: "14055784",
+        comprobante: false
+      }
+    ],
+    total_usd: "35,99",
+    contratos: [
+      {
+        nombre: "JULIAN ALEJANDRO FIGUEROA LOPEZ ",
+        contrato: "2007650",
+        rif: "14055784",
+        estado: "ACTIVO"
+      }
+    ],
+    facturas: [
+      {
+        factura: "B00083695",
+        fecha: "10/06/2025",
+        monto: "3567.33",
+        nro_contrato: "2007650",
+        id_contrato: 31524
+      }
+    ],
+    created_at: "2025-06-10 08:13:16"
+  },
+  {
+    id: 478122,
+    reporte_estado: "Facturado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "Reporte creado mediante opción de BanescoPagos.",
+    transaccions: [
+      {
+        id: 462229,
+        referencia: "51610017671",
+        pago_proveedor: false,
+        banco_destino: "BANESCO",
+        banco_origen: "BANESCO",
+        tipo: "BANESCO PAGOS",
+        monto: "3.567,33",
+        monto_usd: "35,99",
+        tasa_id: 1104,
+        tasa: 99.12,
+        fecha: "10/06/2025",
+        moneda: "BS",
+        depositante: "21188854",
+        comprobante: false
+      }
+    ],
+    total_usd: "35,99",
+    contratos: [
+      {
+        nombre: "VIVIANA DEL VALLE CAMPOS GRATEROL ",
+        contrato: "2005262",
+        rif: "21188854",
+        estado: "ACTIVO"
+      }
+    ],
+    facturas: [
+      {
+        factura: "B00083694",
+        fecha: "10/06/2025",
+        monto: "3567.33",
+        nro_contrato: "2005262",
+        id_contrato: 31734
+      }
+    ],
+    created_at: "2025-06-10 08:13:04"
+  },
+  {
+    id: 478114,
+    reporte_estado: "Facturado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "-",
+    transaccions: [
+      {
+        id: 462221,
+        referencia: "10039",
+        pago_proveedor: false,
+        banco_destino: "DEL TESORO",
+        banco_origen: "BANESCO",
+        tipo: "PAGO MOVIL",
+        monto: "1.486,80",
+        monto_usd: "15,00",
+        tasa_id: 1104,
+        tasa: 99.12,
+        fecha: "10/06/2025",
+        moneda: "BS",
+        depositante: "04141909338",
+        comprobante: false
+      }
+    ],
+    total_usd: "15,00",
+    contratos: [
+      {
+        nombre: "MARLIN SUSANA GALDONA LOPEZ ",
+        contrato: "2042095",
+        rif: "16825945",
+        estado: "N/D"
+      }
+    ],
+    facturas: [
+      {
+        factura: "B00083691",
+        fecha: "10/06/2025",
+        monto: "1486.8",
+        nro_contrato: "2042095",
+        id_contrato: 33464
+      }
+    ],
+    created_at: "2025-06-10 08:10:49"
+  },
+  {
+    id: 478113,
+    reporte_estado: "Facturado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "-",
+    transaccions: [
+      {
+        id: 462220,
+        referencia: "154994",
+        pago_proveedor: false,
+        banco_destino: "DEL TESORO",
+        banco_origen: "VENEZUELA",
+        tipo: "PAGO MOVIL",
+        monto: "3.963,81",
+        monto_usd: "39,99",
+        tasa_id: 1104,
+        tasa: 99.12,
+        fecha: "10/06/2025",
+        moneda: "BS",
+        depositante: "04248582867",
+        comprobante: false
+      }
+    ],
+    total_usd: "39,99",
+    contratos: [
+      {
+        nombre: "DONNA ROMITA PIZZERIA, C.A ",
+        contrato: "1013731",
+        rif: "503784075",
+        estado: "N/D"
+      }
+    ],
+    facturas: [
+      {
+        factura: "B00083693",
+        fecha: "10/06/2025",
+        monto: "3963.81",
+        nro_contrato: "1013731",
+        id_contrato: 16411
+      }
+    ],
+    created_at: "2025-06-10 08:10:47"
+  },
+  {
+    id: 478109,
+    reporte_estado: "Facturado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "-",
+    transaccions: [
+      {
+        id: 462216,
+        referencia: "051610008350",
+        pago_proveedor: false,
+        banco_destino: "DEL TESORO",
+        banco_origen: "DEL TESORO",
+        tipo: "PAGO MOVIL",
+        monto: "2.873,49",
+        monto_usd: "28,99",
+        tasa_id: 1104,
+        tasa: 99.12,
+        fecha: "10/06/2025",
+        moneda: "BS",
+        depositante: null,
+        comprobante: false
+      }
+    ],
+    total_usd: "28,99",
+    contratos: [
+      {
+        nombre: "ANGEL ALEXANDER SOTILLET ñAñEZ ",
+        contrato: "2055367",
+        rif: "19683592",
+        estado: "N/D"
+      }
+    ],
+    facturas: [
+      {
+        factura: "B00083690",
+        fecha: "10/06/2025",
+        monto: "2873.49",
+        nro_contrato: "2055367",
+        id_contrato: 29827
+      }
+    ],
+    created_at: "2025-06-10 08:09:32"
+  },
+  {
+    id: 478107,
+    reporte_estado: "Facturado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "-",
+    transaccions: [
+      {
+        id: 462215,
+        referencia: "000267153838",
+        pago_proveedor: false,
+        banco_destino: "DEL TESORO",
+        banco_origen: "DEL TESORO",
+        tipo: "PAGO MOVIL",
+        monto: "3.567,33",
+        monto_usd: "35,99",
+        tasa_id: 1104,
+        tasa: 99.12,
+        fecha: "10/06/2025",
+        moneda: "BS",
+        depositante: null,
+        comprobante: false
+      }
+    ],
+    total_usd: "35,99",
+    contratos: [
+      {
+        nombre: "SOR CECILIA VERA VEGA",
+        contrato: "1001774",
+        rif: "3750863",
+        estado: "N/D"
+      }
+    ],
+    facturas: [
+      {
+        factura: "B00083689",
+        fecha: "10/06/2025",
+        monto: "3567.33",
+        nro_contrato: "1001774",
+        id_contrato: 1109
+      }
+    ],
+    created_at: "2025-06-10 08:09:30"
+  },
+  {
+    id: 478106,
+    reporte_estado: "Facturado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "Reporte creado mediante opción de BanescoPagos.",
+    transaccions: [
+      {
+        id: 462213,
+        referencia: "51610011184",
+        pago_proveedor: false,
+        banco_destino: "BANESCO",
+        banco_origen: "BANESCO",
+        tipo: "BANESCO PAGOS",
+        monto: "3.765,57",
+        monto_usd: "37,99",
+        tasa_id: 1104,
+        tasa: 99.12,
+        fecha: "10/06/2025",
+        moneda: "BS",
+        depositante: "21188854",
+        comprobante: false
+      }
+    ],
+    total_usd: "37,99",
+    contratos: [
+      {
+        nombre: "DANIEL ANTONIO PALENCIA CASTELLANO ",
+        contrato: "1030170",
+        rif: "13734354",
+        estado: "ACTIVO"
+      }
+    ],
+    facturas: [
+      {
+        factura: "B00083692",
+        fecha: "10/06/2025",
+        monto: "3765.57",
+        nro_contrato: "1030170",
+        id_contrato: 41768
+      }
+    ],
+    created_at: "2025-06-10 08:09:24"
+  },
+  {
+    id: 478098,
+    reporte_estado: "Facturado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "Reporte creado mediante opción de BanescoPagos.",
+    transaccions: [
+      {
+        id: 462205,
+        referencia: "51610003428",
+        pago_proveedor: false,
+        banco_destino: "BANESCO",
+        banco_origen: "BANESCO",
+        tipo: "BANESCO PAGOS",
+        monto: "3.567,33",
+        monto_usd: "35,99",
+        tasa_id: 1104,
+        tasa: 99.12,
+        fecha: "10/06/2025",
+        moneda: "BS",
+        depositante: "23868589",
+        comprobante: false
+      }
+    ],
+    total_usd: "35,99",
+    contratos: [
+      {
+        nombre: "GUILLERMO ADRIAN PIEDRAHITA  HERRERA ",
+        contrato: "1013722",
+        rif: "22890198",
+        estado: "ACTIVO"
+      }
+    ],
+    facturas: [
+      {
+        factura: "B00083687",
+        fecha: "10/06/2025",
+        monto: "3567.33",
+        nro_contrato: "1013722",
+        id_contrato: 16302
+      }
+    ],
+    created_at: "2025-06-10 08:05:22"
+  },
+  {
+    id: 478097,
+    reporte_estado: "Facturado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "Reporte creado mediante opción de BanescoPagos.",
+    transaccions: [
+      {
+        id: 462204,
+        referencia: "51610005411",
+        pago_proveedor: false,
+        banco_destino: "BANESCO",
+        banco_origen: "BANESCO",
+        tipo: "BANESCO PAGOS",
+        monto: "2.675,25",
+        monto_usd: "26,99",
+        tasa_id: 1104,
+        tasa: 99.12,
+        fecha: "10/06/2025",
+        moneda: "BS",
+        depositante: "4652703",
+        comprobante: false
+      }
+    ],
+    total_usd: "26,99",
+    contratos: [
+      {
+        nombre: "NEIDA JOSE MARIN DE MARVAL ",
+        contrato: "1014933",
+        rif: "4652703",
+        estado: "ACTIVO"
+      }
+    ],
+    facturas: [
+      {
+        factura: "B00083688",
+        fecha: "10/06/2025",
+        monto: "2675.25",
+        nro_contrato: "1014933",
+        id_contrato: 16061
+      }
+    ],
+    created_at: "2025-06-10 08:04:18"
+  },
+  {
+    id: 478093,
+    reporte_estado: "Facturado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "-",
+    transaccions: [
+      {
+        id: 462200,
+        referencia: "000267150770",
+        pago_proveedor: false,
+        banco_destino: "DEL TESORO",
+        banco_origen: "DEL TESORO",
+        tipo: "PAGO MOVIL",
+        monto: "3.567,33",
+        monto_usd: "35,99",
+        tasa_id: 1104,
+        tasa: 99.12,
+        fecha: "10/06/2025",
+        moneda: "BS",
+        depositante: null,
+        comprobante: false
+      }
+    ],
+    total_usd: "35,99",
+    contratos: [
+      {
+        nombre: "FABIO JOSE PIÑERO VILLASPAREDES ",
+        contrato: "1025986",
+        rif: "6481458",
+        estado: "N/D"
+      }
+    ],
+    facturas: [
+      {
+        factura: "B00083685",
+        fecha: "10/06/2025",
+        monto: "3567.33",
+        nro_contrato: "1025986",
+        id_contrato: 37775
+      }
+    ],
+    created_at: "2025-06-10 08:02:34"
+  }
+]
+
+export const REPORTS_RECHAZADOS = [
+  {
+    id: 478079,
+    reporte_estado: "Rechazado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "Reporte creado mediante opción de BanescoPagos.",
+    transaccions: [
+      {
+        id: 462186,
+        referencia: "",
+        pago_proveedor: false,
+        banco_destino: "BANESCO",
+        banco_origen: "BANESCO",
+        tipo: "BANESCO PAGOS",
+        tasa_id: 1104,
+        tasa: null,
+        monto: "1.189,44",
+        monto_usd: "12,00",
+        fecha: "2025-06-10",
+        moneda: "BS",
+        depositante: "12864028",
+        comprobante: false
+      }
+    ],
+    contratos: [
+      {
+        nombre: "ANA ROSA GONZALEZ DEL ROSSO ",
+        contrato: "2042865",
+        rif: "12864028",
+        estado: "ACTIVO"
+      }
+    ],
+    created_at: "2025-06-10 07:54:58",
+    motivo_rechazo: "Cancelada por cliente.",
+    facturas: []
+  },
+  {
+    id: 478078,
+    reporte_estado: "Rechazado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "Reporte creado mediante opción de BanescoPagos.",
+    transaccions: [
+      {
+        id: 462185,
+        referencia: "",
+        pago_proveedor: false,
+        banco_destino: "BANESCO",
+        banco_origen: "BANESCO",
+        tipo: "BANESCO PAGOS",
+        tasa_id: 1104,
+        tasa: null,
+        monto: "1.189,44",
+        monto_usd: "12,00",
+        fecha: "2025-06-10",
+        moneda: "BS",
+        depositante: "12864028",
+        comprobante: false
+      }
+    ],
+    contratos: [
+      {
+        nombre: "ANA ROSA GONZALEZ DEL ROSSO ",
+        contrato: "2042865",
+        rif: "12864028",
+        estado: "ACTIVO"
+      }
+    ],
+    created_at: "2025-06-10 07:54:43",
+    motivo_rechazo: "Cancelada por cliente.",
+    facturas: []
+  },
+  {
+    id: 478074,
+    reporte_estado: "Rechazado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "Reporte creado mediante opción de BanescoPagos.",
+    transaccions: [
+      {
+        id: 462181,
+        referencia: "",
+        pago_proveedor: false,
+        banco_destino: "BANESCO",
+        banco_origen: "BANESCO",
+        tipo: "BANESCO PAGOS",
+        tasa_id: 1104,
+        tasa: null,
+        monto: "3.567,33",
+        monto_usd: "35,99",
+        fecha: "2025-06-10",
+        moneda: "BS",
+        depositante: "17111672",
+        comprobante: false
+      }
+    ],
+    contratos: [
+      {
+        nombre: "ALEXANDER SAN JUDAS ASCANIO QUINTERO ",
+        contrato: "1037007",
+        rif: "17111672",
+        estado: "ACTIVO"
+      }
+    ],
+    created_at: "2025-06-10 07:54:05",
+    motivo_rechazo: "Cancelada por cliente.",
+    facturas: []
+  },
+  {
+    id: 478072,
+    reporte_estado: "Rechazado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "Reporte creado mediante opción de BanescoPagos.",
+    transaccions: [
+      {
+        id: 462179,
+        referencia: "",
+        pago_proveedor: false,
+        banco_destino: "BANESCO",
+        banco_origen: "BANESCO",
+        tipo: "BANESCO PAGOS",
+        tasa_id: 1104,
+        tasa: null,
+        monto: "2.675,25",
+        monto_usd: "26,99",
+        fecha: "2025-06-10",
+        moneda: "BS",
+        depositante: "20324328",
+        comprobante: false
+      }
+    ],
+    contratos: [
+      {
+        nombre: "MILAGRO JOSEFINA GRANADO GIL ",
+        contrato: "1011772",
+        rif: "19331120",
+        estado: "CORTADO"
+      }
+    ],
+    created_at: "2025-06-10 07:52:07",
+    motivo_rechazo: "Cancelada por cliente.",
+    facturas: []
+  },
+  {
+    id: 478067,
+    reporte_estado: "Rechazado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "Reporte creado mediante opción de BanescoPagos.",
+    transaccions: [
+      {
+        id: 462174,
+        referencia: "",
+        pago_proveedor: false,
+        banco_destino: "BANESCO",
+        banco_origen: "BANESCO",
+        tipo: "BANESCO PAGOS",
+        tasa_id: 1104,
+        tasa: null,
+        monto: "2.675,25",
+        monto_usd: "26,99",
+        fecha: "2025-06-10",
+        moneda: "BS",
+        depositante: "14055554",
+        comprobante: false
+      }
+    ],
+    contratos: [
+      {
+        nombre: "MELVIS DEL VALLE MARCANO ",
+        contrato: "1012254",
+        rif: "14055554",
+        estado: "ACTIVO"
+      }
+    ],
+    created_at: "2025-06-10 07:49:47",
+    motivo_rechazo: "Cancelada por cliente.",
+    facturas: []
+  },
+  {
+    id: 478066,
+    reporte_estado: "Rechazado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "Reporte creado mediante opción de BanescoPagos.",
+    transaccions: [
+      {
+        id: 462173,
+        referencia: "",
+        pago_proveedor: false,
+        banco_destino: "BANESCO",
+        banco_origen: "BANESCO",
+        tipo: "BANESCO PAGOS",
+        tasa_id: 1104,
+        tasa: null,
+        monto: "2.675,25",
+        monto_usd: "26,99",
+        fecha: "2025-06-10",
+        moneda: "BS",
+        depositante: "81241185",
+        comprobante: false
+      }
+    ],
+    contratos: [
+      {
+        nombre: "JOAO JOSE RODRIGUES DA SILVA ",
+        contrato: "1016419",
+        rif: "81241185",
+        estado: "ACTIVO"
+      }
+    ],
+    created_at: "2025-06-10 07:49:10",
+    motivo_rechazo: "Cancelada por cliente.",
+    facturas: []
+  },
+  {
+    id: 478062,
+    reporte_estado: "Rechazado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "Reporte creado mediante opción de BanescoPagos.",
+    transaccions: [
+      {
+        id: 462169,
+        referencia: "",
+        pago_proveedor: false,
+        banco_destino: "BANESCO",
+        banco_origen: "BANESCO",
+        tipo: "BANESCO PAGOS",
+        tasa_id: 1104,
+        tasa: null,
+        monto: "2.675,25",
+        monto_usd: "26,99",
+        fecha: "2025-06-10",
+        moneda: "BS",
+        depositante: "13730266",
+        comprobante: false
+      }
+    ],
+    contratos: [
+      {
+        nombre: "ANIUSKA JOSE HENRÍQUEZ MARCANO ",
+        contrato: "1018815",
+        rif: "23532074",
+        estado: "ACTIVO"
+      }
+    ],
+    created_at: "2025-06-10 07:43:29",
+    motivo_rechazo: "Cancelada por cliente.",
+    facturas: []
+  },
+  {
+    id: 478059,
+    reporte_estado: "Rechazado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "Reporte creado mediante opción de BanescoPagos.",
+    transaccions: [
+      {
+        id: 462166,
+        referencia: "",
+        pago_proveedor: false,
+        banco_destino: "BANESCO",
+        banco_origen: "BANESCO",
+        tipo: "BANESCO PAGOS",
+        tasa_id: 1104,
+        tasa: null,
+        monto: "2.675,25",
+        monto_usd: "26,99",
+        fecha: "2025-06-10",
+        moneda: "BS",
+        depositante: "23532074",
+        comprobante: false
+      }
+    ],
+    contratos: [
+      {
+        nombre: "ANIUSKA JOSE HENRÍQUEZ MARCANO ",
+        contrato: "1018815",
+        rif: "23532074",
+        estado: "ACTIVO"
+      }
+    ],
+    created_at: "2025-06-10 07:43:09",
+    motivo_rechazo: "Cancelada por cliente.",
+    facturas: []
+  },
+  {
+    id: 478052,
+    reporte_estado: "Rechazado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "Reporte creado mediante opción de BanescoPagos.",
+    transaccions: [
+      {
+        id: 462159,
+        referencia: "",
+        pago_proveedor: false,
+        banco_destino: "BANESCO",
+        banco_origen: "BANESCO",
+        tipo: "BANESCO PAGOS",
+        tasa_id: 1104,
+        tasa: null,
+        monto: "2.675,25",
+        monto_usd: "26,99",
+        fecha: "2025-06-10",
+        moneda: "BS",
+        depositante: "15179766",
+        comprobante: false
+      }
+    ],
+    contratos: [
+      {
+        nombre: "ZULAYKA QUINTERO CORZO ",
+        contrato: "1005762",
+        rif: "15179766",
+        estado: "ACTIVO"
+      }
+    ],
+    created_at: "2025-06-10 07:38:21",
+    motivo_rechazo: "Cancelada por cliente.",
+    facturas: []
+  },
+  {
+    id: 478050,
+    reporte_estado: "Rechazado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "Reporte creado mediante opción de BanescoPagos.",
+    transaccions: [
+      {
+        id: 462157,
+        referencia: "",
+        pago_proveedor: false,
+        banco_destino: "BANESCO",
+        banco_origen: "BANESCO",
+        tipo: "BANESCO PAGOS",
+        tasa_id: 1104,
+        tasa: null,
+        monto: "3.963,81",
+        monto_usd: "39,99",
+        fecha: "2025-06-10",
+        moneda: "BS",
+        depositante: "16546339",
+        comprobante: false
+      }
+    ],
+    contratos: [
+      {
+        nombre: "O.T. BRISAS DE SAN LORENZO, C.A ",
+        contrato: "1006304",
+        rif: "411858927",
+        estado: "ACTIVO"
+      }
+    ],
+    created_at: "2025-06-10 07:37:13",
+    motivo_rechazo: "Cancelada por cliente.",
+    facturas: []
+  }
+]
+
+export const REPORTS_POR_VERIFICAR = [
+  {
+      id: 440282,
+      reporte_estado: "En verificación",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "PROMOCIÓN MES DE ABRIL",
+      transaccions: [
+        {
+          id: 425457,
+          referencia: "3701144567752",
+          pago_proveedor: false,
+          banco_destino: "BNC",
+          banco_origen: "VENEZUELA",
+          tasa_id: 1073,
+          tasa: 83.42,
+          tipo: "TRANSFERENCIA",
+          monto: "4.086,60",
+          monto_usd: "48,99",
+          fecha: "24/04/2025",
+          moneda: "BS",
+          depositante: "22590670",
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "48,99",
+      tiene_bs: true,
+      contratos: [
+        {
+          nombre: "JORYERLIN JOSE MARTINEZ LEZAMA ",
+          contrato: "1034580",
+          rif: "22590670",
+          estado: "POR INSTALAR"
+        }
+      ],
+      created_at: "2025-04-30 10:58:50",
+      deuda: [
+        "0,00"
+      ]
+    },
+    {
+      id: 440289,
+      reporte_estado: "En verificación",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "PROMOCIÓN MES DE ABRIL",
+      transaccions: [
+        {
+          id: 425464,
+          referencia: "3701145013633",
+          pago_proveedor: false,
+          banco_destino: "BNC",
+          banco_origen: "VENEZUELA",
+          tasa_id: 1075,
+          tasa: 86.11,
+          tipo: "TRANSFERENCIA",
+          monto: "4.219,39",
+          monto_usd: "49,00",
+          fecha: "28/04/2025",
+          moneda: "BS",
+          depositante: "23589368",
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "49,00",
+      tiene_bs: true,
+      contratos: [
+        {
+          nombre: "CYNTHIA DEL CARMEN ESCOBAR MOJON ",
+          contrato: "1034584",
+          rif: "23589368",
+          estado: "POR INSTALAR"
+        }
+      ],
+      created_at: "2025-04-30 11:10:29",
+      deuda: [
+        "23,49"
+      ]
+    },
+    {
+      id: 458024,
+      reporte_estado: "En verificación",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 442629,
+          referencia: "051345865075",
+          pago_proveedor: false,
+          banco_destino: "BANESCO",
+          banco_origen: "BANESCO",
+          tasa_id: 1086,
+          tasa: 93.58,
+          tipo: "TRANSFERENCIA",
+          monto: "3.367,94",
+          monto_usd: "35,99",
+          fecha: "14/05/2025",
+          moneda: "BS",
+          depositante: "501534292",
+          comprobante: "eyJpdiI6IjlucnJRMjI4U1lWWHFaXC9rQkxkUVwvQT09IiwidmFsdWUiOiI0N3d2UlNDMng2S1hmcHRwY3g4Mk9RPT0iLCJtYWMiOiI4OGQ0NDk4ZjU5YjNiNTdiOGU3NmY1NmVkODhmZmU4MDg4ZmM0OTE4NTAxNjRhMWI4MmU3NzFlNzdkNDQ2ODYxIn0=___Screenshot20250514091921Banesco-VEjpg.jpg",
+          id_comprobante: 176815
+        }
+      ],
+      total_usd: "35,99",
+      tiene_bs: true,
+      contratos: [
+        {
+          nombre: "DANA KASSEM TALEB ",
+          contrato: "1003166",
+          rif: "20535257",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-14 10:30:43",
+      deuda: [
+        "71,98"
+      ]
+    },
+    {
+      id: 465307,
+      reporte_estado: "En verificación",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 449626,
+          referencia: "4554465464",
+          pago_proveedor: false,
+          banco_destino: "DEL TESORO",
+          banco_origen: "BNC",
+          tasa_id: 1094,
+          tasa: 95.08,
+          tipo: "PAGO MOVIL",
+          monto: "2.094,33",
+          monto_usd: "22,03",
+          fecha: "26/05/2025",
+          moneda: "BS",
+          depositante: "04248962165",
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "22,03",
+      tiene_bs: true,
+      contratos: [
+        {
+          nombre: "MARCEL SALAZAR ",
+          contrato: "1014581",
+          rif: "26625890",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-27 11:18:35",
+      deuda: [
+        "38,12"
+      ]
+    },
+    {
+      id: 465322,
+      reporte_estado: "Por verificar",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 449641,
+          referencia: "50295147816",
+          pago_proveedor: false,
+          banco_destino: "DEL TESORO",
+          banco_origen: "BANESCO",
+          tasa_id: 1007,
+          tasa: 57.3,
+          tipo: "PAGO MOVIL",
+          monto: "573,00",
+          monto_usd: "10,00",
+          fecha: "29/01/2025",
+          moneda: "BS",
+          depositante: "04141943131",
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "10,00",
+      tiene_bs: true,
+      contratos: [
+        {
+          nombre: "ISABEL NUNES DA COSTA ",
+          contrato: "2001558",
+          rif: "25834858",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-27 12:43:07",
+      deuda: [
+        "10,00"
+      ]
+    },
+    {
+      id: 465402,
+      reporte_estado: "Por verificar",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 449717,
+          referencia: "60195752",
+          pago_proveedor: false,
+          banco_destino: "DEL TESORO",
+          banco_origen: "DEL TESORO",
+          tasa_id: 1087,
+          tasa: 94.16,
+          tipo: "PAGO MOVIL",
+          monto: "500,00",
+          monto_usd: "5,31",
+          fecha: "15/05/2025",
+          moneda: "BS",
+          depositante: "04120791997",
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "5,31",
+      tiene_bs: true,
+      contratos: [
+        {
+          nombre: "MARIA BARRERO ",
+          contrato: "4001783",
+          rif: "1199503",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-28 08:28:36",
+      deuda: [
+        "48,61"
+      ]
+    },
+    {
+      id: 465494,
+      reporte_estado: "En verificación",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 449809,
+          referencia: "813652174755",
+          pago_proveedor: false,
+          banco_destino: "BANESCO",
+          banco_origen: "MERCANTIL",
+          tasa_id: 1088,
+          tasa: 94.32,
+          tipo: "TRANSFERENCIA",
+          monto: "8.220,00",
+          monto_usd: "87,15",
+          fecha: "16/05/2025",
+          moneda: "BS",
+          depositante: "7951578",
+          comprobante: "eyJpdiI6Ik9uTmIwZWRNUW9vS0RQVm91ZkJhYlE9PSIsInZhbHVlIjoiNUd1eVh4d2tscXFENFZ2XC8zem5ZQWc9PSIsIm1hYyI6IjFmMTVhNmI1MzFjZTBhZGU3ZDljYmEzZGNkOWMzMDc5ZTdlMTJkNDUzNDQ0NWU3ZWQyNmU2ZDI3OWFkM2Q5YjcifQ==___Screenshot20250528114245978comwhatsappjpg.jpg",
+          id_comprobante: 177903
+        }
+      ],
+      total_usd: "87,15",
+      tiene_bs: true,
+      contratos: [
+        {
+          nombre: "ELVIS JOSE SALAZAR HERNANDEZ ",
+          contrato: "2002669",
+          rif: "7951578",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-28 11:43:37",
+      deuda: [
+        "28,99"
+      ]
+    },
+    {
+      id: 466144,
+      reporte_estado: "Por verificar",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 450442,
+          referencia: "255990662",
+          pago_proveedor: false,
+          banco_destino: "BNC",
+          banco_origen: "BANESCO",
+          tasa_id: 1098,
+          tasa: 96.86,
+          tipo: "PAGO MOVIL",
+          monto: "949,21",
+          monto_usd: "9,80",
+          fecha: "30/05/2025",
+          moneda: "BS",
+          depositante: "11418798",
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "9,80",
+      tiene_bs: true,
+      contratos: [
+        {
+          nombre: "NORMA JOSEFINA VÁSQUEZ QUINTANA",
+          contrato: "1039657",
+          rif: "11418798",
+          estado: "ACTIVO"
+        }
+      ],
+      created_at: "2025-05-31 10:48:48",
+      deuda: [
+        "0,00"
+      ]
+    },
+    {
+      id: 466163,
+      reporte_estado: "Por verificar",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 450461,
+          referencia: "11880",
+          pago_proveedor: false,
+          banco_destino: "BNC",
+          banco_origen: "BANESCO",
+          tasa_id: 1098,
+          tasa: 96.86,
+          tipo: "PAGO MOVIL",
+          monto: "955,22",
+          monto_usd: "9,86",
+          fecha: "30/05/2025",
+          moneda: "BS",
+          depositante: "14841569",
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "9,86",
+      tiene_bs: true,
+      contratos: [
+        {
+          nombre: "JESUS AMERICO RODRIGUEZ MOYA ",
+          contrato: "2054206",
+          rif: "14841569",
+          estado: "ACTIVO"
+        }
+      ],
+      created_at: "2025-05-31 11:23:46",
+      deuda: [
+        "57,98"
+      ]
+    },
+    {
+      id: 466251,
+      reporte_estado: "Por verificar",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 450549,
+          referencia: "1816",
+          pago_proveedor: false,
+          banco_destino: "BNC",
+          banco_origen: "DEL TESORO",
+          tasa_id: 1043,
+          tasa: 66.56,
+          tipo: "TRANSFERENCIA",
+          monto: "522,64",
+          monto_usd: "7,85",
+          fecha: "15/03/2025",
+          moneda: "BS",
+          depositante: "20111667",
+          comprobante: "eyJpdiI6IklDMEU5NEp0SUtZY2kxQ3U3RWdIXC93PT0iLCJ2YWx1ZSI6Inkrajd3N2FwdEVZUjVCV2xuYm1aMWc9PSIsIm1hYyI6IjI1YzVkYzMxMGM2MjVkZGVjNGVmYzhkZWU2NjI2Y2ZmZDhhMWJhMjM1ZjRiNmRiN2I5ZDZhOWRlODUwZDU4ZmQifQ==___IMG20250531WA0025jpg.jpg",
+          id_comprobante: 178049
+        }
+      ],
+      total_usd: "7,85",
+      tiene_bs: true,
+      contratos: [
+        {
+          nombre: "MARIOTNNI DEL VALLE VASQUEZ CEDEÑO ",
+          contrato: "1040882",
+          rif: "20111667",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-31 16:54:57",
+      deuda: [
+        "26,99"
+      ]
+    }
+]
+
 
 export const REPORTS_DOLAR = [
   {
@@ -4512,7 +5691,384 @@ export const REPORTS_DOLAR = [
 ]
 
 
-export const REPORTS_FACTURADOS = [
+export const REPORTS_DIVISAS = [
+   {
+      id: 449229,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 434052,
+          referencia: "jlm9d5r87",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1081,
+          tasa: 91.21,
+          tipo: "TRANSFERENCIA",
+          monto: "2.254,71",
+          monto_usd: "24,72",
+          fecha: "07/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IlBJVnBybVNrSitaSmNMeEVMTmZVb1E9PSIsInZhbHVlIjoidlFLdmNXZWdxM1lUd1dXeEZUSE9sUT09IiwibWFjIjoiMDRiMDY2YjI4YzRiOWQyYWZlMWFhNDI3MmYyNzE1NGVjZGQxYjFhZjEzZmVhMjVkNjZlOTAwOGI4YmEyZTkxOCJ9___IMG7083png.png",
+          id_comprobante: 175057
+        }
+      ],
+      total_usd: "24,72",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "YECSIT ACOSTA ROJAS ",
+          contrato: "1017335",
+          rif: "14291265",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-07 18:39:59"
+    },
+    {
+      id: 455077,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 439753,
+          referencia: "Izzoh4uwr",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1084,
+          tasa: 93.05,
+          tipo: "TRANSFERENCIA",
+          monto: "5.750,49",
+          monto_usd: "61,80",
+          fecha: "12/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "61,80",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "ANTONIO DA COSTA",
+          contrato: "1001907",
+          rif: "21324119",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-12 08:26:35"
+    },
+    {
+      id: 465032,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 449364,
+          referencia: "BACpo669hbev",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1093,
+          tasa: 95.02,
+          tipo: "TRANSFERENCIA",
+          monto: "2.850,60",
+          monto_usd: "30,00",
+          fecha: "24/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IjNSQjJWTzE5SkUzM3NSVUgrMjloaWc9PSIsInZhbHVlIjoiYytDUGJXMWFVYnRvVmVvZWlZMnlBQT09IiwibWFjIjoiNWZkZWNiZTNlY2Q2NzcxYjI4MThjZDgwYmYxOTBjYzhlMjIwYjM1MTRhZjE3M2U1YzNkODA0ZjEyODhlM2M1MiJ9___67fa0a41200f4f2aa02d477443e94700jpeg.jpeg",
+          id_comprobante: 177849
+        }
+      ],
+      total_usd: "30,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "ERNESDELLYS CAROLINA FUENTES RODRIGUEZ ",
+          contrato: "1039951",
+          rif: "26887948",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-24 17:02:21"
+    },
+    {
+      id: 465097,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 449419,
+          referencia: "BACqot7jlfnc",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1093,
+          tasa: 95.02,
+          tipo: "TRANSFERENCIA",
+          monto: "2.850,60",
+          monto_usd: "30,00",
+          fecha: "25/05/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "30,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "CRISTIAN ROSAS ",
+          contrato: "4001509",
+          rif: "30090009",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-25 16:13:16"
+    },
+    {
+      id: 466701,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 450991,
+          referencia: "qll91tyqb",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1098,
+          tasa: 96.86,
+          tipo: "TRANSFERENCIA",
+          monto: "7.555,08",
+          monto_usd: "78,00",
+          fecha: "01/06/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IlpEOVFpa2J0RE1MWldYTlgwK09mN1E9PSIsInZhbHVlIjoiMURnOUhiT3N3enkweUhsb3dNazg2QT09IiwibWFjIjoiMWZmN2FlNTMwMjBkYWJjMjliYTQwNmJlZjQwYmRlY2Q0Zjg2MmMxMThmY2E0MDc4MTFiNzE0NmEyMjkyZDVhMSJ9___COMPROBANTE-DE-PAGO-VIVO-MARKET-CApdf.pdf",
+          id_comprobante: 178115
+        }
+      ],
+      total_usd: "78,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "VIVO MARKET, C.A. ",
+          contrato: "1010310",
+          rif: "409491978",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-06-01 11:44:51"
+    },
+    {
+      id: 466802,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 451091,
+          referencia: "4501083098",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1098,
+          tasa: 96.86,
+          tipo: "TRANSFERENCIA",
+          monto: "4.843,00",
+          monto_usd: "50,00",
+          fecha: "01/06/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IjI0cm1maDk4YXBtdGwxS25wNGY1SHc9PSIsInZhbHVlIjoiSGpaTUVMV20rR3JqRzFDQU5mV2pyUT09IiwibWFjIjoiMDE4ZmRkMDA5MWZiZmUzMDUxODc4ZTJlMmM4NDRkM2Y0MWM3OGQ0OWY4Y2EzZTgwYTU2NDdjNDVhMzljNjdjMCJ9___20250601124714resizedjpg.jpg",
+          id_comprobante: 178137
+        }
+      ],
+      total_usd: "50,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "Eda Arafat ",
+          contrato: "1005143",
+          rif: "84602043",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-06-01 12:53:59"
+    },
+    {
+      id: 466880,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 451168,
+          referencia: "otvcjyzed",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1098,
+          tasa: 96.86,
+          tipo: "TRANSFERENCIA",
+          monto: "5.424,16",
+          monto_usd: "56,00",
+          fecha: "01/06/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IkNkWEV4MjNLeTl3RlhXMUJoRXdHa0E9PSIsInZhbHVlIjoiTTVFMzRFSWxcL21NS3o2UTJRTVQ1WVE9PSIsIm1hYyI6ImEzODhkMDM5YWI4NDhjMzc2MzY3MWYyZmFhYzNhMzBiNTk2NDcyNDkwMjY5MWQ1YTQ4NWY4MmM1OTc4MTViYTcifQ==___IMG3360png.png",
+          id_comprobante: 178153
+        }
+      ],
+      total_usd: "56,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "JOHANA JOSE VEGA AGUILERA",
+          contrato: "1002403",
+          rif: "27100135",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-06-01 14:15:54"
+    },
+    {
+      id: 466911,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 451199,
+          referencia: "JPM99bal0ncr",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1098,
+          tasa: 96.86,
+          tipo: "TRANSFERENCIA",
+          monto: "4.261,84",
+          monto_usd: "44,00",
+          fecha: "01/06/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IkVaaHFMNEx3M3MxVlRxbHNYNE95akE9PSIsInZhbHVlIjoiam1ZNWZWUkNcLzVuM1hvYzNOTFwvVWx3PT0iLCJtYWMiOiIwNTQ1YmZlMmI1ZDFiNTYyNWI1ZmY1MGQzMmI5YTRhMDA2YzY0OGZlZjcxNzM3ZWJkM2I1NGE1NDg1YjFlNDM5In0=___IMG2851png.png",
+          id_comprobante: 178159
+        }
+      ],
+      total_usd: "44,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "ADRIANA SESSA ALVAREZ ",
+          contrato: "1005244",
+          rif: "7422732",
+          estado: "N/D"
+        },
+        {
+          nombre: "ADRIANA SESSA ALVAREZ",
+          contrato: "1017540",
+          rif: "7422732",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-06-01 14:50:05"
+    },
+    {
+      id: 467565,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 451835,
+          referencia: "yiczjvu33",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1098,
+          tasa: 96.86,
+          tipo: "TRANSFERENCIA",
+          monto: "4.843,00",
+          monto_usd: "50,00",
+          fecha: "02/06/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "50,00",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "PEDRO JAVIER ALEJANDRO VARGAS DURAN ",
+          contrato: "1009924",
+          rif: "15662875",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-06-02 10:15:51"
+    },
+    {
+      id: 467620,
+      reporte_estado: "Verificado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 451888,
+          referencia: "kb1lsd5jd",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tasa_id: 1098,
+          tasa: 96.86,
+          tipo: "TRANSFERENCIA",
+          monto: "3.424,00",
+          monto_usd: "35,35",
+          fecha: "01/06/2025",
+          moneda: "USD",
+          depositante: null,
+          comprobante: false,
+          id_comprobante: null
+        }
+      ],
+      total_usd: "35,35",
+      tiene_bs: false,
+      contratos: [
+        {
+          nombre: "AURIS CLEMENTINA HERNANDEZ ANDARCIA",
+          contrato: "2008065",
+          rif: "12153415",
+          estado: "N/D"
+        },
+        {
+          nombre: "AURIS CLEMENTINA HERNANDEZ ANDARCIA",
+          contrato: "1005118",
+          rif: "12153415",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-06-02 10:38:24"
+    }
+
+]
+
+
+export const REPORTS_FACTURADOS_DIVISAS = [
   {
     id: 465454,
     reporte_estado: "Facturado",
@@ -4944,3 +6500,360 @@ export const REPORTS_FACTURADOS = [
     created_at: "2025-05-27 18:53:48"
   }
 ]
+
+export const REPORTS_DIVISAS_RECHAZADOS = [
+  {
+      id: 474523,
+      reporte_estado: "Rechazado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 458675,
+          referencia: "BACr9fqgqc3c",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tipo: "TRANSFERENCIA",
+          tasa_id: 1102,
+          tasa: "{\"id\":\"1102\",\"valor\":\"98.51000\",\"fecha\":\"2025-06-06 06:27:37\"}",
+          monto: "3.224,23",
+          monto_usd: "32,73",
+          fecha: "2025-06-07",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IjR3XC9YUGVoTGpKRUVcL3hXclcxY1Z0UT09IiwidmFsdWUiOiJlTnFIRElVRGxjV1wvRnFQbHA0eXBTUT09IiwibWFjIjoiMWRkZjI1ZDBkZTk0OThjZTk0ZjdmOTgyMWYwMDJlMjQyMmMwMTYwNjQ5ZmY0YjZjZWM1NWI2ZTQ3ZTE4YTg2NCJ9___IMG20250606WA0039jpg.jpg"
+        }
+      ],
+      contratos: [
+        {
+          nombre: "VICTORIA ASTRID DEL VALLE RIVODO MUÑOZ ",
+          contrato: "2054365",
+          rif: "6143991",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-06-07 10:25:42",
+      motivo_rechazo: "N/D",
+      facturas: []
+    },
+    {
+      id: 472334,
+      reporte_estado: "Rechazado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 456533,
+          referencia: "PNCAAOSPH87d",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tipo: "TRANSFERENCIA",
+          tasa_id: 1101,
+          tasa: "{\"id\":\"1101\",\"valor\":\"97.90000\",\"fecha\":\"2025-06-05 06:52:52\"}",
+          monto: "1.758,28",
+          monto_usd: "17,96",
+          fecha: "2025-06-05",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6Img4XC8wSUhqN0FBcWVoMXY3N2c3dWlBPT0iLCJ2YWx1ZSI6ImxyVG1acU9veFJJcm5iVlcxXC96UExBPT0iLCJtYWMiOiI2YTY1ODhlMWI0NWI5N2E4YzUzZmIxZDdiOGFjMTA2ZTVkYzkzOGY4MTQ1ZjQ3ZGU1NDUzODM3MWNkZGZjOTA4In0=___Screenshot20250603124413png.png"
+        }
+      ],
+      contratos: [
+        {
+          nombre: "MARENITA DEL VALLE MATUTE RIVERA ",
+          contrato: "1009310",
+          rif: "20534816",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-06-05 15:28:48",
+      motivo_rechazo: "Reporte duplicado",
+      facturas: []
+    },
+    {
+      id: 471978,
+      reporte_estado: "Rechazado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 456178,
+          referencia: "WFCTOYWKQW6L",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tipo: "TRANSFERENCIA",
+          tasa_id: 1101,
+          tasa: "{\"id\":\"1101\",\"valor\":\"97.90000\",\"fecha\":\"2025-06-05 06:52:52\"}",
+          monto: "2.937,00",
+          monto_usd: "30,00",
+          fecha: "2025-06-05",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6InpXVnE5N1l4K2NrQVpEbjhaY01uSlE9PSIsInZhbHVlIjoiMjdydERlMkxReEJoazVhMFhLSERQdz09IiwibWFjIjoiNzE0ODE0ZDFhMjM0ZmFiZTg1MDMxMTU4MTk1MWZmMTgzM2ExNTgzNTExM2NiNTM1NGZkNzQwOTg0NmI2NDQ4MyJ9___IMG6639png.png"
+        }
+      ],
+      contratos: [
+        {
+          nombre: "OLGA JOSEFINA ZAPATA LOPEZ ",
+          contrato: "1011513",
+          rif: "3712162",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-06-05 11:46:02",
+      motivo_rechazo: "Reporte duplicado",
+      facturas: []
+    },
+    {
+      id: 470059,
+      reporte_estado: "Rechazado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 454276,
+          referencia: "vqe875phh",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tipo: "TRANSFERENCIA",
+          tasa_id: 1099,
+          tasa: "{\"id\":\"1099\",\"valor\":\"97.31000\",\"fecha\":\"2025-06-03 06:55:53\"}",
+          monto: "2.919,30",
+          monto_usd: "30,00",
+          fecha: "2025-06-03",
+          moneda: "USD",
+          depositante: null,
+          comprobante: false
+        }
+      ],
+      contratos: [
+        {
+          nombre: "VERONICA DUPONT ",
+          contrato: "1011481",
+          rif: "27403292",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-06-03 19:02:02",
+      motivo_rechazo: "Reporte duplicado",
+      facturas: []
+    },
+    {
+      id: 469479,
+      reporte_estado: "Rechazado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 453708,
+          referencia: "banco@datalink.com.ve",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tipo: "TRANSFERENCIA",
+          tasa_id: 1099,
+          tasa: "{\"id\":\"1099\",\"valor\":\"97.31000\",\"fecha\":\"2025-06-03 06:55:53\"}",
+          monto: "3.006,88",
+          monto_usd: "30,90",
+          fecha: "2025-06-03",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6Imx5RVRreDZKTVZrdFo0OWdWVUt6Tnc9PSIsInZhbHVlIjoiQjRnaHd6U0FEY0JWdzVDNFh3eVwvMWc9PSIsIm1hYyI6IjZmZTIyNTczNTgyMzJkZjA4NjY5NzlkZDgxNzVkOTljMmI0MzEzODhjYzlhNjJlN2ZjNDdlODk2ZjhjMzE3MDIifQ==___IMG3805jpeg.jpeg"
+        }
+      ],
+      contratos: [
+        {
+          nombre: "LISETT TORRES",
+          contrato: "1001898",
+          rif: "10119105",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-06-03 12:35:23",
+      motivo_rechazo: "Reporte duplicado",
+      facturas: []
+    },
+    {
+      id: 467778,
+      reporte_estado: "Rechazado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 452045,
+          referencia: "PNCAA0SNw06W",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tipo: "TRANSFERENCIA",
+          tasa_id: 1098,
+          tasa: "{\"id\":\"1098\",\"valor\":\"96.86000\",\"fecha\":\"2025-05-30 06:44:58\"}",
+          monto: "2.807,97",
+          monto_usd: "28,99",
+          fecha: "2025-06-02",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6InpSVFJmRGtnaGJBbzIySDFQZ00xRkE9PSIsInZhbHVlIjoidWlcLzJFWFBTVkYxWFFxMnBVSVltaUE9PSIsIm1hYyI6ImI2ZGU0YzJlMDk1NDk5MTIxYTVlMWI2ZjUwM2NlNGQyNDJhMzhlNTIxOGU5OGYzODkwOWU4MzUyY2I4ZmIyODQifQ==___IMG4035png.png"
+        }
+      ],
+      contratos: [
+        {
+          nombre: "JULLY DAYANA OJEDA HERNANDEZ ",
+          contrato: "2002644",
+          rif: "12210551",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-06-02 11:43:44",
+      motivo_rechazo: "Reporte duplicado",
+      facturas: []
+    },
+    {
+      id: 466771,
+      reporte_estado: "Rechazado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 451060,
+          referencia: "nudkugsdg",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tipo: "TRANSFERENCIA",
+          tasa_id: 1073,
+          tasa: "{\"id\":\"1073\",\"valor\":\"83.42000\",\"fecha\":\"2025-04-24 04:23:51\"}",
+          monto: "4.503,01",
+          monto_usd: "53,98",
+          fecha: "2025-04-24",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IkVKbmhYdWtaRmlUVVhVcE1WSCtmTXc9PSIsInZhbHVlIjoiVnpZWXdjYVo1bjdJMjV1aitib0w4UT09IiwibWFjIjoiNjY4NGE0MzgwOWFjYWFhZTE5OGFkOTk5MGQzMTM2ZmMwYzk1MTM5MDdiYmQ3ZDJiZjZlODA3NWJjMzgwZjUxZCJ9___Screenshot20250601090503jpg.jpg"
+        }
+      ],
+      contratos: [
+        {
+          nombre: "CEILA MANUELITA CONTRERAS CAMARGO ",
+          contrato: "1036299",
+          rif: "20425638",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-06-01 12:34:00",
+      motivo_rechazo: "Reporte duplicado",
+      facturas: []
+    },
+    {
+      id: 464109,
+      reporte_estado: "Rechazado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 448490,
+          referencia: "TDP0JDZE4IZD",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tipo: "TRANSFERENCIA",
+          tasa_id: 1092,
+          tasa: "{\"id\":\"1092\",\"valor\":\"94.97000\",\"fecha\":\"2025-05-22 06:34:41\"}",
+          monto: "3.115,97",
+          monto_usd: "32,81",
+          fecha: "2025-05-22",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IkxxblFGRjc3c1ZFSFc2bWtyV3ZSMHc9PSIsInZhbHVlIjoiMWIxajNHZEtcL1pTMkRoU0lvZDBwQVE9PSIsIm1hYyI6IjRlNzkxYjE5ZWFkZDY4MzBkOGZmNDgxYzViZDJjNzUzNDBhNjVjZDY5NWM0OTdkMDQwM2E1OTJhZTFmMzYzMWIifQ==___IMG20250510WA0000jpg.jpg"
+        }
+      ],
+      contratos: [
+        {
+          nombre: "ROSA LIMA ",
+          contrato: "1002337",
+          rif: "11641978",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-22 10:25:29",
+      motivo_rechazo: "No existe la referencia en el banco",
+      facturas: []
+    },
+    {
+      id: 463429,
+      reporte_estado: "Rechazado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 447847,
+          referencia: "BACbawwu10fy",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tipo: "TRANSFERENCIA",
+          tasa_id: 1090,
+          tasa: "{\"id\":\"1090\",\"valor\":\"94.80000\",\"fecha\":\"2025-05-20 06:06:13\"}",
+          monto: "2.749,20",
+          monto_usd: "29,00",
+          fecha: "2025-05-20",
+          moneda: "USD",
+          depositante: null,
+          comprobante: "eyJpdiI6IjZ0S0QxRDdHK0dyT2xReldBd1paVVE9PSIsInZhbHVlIjoiYlVVMjZSV1dlSzk1M05yU3pRZnkrZz09IiwibWFjIjoiMjY3MWQ5MmMyMWFlNmRjOGE0NTVlZjVmNzRiMGQxY2VhZjRjZDBkYmI1MmMxOWQ1YWMyMjkwNTE5YmQ4ZWUwZCJ9___IMG20250520WA0003jpg.jpg"
+        }
+      ],
+      contratos: [
+        {
+          nombre: "CRUZ ADELA MATA ",
+          contrato: "2002147",
+          rif: "10198080",
+          estado: "N/D"
+        }
+      ],
+      created_at: "2025-05-20 13:57:46",
+      motivo_rechazo: "Reporte duplicado",
+      facturas: []
+    },
+    {
+      id: 462499,
+      reporte_estado: "Rechazado",
+      tipo_reporte: "MENSUALIDAD",
+      nota: "-",
+      transaccions: [
+        {
+          id: 446953,
+          referencia: "WFCT0YTNWV8",
+          pago_proveedor: false,
+          banco_destino: "ZELLE",
+          banco_origen: "ZELLE",
+          tipo: "TRANSFERENCIA",
+          tasa_id: 1088,
+          tasa: "{\"id\":\"1088\",\"valor\":\"94.32000\",\"fecha\":\"2025-05-16 04:09:33\",\"id_user\":\"14\",\"deleted_at\":null}",
+          monto: "4.666,95",
+          monto_usd: "49,48",
+          fecha: "2025-05-17",
+          moneda: "USD",
+          depositante: "123456",
+          comprobante: false
+        }
+      ],
+      contratos: [
+        {
+          nombre: "BEATRIZ LEAL CANELÓN ",
+          contrato: "1018860",
+          rif: "5073880",
+          estado: "ACTIVO"
+        }
+      ],
+      created_at: "2025-05-17 20:14:13",
+      motivo_rechazo: "Reporte duplicado",
+      facturas: []
+    }
+]
+
+export const RECIBOS = []
+
+

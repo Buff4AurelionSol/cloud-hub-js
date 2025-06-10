@@ -18,7 +18,7 @@
     })
 
     const tableData = computed(() => props.dataTable)
-
+    
 
 
 </script>

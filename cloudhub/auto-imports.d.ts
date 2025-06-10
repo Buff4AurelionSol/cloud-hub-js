@@ -11,10 +11,16 @@ declare global {
   const LISTA_TASAS: typeof import('./src/stores/mockdata/tasas.js')['LISTA_TASAS']
   const OPTIONS_ORDER_BY: typeof import('./src/stores/const.js')['OPTIONS_ORDER_BY']
   const OPTIONS_TRANSACTION: typeof import('./src/stores/const.js')['OPTIONS_TRANSACTION']
+  const RECIBOS: typeof import('./src/stores/mockdata/reports.js')['RECIBOS']
   const REPORTS: typeof import('./src/stores/mockdata/reports.js')['REPORTS']
+  const REPORTS_DIVISAS: typeof import('./src/stores/mockdata/reports.js')['REPORTS_DIVISAS']
+  const REPORTS_DIVISAS_RECHAZADOS: typeof import('./src/stores/mockdata/reports.js')['REPORTS_DIVISAS_RECHAZADOS']
   const REPORTS_DOLAR: typeof import('./src/stores/mockdata/reports.js')['REPORTS_DOLAR']
   const REPORTS_DOLLAR: typeof import('./src/stores/const.js')['REPORTS_DOLLAR']
   const REPORTS_FACTURADOS: typeof import('./src/stores/mockdata/reports.js')['REPORTS_FACTURADOS']
+  const REPORTS_FACTURADOS_DIVISAS: typeof import('./src/stores/mockdata/reports.js')['REPORTS_FACTURADOS_DIVISAS']
+  const REPORTS_POR_VERIFICAR: typeof import('./src/stores/mockdata/reports.js')['REPORTS_POR_VERIFICAR']
+  const REPORTS_RECHAZADOS: typeof import('./src/stores/mockdata/reports.js')['REPORTS_RECHAZADOS']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
@@ -123,10 +129,16 @@ declare module 'vue' {
     readonly LISTA_TASAS: UnwrapRef<typeof import('./src/stores/mockdata/tasas.js')['LISTA_TASAS']>
     readonly OPTIONS_ORDER_BY: UnwrapRef<typeof import('./src/stores/const.js')['OPTIONS_ORDER_BY']>
     readonly OPTIONS_TRANSACTION: UnwrapRef<typeof import('./src/stores/const.js')['OPTIONS_TRANSACTION']>
+    readonly RECIBOS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['RECIBOS']>
     readonly REPORTS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS']>
+    readonly REPORTS_DIVISAS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_DIVISAS']>
+    readonly REPORTS_DIVISAS_RECHAZADOS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_DIVISAS_RECHAZADOS']>
     readonly REPORTS_DOLAR: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_DOLAR']>
     readonly REPORTS_DOLLAR: UnwrapRef<typeof import('./src/stores/const.js')['REPORTS_DOLLAR']>
     readonly REPORTS_FACTURADOS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_FACTURADOS']>
+    readonly REPORTS_FACTURADOS_DIVISAS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_FACTURADOS_DIVISAS']>
+    readonly REPORTS_POR_VERIFICAR: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_POR_VERIFICAR']>
+    readonly REPORTS_RECHAZADOS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_RECHAZADOS']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>

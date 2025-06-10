@@ -114,6 +114,12 @@
     "REPORTS": true,
     "REPORTS_DOLAR": true,
     "REPORTS_FACTURADOS": true,
-    "HEADERS": true
+    "HEADERS": true,
+    "REPORTS_FACTURADOS_DIVISAS": true,
+    "REPORTS_RECHAZADOS": true,
+    "REPORTS_POR_VERIFICAR": true,
+    "REPORTS_DIVISAS": true,
+    "REPORTS_DIVISAS_RECHAZADOS": true,
+    "RECIBOS": true
   }
 }

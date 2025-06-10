@@ -291,29 +291,34 @@ import TableFacturados from './components/TableFacturados.vue'
     }
     if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'FACTURADOS'){
       tableType.value = 'Facturados'
+      dataTable.value = REPORTS_FACTURADOS
      
     }
     if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'RECHAZADOS'){
       tableType.value = 'Rechazados'
+      dataTable.value = REPORTS_RECHAZADOS
     }
     if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'POR VERIFICAR'){
       tableType.value = 'Por verificar'
+      dataTable.value = REPORTS_POR_VERIFICAR
     }
     
     if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'POR FACTURAR'){
       tableType.value = 'Divisas/Por facturar'
+      dataTable.value = REPORTS_DIVISAS
     }
     if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'FACTURADOS'){
       tableType.value = 'Divisas/Facturados'
-      dataTable.value = REPORTS_FACTURADOS
+      dataTable.value = REPORTS_FACTURADOS_DIVISAS
     }
     if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'RECHAZADOS'){
       tableType.value = 'Divisas/Rechazados'
+      dataTable.value = REPORTS_DIVISAS_RECHAZADOS
     }
     if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'POR VERIFICAR'){
       tableType.value = 'Divisas/Por verificar'
+      dataTable.value = REPORTS_POR_VERIFICAR
     }
-    
   })
 
 </script>
