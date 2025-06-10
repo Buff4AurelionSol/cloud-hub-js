@@ -22,6 +22,9 @@ declare global {
   const REPORTS_POR_VERIFICAR: typeof import('./src/stores/mockdata/reports.js')['REPORTS_POR_VERIFICAR']
   const REPORTS_RECHAZADOS: typeof import('./src/stores/mockdata/reports.js')['REPORTS_RECHAZADOS']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
+  const banesco: typeof import('./src/stores/mockdata/bills.js')['banesco']
+  const banescopagos: typeof import('./src/stores/mockdata/bills.js')['banescopagos']
+  const bnc: typeof import('./src/stores/mockdata/bills.js')['bnc']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
   const createPinia: typeof import('pinia')['createPinia']
@@ -31,6 +34,8 @@ declare global {
   const defineStore: typeof import('pinia')['defineStore']
   const effectScope: typeof import('vue')['effectScope']
   const exportTable: typeof import('./src/modules/exportToExcell.js')['exportTable']
+  const facturas_realizadas_hoy: typeof import('./src/stores/mockdata/bills.js')['facturas_realizadas_hoy']
+  const facturas_realizadas_mes: typeof import('./src/stores/mockdata/bills.js')['facturas_realizadas_mes']
   const getActivePinia: typeof import('pinia')['getActivePinia']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
@@ -47,6 +52,7 @@ declare global {
   const mapStores: typeof import('pinia')['mapStores']
   const mapWritableState: typeof import('pinia')['mapWritableState']
   const markRaw: typeof import('vue')['markRaw']
+  const multipagos: typeof import('./src/stores/mockdata/bills.js')['multipagos']
   const nextTick: typeof import('vue')['nextTick']
   const onActivated: typeof import('vue')['onActivated']
   const onBeforeMount: typeof import('vue')['onBeforeMount']
@@ -64,6 +70,8 @@ declare global {
   const onUnmounted: typeof import('vue')['onUnmounted']
   const onUpdated: typeof import('vue')['onUpdated']
   const onWatcherCleanup: typeof import('vue')['onWatcherCleanup']
+  const pagomovil: typeof import('./src/stores/mockdata/bills.js')['pagomovil']
+  const pdvc: typeof import('./src/stores/mockdata/bills.js')['pdvc']
   const provide: typeof import('vue')['provide']
   const reactive: typeof import('vue')['reactive']
   const readonly: typeof import('vue')['readonly']
@@ -107,10 +115,12 @@ declare global {
   const useTheme: typeof import('vuetify')['useTheme']
   const useUserServices: typeof import('./src/stores/user.js')['useUserServices']
   const useVerificacionesServices: typeof import('./src/stores/paymentsServices/verificaciones.js')['useVerificacionesServices']
+  const vpos: typeof import('./src/stores/mockdata/bills.js')['vpos']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
   const watchPostEffect: typeof import('vue')['watchPostEffect']
   const watchSyncEffect: typeof import('vue')['watchSyncEffect']
+  const zelle: typeof import('./src/stores/mockdata/bills.js')['zelle']
 }
 // for type re-export
 declare global {
@@ -140,6 +150,9 @@ declare module 'vue' {
     readonly REPORTS_POR_VERIFICAR: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_POR_VERIFICAR']>
     readonly REPORTS_RECHAZADOS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_RECHAZADOS']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
+    readonly banesco: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['banesco']>
+    readonly banescopagos: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['banescopagos']>
+    readonly bnc: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['bnc']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly createPinia: UnwrapRef<typeof import('pinia')['createPinia']>
@@ -149,6 +162,8 @@ declare module 'vue' {
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly exportTable: UnwrapRef<typeof import('./src/modules/exportToExcell.js')['exportTable']>
+    readonly facturas_realizadas_hoy: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['facturas_realizadas_hoy']>
+    readonly facturas_realizadas_mes: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['facturas_realizadas_mes']>
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
@@ -165,6 +180,7 @@ declare module 'vue' {
     readonly mapStores: UnwrapRef<typeof import('pinia')['mapStores']>
     readonly mapWritableState: UnwrapRef<typeof import('pinia')['mapWritableState']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
+    readonly multipagos: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['multipagos']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>
@@ -182,6 +198,8 @@ declare module 'vue' {
     readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
     readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
     readonly onWatcherCleanup: UnwrapRef<typeof import('vue')['onWatcherCleanup']>
+    readonly pagomovil: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['pagomovil']>
+    readonly pdvc: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['pdvc']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
@@ -225,9 +243,11 @@ declare module 'vue' {
     readonly useTheme: UnwrapRef<typeof import('vuetify')['useTheme']>
     readonly useUserServices: UnwrapRef<typeof import('./src/stores/user.js')['useUserServices']>
     readonly useVerificacionesServices: UnwrapRef<typeof import('./src/stores/paymentsServices/verificaciones.js')['useVerificacionesServices']>
+    readonly vpos: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['vpos']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>
     readonly watchSyncEffect: UnwrapRef<typeof import('vue')['watchSyncEffect']>
+    readonly zelle: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['zelle']>
   }
 }

@@ -1,6 +1,6 @@
-facturas_realizadas_hoy: [
+export const facturas_realizadas_hoy = [
   {
-    "codigo": "990   ",
+    "codigo": "990 ",
     "cantidad_facturas": "43",
     "nombre": "SARA"
   },
@@ -51,7 +51,7 @@ facturas_realizadas_hoy: [
   }
 ]
 
-facturas_realizadas_mes: [
+export const facturas_realizadas_mes = [
   {
     "codigo": "990   ",
     "cantidad_facturas": "1518",
@@ -209,7 +209,7 @@ facturas_realizadas_mes: [
   }
 ]
 
-banesco: [
+export const banesco = [
   {
     "dia_mes": "2025-06-01",
     "reportes": 143
@@ -228,7 +228,7 @@ banesco: [
   }
 ]
 
-bnc: [
+export const bnc = [
   {
     "dia_mes": "2025-06-01",
     "reportes": 39
@@ -247,7 +247,7 @@ bnc: [
   }
 ]
 
-zelle: [
+export const zelle = [
   {
     "dia_mes": "2025-06-01",
     "reportes": 17
@@ -266,7 +266,7 @@ zelle: [
   }
 ]
 
-banescopagos: [
+export const banescopagos = [
   {
     "dia_mes": "2025-06-01",
     "reportes": 97
@@ -285,7 +285,7 @@ banescopagos: [
   }
 ]
 
-pagomovil: [
+export const pagomovil = [
   {
     "dia_mes": "2025-06-01",
     "reportes": 389
@@ -304,14 +304,14 @@ pagomovil: [
   }
 ]
 
-multipagos: [
+export const multipagos = [
   {
     "dia_mes": "2025-06-02",
     "reportes": 18
   }
 ]
 
-pdvc:[
+export const pdvc = [
   {
     "dia_mes": "2025-06-01",
     "reportes": 22
@@ -330,7 +330,7 @@ pdvc:[
   }
 ]
 
-vpos: [
+export const vpos = [
   {
     "dia_mes": "2025-06-01",
     "reportes": 23

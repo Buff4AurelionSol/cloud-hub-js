@@ -11,6 +11,7 @@ declare module 'vue' {
     AppBar: typeof import('./src/components/AppBar.vue')['default']
     ColumnsFilter: typeof import('./src/components/ColumnsFilter.vue')['default']
     ContractsTable: typeof import('./src/components/ContractsTable.vue')['default']
+    DailyBilling: typeof import('./src/components/DailyBilling.vue')['default']
     DateInput: typeof import('./src/components/DateInput.vue')['default']
     Form: typeof import('./src/components/Form.vue')['default']
     Modal: typeof import('./src/components/Modal.vue')['default']

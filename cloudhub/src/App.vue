@@ -1,5 +1,6 @@
 <script setup>
-import TableFacturados from './components/TableFacturados.vue'
+
+
 
   const indexState = ref(10)
   const filters = ref([])
@@ -21,6 +22,10 @@ import TableFacturados from './components/TableFacturados.vue'
         'MONTO ($)', 'TASA', 'CONTRATO(S)', 'FACTURA(S)', 'FECHA FACTURADO(S)', 'CLIENTE',
         'RIF/CEDULA', 'BANCO ORIGEN', 'BANCO DESTINO', 'FECHA TRANSACCIÓN', 'FECHA REPORTE'
     ]}]
+
+
+   
+
 
 
     const COLUMNS_TABLE2 = [
@@ -321,37 +326,39 @@ import TableFacturados from './components/TableFacturados.vue'
     }
   })
 
+  
 </script>
 
 
 <template>
 
-<v-app>
-  
- 
-  <Form @numberToFilter="getNumberToFilter" 
-        @sendData="getData" 
-        @transactions="getTransactions" 
-        @orderBy="getOrderBy"
-        :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy"
-        @isChangeDirectionOrderBy="isChangeDirectionOrderBy"
-        @sendSearch="getSearch"
-        @sendPayTypeState="getPayType"
-        @sendColumnsToFilter="getColumnsToFilter"
-        :columnsItems="columnsItems"
-        @sendTypeReport="getTypeReport"
-  />
+  <v-app>
     
-  <section>
-      <TableFacturados
-      :indexState="indexState" 
-      :columns="columnsToFilter"
-      :type="tableType"
-      :dataTable="dataTable"
+    <!-- <Form @numberToFilter="getNumberToFilter" 
+          @sendData="getData" 
+          @transactions="getTransactions" 
+          @orderBy="getOrderBy"
+          :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy"
+          @isChangeDirectionOrderBy="isChangeDirectionOrderBy"
+          @sendSearch="getSearch"
+          @sendPayTypeState="getPayType"
+          @sendColumnsToFilter="getColumnsToFilter"
+          :columnsItems="columnsItems"
+          @sendTypeReport="getTypeReport"
     />
-  </section>
+      
+    <section>
+        <TableFacturados
+        :indexState="indexState" 
+        :columns="columnsToFilter"
+        :type="tableType"
+        :dataTable="dataTable"
+      />
+    </section>
+  -->
 
-</v-app>
+    <DailyBilling/>
+  </v-app>
    
 </template>
 
