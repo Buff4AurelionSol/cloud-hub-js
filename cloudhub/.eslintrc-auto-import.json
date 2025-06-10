@@ -120,6 +120,16 @@
     "REPORTS_POR_VERIFICAR": true,
     "REPORTS_DIVISAS": true,
     "REPORTS_DIVISAS_RECHAZADOS": true,
-    "RECIBOS": true
+    "RECIBOS": true,
+    "banesco": true,
+    "banescopagos": true,
+    "bnc": true,
+    "facturas_realizadas_hoy": true,
+    "facturas_realizadas_mes": true,
+    "multipagos": true,
+    "pagomovil": true,
+    "zelle": true,
+    "pdvc": true,
+    "vpos": true
   }
 }
