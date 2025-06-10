@@ -18,7 +18,7 @@
     })
 
     const tableData = computed(() => props.dataTable)
-    
+
 
 
 </script>
@@ -95,7 +95,6 @@
   
   td{
     font-size: small;
-    white-space: nowrap;
   }
 
   th{
