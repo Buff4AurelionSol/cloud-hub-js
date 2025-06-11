@@ -15,6 +15,7 @@ declare module 'vue' {
     DateInput: typeof import('./src/components/DateInput.vue')['default']
     Form: typeof import('./src/components/Form.vue')['default']
     Modal: typeof import('./src/components/Modal.vue')['default']
+    MonthBilling: typeof import('./src/components/MonthBilling.vue')['default']
     OrderByInput: typeof import('./src/components/OrderByInput.vue')['default']
     PayType: typeof import('./src/components/PayType.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

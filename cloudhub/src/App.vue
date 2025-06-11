@@ -357,8 +357,10 @@
     </section>
   -->
 
-    <DailyBilling/>
-
+  <div class="d-flex ga-8">
+     <DailyBilling/>
+     <MonthBilling/>
+  </div>
   </v-app>
    
 </template>
