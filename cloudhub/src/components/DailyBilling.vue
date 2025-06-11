@@ -5,32 +5,37 @@
         return actual > inicial ? actual:  inicial
     }
     
-    const longerBill = DATA_DAY.value.reduce(calculateLongerBill)
+    const longerBill = computed(()=> {
+         return DATA_DAY.value.reduce(calculateLongerBill)
+    })
     
 
     const OPTIONS = {
         labels: DATA_DAY.value.map(item => item.nombre),
         legend: {
             show: true,
-            showForSingleSeries: false,
+            showForSingleSeries: true,
             showForNullSeries: true,
             showForZeroSeries: `true`,
             position: 'top',
             horizontalAlign: 'left', 
             floating: false,
-            fontSize: '15px',
+            fontSize: '12px',
             fontFamily: 'Helvetica, Arial',
-            fontWeight: 400,
-            formatter: undefined,
+            formatter: function(serieName, option){
+                const valueSerie = option.w.globals.series[option.seriesIndex]
+                return `${serieName}`+`: ${valueSerie}`  
+
+            },
             inverseOrder: false,
             clusterGroupedSeries: true,
             clusterGroupedSeriesOrientation: 'vertical',
             offsetX: 0,
             offsetY: 0,
             markers: {
-                size: 5,
+                size: 6,
                 shape: 'line',
-                strokeWidth: 1,
+                strokeWidth: 5,
                 fillColors: undefined,
                 customHTML: undefined,
                 onClick: undefined,
@@ -39,7 +44,7 @@
             },
             itemMargin: {
                 horizontal: 5,
-                vertical: 5
+                vertical: 3
             },
             
         },
@@ -56,13 +61,13 @@
                     minAngleToShowLabel: 10
                 }, 
                 donut: {
-                    size: '65%',
+                    size: '50%',
                     background: 'transparent',
                     labels: {
                         show: true,
                         name: {
                             show: true,
-                            fontSize: '22px',
+                            fontSize: '20px',
                             fontFamily: 'Helvetica, Arial, sans-serif',
                             fontWeight: 600,
                             color: undefined,
@@ -73,19 +78,19 @@
                         total: {
                             show: true,
                             showAlways: false,
-                            label: longerBill.nombre,
+                            label: longerBill.value.nombre,
                             fontSize: '15px',
                             fontFamily: 'Helvetica, Arial, sans-serif',
                             fontWeight: 600,
-                            color: 'white',
+                            color: 'black',
                             formatter: function(){
-                                return longerBill.cantidad_facturas
+                                return longerBill.value.cantidad_facturas
                             }                  
                         },
                         value: {
                             fontSize: '20px',   
                             fontWeight: 700,
-                            color: 'white',       
+                            color: 'black',       
                             offsetY: 16            
                         }
                     }
@@ -101,23 +106,47 @@
         return total + parseInt(item.cantidad_facturas)
     }
 
-    const SERIES = DATA_DAY.value.map(item => parseInt(item.cantidad_facturas)) 
+    const SERIES = computed(()=>{
+        return DATA_DAY.value.map(item => parseInt(item.cantidad_facturas)) 
+    })
 
-    const total_facturas = DATA_DAY.value.reduce(calculateTotalBillings, 0)
-
+    const total_bills = computed(()=>{
+        return DATA_DAY.value.reduce(calculateTotalBillings, 0)
+    })
 
 </script>
 
 <template>
-    <section class="d-flex flex-column align-center ga-2">
-        <header> 
-            <h2>
+    <section class="
+        d-flex 
+        flex-column 
+        align-center 
+        ga-2 
+        bg-white 
+        w-50 
+        rounded-xl 
+        border-t-lg 
+        border-primary 
+        border-opacity-100
+        "
+    >
+        <header class="
+            d-flex 
+            w-100 
+            border-b-md
+            border-opacity-25
+            border-secondary
+            "
+        > 
+            <h2 class="text-subtitle-2 ml-5 pa-2">
                 Facturación del día
             </h2>
         </header>
             <apexchart width="500" type="donut" :options="OPTIONS" :series="SERIES"/> 
-        <footer>
-            <span>Total de facturas: {{ total_facturas }}</span>
+        <footer class="w-100">
+            <div class="pa-2 font-weight-light">
+                <span>Total de facturas: {{ total_bills }}</span>
+            </div>
         </footer>
     </section>
 </template>
