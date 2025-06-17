@@ -348,3 +348,166 @@ export const vpos = [
     "reportes": 3
   }
 ]
+
+export const datosConsolidados = [
+  // banesco
+  {
+    "metodo": "banesco",
+    "dia_mes": "2025-06-01",
+    "reportes": 143
+  },
+  {
+    "metodo": "banesco",
+    "dia_mes": "2025-06-02",
+    "reportes": 377
+  },
+  {
+    "metodo": "banesco",
+    "dia_mes": "2025-06-03",
+    "reportes": 321
+  },
+  {
+    "metodo": "banesco",
+    "dia_mes": "2025-06-04",
+    "reportes": 21
+  },
+  
+  // bnc
+  {
+    "metodo": "bnc",
+    "dia_mes": "2025-06-01",
+    "reportes": 39
+  },
+  {
+    "metodo": "bnc",
+    "dia_mes": "2025-06-02",
+    "reportes": 73
+  },
+  {
+    "metodo": "bnc",
+    "dia_mes": "2025-06-03",
+    "reportes": 52
+  },
+  {
+    "metodo": "bnc",
+    "dia_mes": "2025-06-04",
+    "reportes": 6
+  },
+  
+  // zelle
+  {
+    "metodo": "zelle",
+    "dia_mes": "2025-06-01",
+    "reportes": 17
+  },
+  {
+    "metodo": "zelle",
+    "dia_mes": "2025-06-02",
+    "reportes": 47
+  },
+  {
+    "metodo": "zelle",
+    "dia_mes": "2025-06-03",
+    "reportes": 42
+  },
+  {
+    "metodo": "zelle",
+    "dia_mes": "2025-06-04",
+    "reportes": 7
+  },
+  
+  // banescopagos
+  {
+    "metodo": "banescopagos",
+    "dia_mes": "2025-06-01",
+    "reportes": 97
+  },
+  {
+    "metodo": "banescopagos",
+    "dia_mes": "2025-06-02",
+    "reportes": 183
+  },
+  {
+    "metodo": "banescopagos",
+    "dia_mes": "2025-06-03",
+    "reportes": 141
+  },
+  {
+    "metodo": "banescopagos",
+    "dia_mes": "2025-06-04",
+    "reportes": 9
+  },
+  
+  // pagomovil
+  {
+    "metodo": "pagomovil",
+    "dia_mes": "2025-06-01",
+    "reportes": 389
+  },
+  {
+    "metodo": "pagomovil",
+    "dia_mes": "2025-06-02",
+    "reportes": 444
+  },
+  {
+    "metodo": "pagomovil",
+    "dia_mes": "2025-06-03",
+    "reportes": 421
+  },
+  {
+    "metodo": "pagomovil",
+    "dia_mes": "2025-06-04",
+    "reportes": 39
+  },
+  
+  // multipagos
+  {
+    "metodo": "multipagos",
+    "dia_mes": "2025-06-02",
+    "reportes": 18
+  },
+  
+  // pdvc
+  {
+    "metodo": "pdvc",
+    "dia_mes": "2025-06-01",
+    "reportes": 22
+  },
+  {
+    "metodo": "pdvc",
+    "dia_mes": "2025-06-02",
+    "reportes": 78
+  },
+  {
+    "metodo": "pdvc",
+    "dia_mes": "2025-06-03",
+    "reportes": 65
+  },
+  {
+    "metodo": "pdvc",
+    "dia_mes": "2025-06-04",
+    "reportes": 1
+  },
+  
+  // vpos
+  {
+    "metodo": "vpos",
+    "dia_mes": "2025-06-01",
+    "reportes": 23
+  },
+  {
+    "metodo": "vpos",
+    "dia_mes": "2025-06-02",
+    "reportes": 43
+  },
+  {
+    "metodo": "vpos",
+    "dia_mes": "2025-06-03",
+    "reportes": 37
+  },
+  {
+    "metodo": "vpos",
+    "dia_mes": "2025-06-04",
+    "reportes": 3
+  }
+]

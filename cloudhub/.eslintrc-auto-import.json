@@ -130,6 +130,7 @@
     "pagomovil": true,
     "zelle": true,
     "pdvc": true,
-    "vpos": true
+    "vpos": true,
+    "datosConsolidados": true
   }
 }
