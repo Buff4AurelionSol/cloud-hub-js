@@ -367,19 +367,35 @@
     </section>
   -->
 
-    <section class="d-flex ga-8">
-      <DataBillingComponent  :title="'Facturas del día'" :data="DATA_DAY"/>
-        <DataBillingComponent :title="'Facturas del Mes'" :data="DATA_MONTH">
-          <section>
-            <DateInput 
+    <section class="d-flex flex-md-row flex-column ga-8 pa-4 bg-grey-lighten-5">
+      <DataBillingComponent  
+        class-props="d-flex flex-column align-center  
+          bg-white w-lg-50 w-100 rounded-xl 
+          border-t-lg border-primary 
+          border-opacity-100
+          " 
+        :title="'Facturas del día'" 
+        :data="DATA_DAY"
+      />
+      <DataBillingComponent
+        class-props="d-flex flex-column align-center  
+          bg-white w-lg-50 w-100 rounded-xl 
+          border-t-lg border-primary 
+          border-opacity-100 
+          " 
+        :title="'Facturas del Mes'" 
+        :data="DATA_MONTH">
+        <section class="w-100 d-flex justify-center">
+          <div class="w-75 mt-1">
+              <DateInput 
                 label="Fecha" 
                 name="dateMonthInput"
                 v-model.formatted="DATE_MONTH_INPUT"
               />
-          </section>
-        </DataBillingComponent>
+          </div>
+        </section>
+      </DataBillingComponent>
     </section>
   </v-app>
    
 </template>
-

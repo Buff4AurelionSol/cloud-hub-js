@@ -8,6 +8,9 @@
         data:{
             type: Array,
             default: []
+        },
+        classProps: {
+            type: String 
         }
     })
     
@@ -23,28 +26,35 @@
 
     const OPTIONS = {
         labels: props.data.map(item => item.nombre),
+        chart:{
+            offsetX: 0,
+            offsetY: 0
+
+        },
         legend: {
             show: true,
             showForSingleSeries: true,
             showForNullSeries: true,
-            showForZeroSeries: `true`,
+            showForZeroSeries: true,
             position: 'top',
             horizontalAlign: 'left', 
             floating: false,
             fontSize: '12px',
             fontFamily: 'Helvetica, Arial',
+            width: 250,
+            offsetX: 255,
+            offsetY: 10,
+            height: 100,
+            
             formatter: function(serieName, option){
                 const valueSerie = option.w.globals.series[option.seriesIndex]
                 return `${serieName}`+`: ${valueSerie}`  
 
             },
             inverseOrder: false,
-            clusterGroupedSeries: true,
             clusterGroupedSeriesOrientation: 'vertical',
-            offsetX: 0,
-            offsetY: 0,
             markers: {
-                size: 6,
+                size: 5,
                 shape: 'line',
                 strokeWidth: 5,
                 fillColors: undefined,
@@ -54,8 +64,8 @@
                 offsetY: 0
             },
             itemMargin: {
-                horizontal: 5,
-                vertical: 3
+                horizontal: 6,
+                vertical: 5
             },
             
         },
@@ -71,8 +81,9 @@
                     offset: 0,
                     minAngleToShowLabel: 10
                 }, 
+                
                 donut: {
-                    size: '50%',
+                    size: '40%',
                     background: 'transparent',
                     labels: {
                         show: true,
@@ -85,7 +96,7 @@
                             offsetY: -10,
                             
                         },
-
+                   
                         total: {
                             show: true,
                             showAlways: false,
@@ -100,16 +111,23 @@
                         },
                         value: {
                             fontSize: '15px',   
-                            fontWeight: 700,
+                            fontWeight: 500,
                             color: 'black',       
-                            offsetY: 16            
+                            offsetY: 0,        
                         }
                     }
                 },      
             }
-        }
-
-        
+        },
+        responsive: [{
+            breakpoint: 530,
+            options: {
+                legend: {
+                    show: false,
+                }
+            },
+        }]
+     
     }
 
     const calculateTotalBillings = (total, item) => {
@@ -127,19 +145,7 @@
 </script>
 
 <template>
-    <section class="
-        d-flex 
-        flex-column 
-        align-center 
-        ga-2 
-        bg-white 
-        w-50 
-        rounded-xl 
-        border-t-lg 
-        border-primary 
-        border-opacity-100
-        "
-    >
+    <section :class="`${classProps} areaComponent`">
         <header class="
             d-flex 
             w-100 
@@ -152,17 +158,29 @@
                 {{ title }}
             </h2>
         </header>
-        <section>
+        <section class="w-100 boxChart">
             <slot>
                 
             </slot>
-            <apexchart width="500" type="donut" :options="OPTIONS" :series="SERIES"/>
+            <apexchart width="100%" height="70%" type="donut" :options="OPTIONS" :series="SERIES" />
         </section>
           
         <footer class="w-100">
-            <div class="pa-2 font-weight-light">
+            <div class="ml-5 mb-2 font-weight-light">
                 <span>Total de facturas: {{ total_bills }}</span>
             </div>
         </footer>
     </section>
 </template>
+
+<style scoped>
+
+    .areaComponent{
+        height: 90vh;
+    }
+
+    .boxChart{
+        height: 100%;
+       
+    }
+</style>
