@@ -1,19 +1,31 @@
 <script setup>
     const props = defineProps({
         name:{
-            type: String
+            type: String,
+            required: true
         },
         label: {
-            type: String
+            type: String,
+            required: true
         }
+       
     })
 
+    const [model, modifiers] = defineModel({
+        set(value){
+            if(modifiers.formatted){
+               const year = value.getFullYear();
+               const month = value.getMonth() +1;
+               const finalDate = `${month}-${year}`
+               return finalDate; 
+            }
+            return value
+        }
+    })
+    
 </script>
 
 <template>
-    <v-date-input variant="outlined" :name="props.name" :label="props.label"/>
+    <v-date-input variant="outlined" :name="props.name" :label="props.label"  v-model="model" :value="model" />
 </template>
 
-<style>
-   
-</style>

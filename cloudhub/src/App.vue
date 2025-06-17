@@ -14,6 +14,11 @@
   const tableType = ref('Por facturar')
   const dataTable = ref(REPORTS)
 
+  //Estados del dashboard
+  const DATA_DAY = ref(facturas_realizadas_hoy)
+  const DATA_MONTH = ref(facturas_realizadas_mes)
+  const DATE_MONTH_INPUT = ref("")
+
   const COLUMNS_TABLE = [
       {reportType: 'BOLIVARES', values: ['ID','ESTADO','REFERENCIA','TIPO REPORTE','TIPO TRANSACCIÓN',
     'MONTO TRANSACCIÓN','MONTO USD','TASA','CONTRATOS','CLIENTE','RIF/CEDULA',
@@ -271,7 +276,7 @@
   const getColumnsToFilter = (columns) =>{
     columnsToFilter.value = columns
   }
-
+  
 
   const changeColumnsItems = () => {
     switch (payTypeState.value) {
@@ -326,6 +331,11 @@
     }
   })
 
+    const submitBill =(e) => {
+      e.preventDefault()
+      console.log(e.target.value)
+    }
+
   
 </script>
 
@@ -357,10 +367,18 @@
     </section>
   -->
 
-  <div class="d-flex ga-8">
-     <DailyBilling/>
-     <MonthBilling/>
-  </div>
+    <section class="d-flex ga-8">
+      <DataBillingComponent  :title="'Facturas del día'" :data="DATA_DAY"/>
+        <DataBillingComponent :title="'Facturas del Mes'" :data="DATA_MONTH">
+          <section>
+            <DateInput 
+                label="Fecha" 
+                name="dateMonthInput"
+                v-model.formatted="DATE_MONTH_INPUT"
+              />
+          </section>
+        </DataBillingComponent>
+    </section>
   </v-app>
    
 </template>

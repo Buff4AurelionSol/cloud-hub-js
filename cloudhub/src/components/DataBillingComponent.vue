@@ -1,17 +1,28 @@
 <script setup>
-    const DATA_DAY = ref(facturas_realizadas_hoy)
+    
+    const props = defineProps({
+        title: {
+            type: String, 
+            default: ''
+        },
+        data:{
+            type: Array,
+            default: []
+        }
+    })
+    
     
     const calculateLongerBill = (inicial, actual) => {
         return actual > inicial ? actual:  inicial
     }
     
     const longerBill = computed(()=> {
-         return DATA_DAY.value.reduce(calculateLongerBill)
+         return props.data.reduce(calculateLongerBill)
     })
     
 
     const OPTIONS = {
-        labels: DATA_DAY.value.map(item => item.nombre),
+        labels: props.data.map(item => item.nombre),
         legend: {
             show: true,
             showForSingleSeries: true,
@@ -69,7 +80,7 @@
                             show: true,
                             fontSize: '20px',
                             fontFamily: 'Helvetica, Arial, sans-serif',
-                            fontWeight: 600,
+                            fontWeight: 200,
                             color: undefined,
                             offsetY: -10,
                             
@@ -88,7 +99,7 @@
                             }                  
                         },
                         value: {
-                            fontSize: '20px',   
+                            fontSize: '15px',   
                             fontWeight: 700,
                             color: 'black',       
                             offsetY: 16            
@@ -101,17 +112,16 @@
         
     }
 
-
     const calculateTotalBillings = (total, item) => {
         return total + parseInt(item.cantidad_facturas)
     }
-
+    
     const SERIES = computed(()=>{
-        return DATA_DAY.value.map(item => parseInt(item.cantidad_facturas)) 
+        return props.data.map(item => parseInt(item.cantidad_facturas)) 
     })
 
     const total_bills = computed(()=>{
-        return DATA_DAY.value.reduce(calculateTotalBillings, 0)
+        return props.data.reduce(calculateTotalBillings, 0)
     })
 
 </script>
@@ -139,10 +149,16 @@
             "
         > 
             <h2 class="text-subtitle-2 ml-5 pa-2">
-                Facturación del día
+                {{ title }}
             </h2>
         </header>
-            <apexchart width="500" type="donut" :options="OPTIONS" :series="SERIES"/> 
+        <section>
+            <slot>
+                
+            </slot>
+            <apexchart width="500" type="donut" :options="OPTIONS" :series="SERIES"/>
+        </section>
+          
         <footer class="w-100">
             <div class="pa-2 font-weight-light">
                 <span>Total de facturas: {{ total_bills }}</span>
