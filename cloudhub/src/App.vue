@@ -18,6 +18,7 @@
   const DATA_DAY = ref(facturas_realizadas_hoy)
   const DATA_MONTH = ref(facturas_realizadas_mes)
   const DATE_MONTH_INPUT = ref("")
+  const HISTORICAL_MONTH = ref(datosConsolidados)
 
   const COLUMNS_TABLE = [
       {reportType: 'BOLIVARES', values: ['ID','ESTADO','REFERENCIA','TIPO REPORTE','TIPO TRANSACCIÓN',
@@ -383,7 +384,7 @@
           border-t-lg border-primary 
           border-opacity-100 
           " 
-        :title="'Facturas del Mes'" 
+        title="Facturas del Mes" 
         :data="DATA_MONTH">
         <section class="w-100 d-flex justify-center">
           <div class="w-75 mt-1">
@@ -396,6 +397,19 @@
         </section>
       </DataBillingComponent>
     </section>
+    <section>
+      <MonthlyHistorical
+        class-props="d-flex flex-column align-center  
+            bg-white w-100 rounded-xl 
+            border-t-lg border-primary 
+            border-opacity-100 
+            "  
+        title="Historico Mensual de Reportes por Método"
+        :data="HISTORICAL_MONTH"
+        
+      /> 
+    </section>
   </v-app>
-   
+  
 </template>
+
