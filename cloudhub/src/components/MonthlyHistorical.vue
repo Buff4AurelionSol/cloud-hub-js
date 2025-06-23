@@ -49,6 +49,10 @@ import { computed, ref } from 'vue';
 
     })
 
+    const totalBills = computed(()=>{
+        return props.data.reduce((acc, item) => acc + item.reportes, 0)
+    })
+
     const OPTIONS = computed(()=> ({
         chart:{
             type: 'bar',
@@ -81,9 +85,11 @@ import { computed, ref } from 'vue';
         xaxis: {
             categories: uniqueDates.value,
 
-            //labels: {
-             // formatter: para cambiar el formatdo a los labels. 
-            //}
+            labels: {
+                formatter: function(value){
+                    
+                }
+            }
         },
 
         yaxis: {
@@ -126,7 +132,12 @@ import { computed, ref } from 'vue';
  
         <footer class="w-100">
             <div class="ml-5 mb-2 font-weight-light">
-                <span>Total de facturas: </span>
+                <span>
+                    Total de facturas: 
+                    <v-chip class="bg-blue">
+                        {{totalBills}}
+                    </v-chip>
+                </span>
             </div>
         </footer>
     </section>
