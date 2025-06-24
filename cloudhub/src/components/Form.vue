@@ -37,7 +37,6 @@
     data.showPaysSelect = recordsToShow.value
     data.transaction = selectedValues.value
 
-
     emit('numberToFilter', recordsToShow.value)
     emit('sendData', dataArray)
     emit('transactions', data.transaction)

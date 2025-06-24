@@ -17,11 +17,26 @@
         },
         columnsHeaders:{
           type: Array
-        }
+        },
+        orderBy:{
+          type: String
+        },
+        haveIChangeDirectionOrderBy:{
+          type: Boolean
+        },
+        transactions:{
+          type: Array,
+          default: () => []
+        },
+        searchValue:{
+          type: String
+        },
     })
 
     
 
+ 
+    //Funcionalidades del Renderizado 
     const tableData = computed(() => props.dataTable)
     
     const COLUMNS_HEADERS = computed(() => props.columnsHeaders)
@@ -45,7 +60,30 @@
 
         },data)
     }
+
+    //Funcionalidades del paginado
+    const rowsPerPage = computed(()=> props.indexState)
+    const currentPage = ref(1)
+
+    const PAGINATED_DATA = computed(() => {
+      const start = (currentPage.value - 1) * rowsPerPage.value
+      const end = start + rowsPerPage.value
+      return sortedAndFilteredData.value.slice(start, end)
+    })
+
+    const totalPages = computed(() => Math.ceil(tableData.value.length / rowsPerPage.value))
+
+    const sortedAndFilteredData = computed(()=>{
       
+      let DATA = tableData.value;
+      
+      let sortedData = DATA; 
+
+     
+
+      return props.haveIChangeDirectionOrderBy ? [...sortedData].reverse(): sortedData;
+    })
+   
 
 
 </script>
@@ -63,7 +101,7 @@
       </thead>
 
       <tbody>
-        <tr v-for="(report, index) in tableData" :key="index">
+        <tr v-for="(report, index) in PAGINATED_DATA" :key="index">
           <td>{{ index + 1 }}</td>
 
           <td v-for="col in VISIBLE_COLUMN" :key="col.title">
@@ -82,8 +120,15 @@
           </td>
        </tr>
     </tbody>
-
     </v-table>
+    <div class="d-flex justify-end align-center mt-4">
+      <v-pagination
+        v-model="currentPage"
+        :length="totalPages"
+        :total-visible="indexState"
+        color="primary"
+      />
+    </div>
 </template>
 
 

@@ -137,6 +137,10 @@
           :typeTable="tableType"
           :dataTable="dataTable"
           :columnsHeaders="columnsItems"
+          :order-by="orderBy"
+          :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy"
+          :transactions="transactions"
+          :searchValue="searchValue"
         />
       </section> 
 </template>
