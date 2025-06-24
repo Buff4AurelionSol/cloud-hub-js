@@ -1,8 +1,5 @@
 <script setup>
     
-    const selectedColumns = ref([])
-
-    const emit = defineEmits(['sendValuesColumns'])
 
     const props = defineProps({
         columnsItems: {
@@ -10,16 +7,18 @@
         }
     })
 
-    const sendValuesColumns= (value) => {
-        emit('sendValuesColumns', value)
-    }
+    const model = defineModel("selected")
 
-    const OPTIONS_COLUMNS_COMBOBOX = props.columnsItems.flatMap((option) => {
+
+    const OPTIONS_COLUMNS_COMBOBOX = computed(()=>{
+        return props.columnsItems.flatMap((option) => {
         if(option.children){
             return option.children.map((subOption) => subOption.value)
         }
 
         return option.value
+
+    })
 
     })
     
@@ -29,11 +28,10 @@
     <v-combobox
         multiple
         label="Columnas a Ocultar:"
-        v-model="selectedColumns"
+        v-model="model"
         :items="OPTIONS_COLUMNS_COMBOBOX"
         class="columns-table-combobox"
         density="compact"
-        @update:modelValue="sendValuesColumns"
       />
 </template>
 

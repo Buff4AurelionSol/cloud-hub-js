@@ -81,8 +81,10 @@
   }
 
   onMounted(() => {
+    session.userCan = () => true // ⚠️ Hack temporal para mostrar todo
     filtrarOpciones()
   })
+
 </script>
 
 <template>

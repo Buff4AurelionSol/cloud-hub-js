@@ -8,12 +8,15 @@
    const selectedValues = ref([])
    const payTypeState = ref('BOLIVARES')
    const reportTypeState = ref('POR FACTURAR')
-   const selectedColumns = ref([])
+  
    const recordsToShow = ref(10)
    const formRef = ref(null)
    const ordersState = ref(null)
    const showFormState = ref(false)
    
+
+   const selectedColumns = defineModel('selectedColumns')
+
   const props = defineProps({
     haveIChangeDirectionOrderBy:{
       type: Boolean
@@ -33,9 +36,7 @@
     const data = Object.fromEntries(formData.entries()) 
     data.showPaysSelect = recordsToShow.value
     data.transaction = selectedValues.value
-    data.selectedColumns = selectedColumns.value
 
-    console.log(data)
 
     emit('numberToFilter', recordsToShow.value)
     emit('sendData', dataArray)
@@ -43,7 +44,6 @@
     emit('orderBy', ordersState.value)
     emit('sendSearch', data.search)
     emit('sendPayTypeState', payTypeState.value)
-    emit('sendColumnsToFilter', data.selectedColumns)
     emit('sendTypeReport', reportTypeState.value)
     
 
@@ -95,6 +95,13 @@
       : showFormState.value = true
   }
 
+  const Columns = computed(()=> {
+    return props.columnsItems
+  })
+
+  watch(() => props.columnsItems, (val) => {
+  console.log('Se actualizó columnsItems en el form', val)
+})
 
 </script>
 
@@ -155,9 +162,10 @@
 
       <v-row v-if="showFormState" >
         <v-col :class="{'box-filters-fade': showFormState}">
-          <ColumnsFilter @sendValuesColumns="getColumnsToFilter" :columnsItems="props.columnsItems"/>
+          <ColumnsFilter :columnsItems="columnsItems" v-model:selected="selectedColumns" />
         </v-col>
       </v-row>
+
     </v-container>
     
   </form>

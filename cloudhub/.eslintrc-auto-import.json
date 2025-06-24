@@ -131,6 +131,13 @@
     "zelle": true,
     "pdvc": true,
     "vpos": true,
-    "datosConsolidados": true
+    "datosConsolidados": true,
+    "ALL_HEADERS": true,
+    "COMMON_COLUMNS": true,
+    "CONTRATO_COLUMNS": true,
+    "FACTURA_COLUMNS": true,
+    "TRANSACCION_COLUMNS": true,
+    "COLUMNS_BY_TYPE": true,
+    "REPORTE_COLUMNS": true
   }
 }

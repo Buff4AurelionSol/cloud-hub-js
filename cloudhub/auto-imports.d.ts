@@ -6,12 +6,18 @@
 // biome-ignore lint: disable
 export {}
 declare global {
+  const ALL_HEADERS: typeof import('./src/stores/const.js')['ALL_HEADERS']
+  const COLUMNS_BY_TYPE: typeof import('./src/stores/const.js')['COLUMNS_BY_TYPE']
+  const COMMON_COLUMNS: typeof import('./src/stores/const.js')['COMMON_COLUMNS']
+  const CONTRATO_COLUMNS: typeof import('./src/stores/const.js')['CONTRATO_COLUMNS']
   const EffectScope: typeof import('vue')['EffectScope']
+  const FACTURA_COLUMNS: typeof import('./src/stores/const.js')['FACTURA_COLUMNS']
   const HEADERS: typeof import('./src/stores/const.js')['HEADERS']
   const LISTA_TASAS: typeof import('./src/stores/mockdata/tasas.js')['LISTA_TASAS']
   const OPTIONS_ORDER_BY: typeof import('./src/stores/const.js')['OPTIONS_ORDER_BY']
   const OPTIONS_TRANSACTION: typeof import('./src/stores/const.js')['OPTIONS_TRANSACTION']
   const RECIBOS: typeof import('./src/stores/mockdata/reports.js')['RECIBOS']
+  const REPORTE_COLUMNS: typeof import('./src/stores/const.js')['REPORTE_COLUMNS']
   const REPORTS: typeof import('./src/stores/mockdata/reports.js')['REPORTS']
   const REPORTS_DIVISAS: typeof import('./src/stores/mockdata/reports.js')['REPORTS_DIVISAS']
   const REPORTS_DIVISAS_RECHAZADOS: typeof import('./src/stores/mockdata/reports.js')['REPORTS_DIVISAS_RECHAZADOS']
@@ -21,6 +27,7 @@ declare global {
   const REPORTS_FACTURADOS_DIVISAS: typeof import('./src/stores/mockdata/reports.js')['REPORTS_FACTURADOS_DIVISAS']
   const REPORTS_POR_VERIFICAR: typeof import('./src/stores/mockdata/reports.js')['REPORTS_POR_VERIFICAR']
   const REPORTS_RECHAZADOS: typeof import('./src/stores/mockdata/reports.js')['REPORTS_RECHAZADOS']
+  const TRANSACCION_COLUMNS: typeof import('./src/stores/const.js')['TRANSACCION_COLUMNS']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const banesco: typeof import('./src/stores/mockdata/bills.js')['banesco']
   const banescopagos: typeof import('./src/stores/mockdata/bills.js')['banescopagos']
@@ -135,21 +142,26 @@ import { UnwrapRef } from 'vue'
 declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
+    readonly ALL_HEADERS: UnwrapRef<typeof import('./src/stores/const.js')['ALL_HEADERS']>
+    readonly COLUMNS_BY_TYPE: UnwrapRef<typeof import('./src/stores/const.js')['COLUMNS_BY_TYPE']>
+    readonly COMMON_COLUMNS: UnwrapRef<typeof import('./src/stores/const.js')['COMMON_COLUMNS']>
+    readonly CONTRATO_COLUMNS: UnwrapRef<typeof import('./src/stores/const.js')['CONTRATO_COLUMNS']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
-    readonly HEADERS: UnwrapRef<typeof import('./src/stores/const.js')['HEADERS']>
+    readonly FACTURA_COLUMNS: UnwrapRef<typeof import('./src/stores/const.js')['FACTURA_COLUMNS']>
     readonly LISTA_TASAS: UnwrapRef<typeof import('./src/stores/mockdata/tasas.js')['LISTA_TASAS']>
     readonly OPTIONS_ORDER_BY: UnwrapRef<typeof import('./src/stores/const.js')['OPTIONS_ORDER_BY']>
     readonly OPTIONS_TRANSACTION: UnwrapRef<typeof import('./src/stores/const.js')['OPTIONS_TRANSACTION']>
     readonly RECIBOS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['RECIBOS']>
+    readonly REPORTE_COLUMNS: UnwrapRef<typeof import('./src/stores/const.js')['REPORTE_COLUMNS']>
     readonly REPORTS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS']>
     readonly REPORTS_DIVISAS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_DIVISAS']>
     readonly REPORTS_DIVISAS_RECHAZADOS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_DIVISAS_RECHAZADOS']>
     readonly REPORTS_DOLAR: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_DOLAR']>
-    readonly REPORTS_DOLLAR: UnwrapRef<typeof import('./src/stores/const.js')['REPORTS_DOLLAR']>
     readonly REPORTS_FACTURADOS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_FACTURADOS']>
     readonly REPORTS_FACTURADOS_DIVISAS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_FACTURADOS_DIVISAS']>
     readonly REPORTS_POR_VERIFICAR: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_POR_VERIFICAR']>
     readonly REPORTS_RECHAZADOS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_RECHAZADOS']>
+    readonly TRANSACCION_COLUMNS: UnwrapRef<typeof import('./src/stores/const.js')['TRANSACCION_COLUMNS']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly banesco: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['banesco']>
     readonly banescopagos: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['banescopagos']>
@@ -206,7 +218,6 @@ declare module 'vue' {
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
     readonly ref: UnwrapRef<typeof import('vue')['ref']>
-    readonly reports: UnwrapRef<typeof import('./src/stores/const.js')['reports']>
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
     readonly setActivePinia: UnwrapRef<typeof import('pinia')['setActivePinia']>
     readonly setMapStoreSuffix: UnwrapRef<typeof import('pinia')['setMapStoreSuffix']>
