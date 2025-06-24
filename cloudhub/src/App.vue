@@ -367,37 +367,41 @@
       />
     </section>
   -->
-
-    <section class="d-flex flex-md-row flex-column ga-8 pa-4 bg-grey-lighten-5">
+<v-container fluid class=" bg-grey-lighten-5 justify-center align-center">
+  <v-row dense>
+    <v-col cols="12" md="6">
       <DataBillingComponent  
-        class-props="d-flex flex-column align-center  
-          bg-white w-lg-50 w-100 rounded-xl 
+        class-props="d-flex flex-column align-center justify-center
+          bg-white rounded-xl 
           border-t-lg border-primary 
           border-opacity-100
-          " 
+          pa-4"
         :title="'Facturas del día'" 
         :data="DATA_DAY"
       />
+    </v-col>
+    <v-col cols="12" md="6">
       <DataBillingComponent
         class-props="d-flex flex-column align-center  
-          bg-white w-lg-50 w-100 rounded-xl 
+          bg-white rounded-xl 
           border-t-lg border-primary 
           border-opacity-100 
-          " 
+          pa-4"
         title="Facturas del Mes" 
-        :data="DATA_MONTH">
-        <section class="w-100 d-flex justify-center">
-          <div class="w-75 mt-1">
-              <DateInput 
-                label="Fecha" 
-                name="dateMonthInput"
-                v-model.formatted="DATE_MONTH_INPUT"
-              />
+        :data="DATA_MONTH"
+      >
+        <section class="w-100 d-flex justify-center mt-2">
+          <div class="w-75">
+            <DateInput 
+              label="Fecha" 
+              name="dateMonthInput"
+              v-model.formatted="DATE_MONTH_INPUT"
+            />
           </div>
         </section>
       </DataBillingComponent>
-    </section>
-    <section>
+    </v-col>
+    <v-col cols="12">
       <MonthlyHistorical
         class-props="d-flex flex-column align-center  
             bg-white w-100 rounded-xl 
@@ -408,8 +412,10 @@
         :data="HISTORICAL_MONTH"
         
       /> 
-    </section>
-  </v-app>
+    </v-col>
+  </v-row>
+  </v-container>
+</v-app>
   
 </template>
 

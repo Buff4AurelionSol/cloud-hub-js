@@ -14,59 +14,64 @@
         }
     })
     
+    const chartRef = ref(null)
+    const colorRef = ref([])
+    const hoveredLegendItem = ref({
+        name: '',   
+        total: 0    
+    })
+
+
     
     const calculateLongerBill = (inicial, actual) => {
         return actual > inicial ? actual:  inicial
     }
     
-    const longerBill = computed(()=> {
-         return props.data.reduce(calculateLongerBill)
+    const longerBill = computed(() => {
+        if (!props.data.length) return { nombre: '', cantidad_facturas: 0 }
+        return props.data.reduce((prev, curr) =>
+            parseInt(curr.cantidad_facturas) > parseInt(prev.cantidad_facturas) ? curr : prev
+        )
     })
+
+    hoveredLegendItem.value = {
+        name: longerBill.value.nombre.toUpperCase(),
+        total: longerBill.value.cantidad_facturas
+    }
+
     
 
-    const OPTIONS = {
+    
+
+    const OPTIONS = computed(()=> ({
         labels: props.data.map(item => item.nombre),
         chart:{
             offsetX: 0,
-            offsetY: 0
-
+            offsetY: 0,
+             events: {
+                mounted: function (chartContext, _config) {
+                    colorRef.value = chartContext?.w?.globals?.colors || []
+                },
+                dataPointMouseEnter(event, chartContext, config) {
+                    const index = config.dataPointIndex
+                    const item = props.data[index]
+                    if (item) {
+                        hoveredLegendItem.value = {
+                        name: item.nombre.toUpperCase(),
+                        total: item.cantidad_facturas
+                        }
+                    }
+                },
+                dataPointMouseLeave() {
+                    hoveredLegendItem.value = {
+                        name: longerBill.value.nombre.toUpperCase(),
+                        total: longerBill.value.cantidad_facturas
+                    }
+                }
+            }
         },
         legend: {
-            show: true,
-            showForSingleSeries: true,
-            showForNullSeries: true,
-            showForZeroSeries: true,
-            position: 'top',
-            horizontalAlign: 'left', 
-            floating: false,
-            fontSize: '12px',
-            fontFamily: 'Helvetica, Arial',
-            width: 250,
-            offsetX: 255,
-            offsetY: 10,
-            height: 100,
-            
-            formatter: function(serieName, option){
-                const valueSerie = option.w.globals.series[option.seriesIndex]
-                return `${serieName}`+`: ${valueSerie}`  
-
-            },
-            inverseOrder: false,
-            clusterGroupedSeriesOrientation: 'vertical',
-            markers: {
-                size: 5,
-                shape: 'line',
-                strokeWidth: 5,
-                fillColors: undefined,
-                customHTML: undefined,
-                onClick: undefined,
-                offsetX: 0,
-                offsetY: 0
-            },
-            itemMargin: {
-                horizontal: 6,
-                vertical: 5
-            },
+            show: false,
             
         },
         plotOptions: {
@@ -86,7 +91,7 @@
                     size: '40%',
                     background: 'transparent',
                     labels: {
-                        show: true,
+                        show: false,
                         name: {
                             show: true,
                             fontSize: '20px',
@@ -100,13 +105,13 @@
                         total: {
                             show: true,
                             showAlways: false,
-                            label: longerBill.value.nombre,
+                            label: hoveredLegendItem.value.name.toUpperCase(),
                             fontSize: '15px',
                             fontFamily: 'Helvetica, Arial, sans-serif',
                             fontWeight: 600,
                             color: 'black',
                             formatter: function(){
-                                return longerBill.value.cantidad_facturas
+                                return hoveredLegendItem.value.total
                             }                  
                         },
                         value: {
@@ -128,7 +133,7 @@
             },
         }]
      
-    }
+    }))
 
     const calculateTotalBillings = (total, item) => {
         return total + parseInt(item.cantidad_facturas)
@@ -141,6 +146,27 @@
     const total_bills = computed(()=>{
         return props.data.reduce(calculateTotalBillings, 0)
     })
+ 
+    const highlight = (name) => {
+        
+        if (chartRef.value?.chart?.highlightSeries) {
+            chartRef.value.chart.highlightSeries(name)
+            hoveredLegendItem.value.name = name.toUpperCase()
+            hoveredLegendItem.value.total = props.data.find(item => item.nombre.toUpperCase() === name.toUpperCase() )?.cantidad_facturas || 0;
+         
+        }
+    }
+
+    const reset = () => {
+        if (chartRef.value?.chart?.resetSeries) {
+            chartRef.value.chart.resetSeries()
+            hoveredLegendItem.value.name = longerBill.value.nombre.toUpperCase();
+            hoveredLegendItem.value.total = longerBill.value.cantidad_facturas
+
+        }
+    }
+
+
 
 </script>
 
@@ -157,17 +183,34 @@
             <h2 class="text-subtitle-2 ml-5 pa-2">
                 {{ title }}
             </h2>
+            
         </header>
-        <section class="w-100 boxChart">
-            <slot>
+        <slot>
                 
-            </slot>
-            <apexchart width="100%" height="70%" type="donut" :options="OPTIONS" :series="SERIES" />
+        </slot>
+        <section class="custom-legend">
+          <div class="item-legend" v-for="(item, index) in props.data" :key="item.codigo" 
+            @mouseenter="highlight(item.nombre)" @mouseleave="reset"
+           >
+            <span class="color-bar" :style="{backgroundColor: colorRef[index] || '#ccc' }"></span>
+            <span class="item-text">{{item.nombre.toUpperCase()}}:{{item.cantidad_facturas}}</span>
+          </div>
+        </section>
+        <section class="w-100 boxChart">
+            <apexchart width="100%" height="100%" type="donut" :options="OPTIONS" :series="SERIES" ref="chartRef" />
+            <div class="label-donut">
+                <p class="item-text">{{ hoveredLegendItem.name }}</p>
+                <p class="text-lg">{{ hoveredLegendItem.total }}</p>
+            </div>
         </section>
           
         <footer class="w-100">
             <div class="ml-5 mb-2 font-weight-light">
-                <span>Total de facturas: {{ total_bills }}</span>
+                <span>Total de facturas:
+                    <v-chip class="bg-blue">
+                        {{total_bills}}
+                    </v-chip>
+                </span>
             </div>
         </footer>
     </section>
@@ -176,11 +219,49 @@
 <style scoped>
 
     .areaComponent{
-        height: 90vh;
+        height: 100vh;
     }
 
     .boxChart{
         height: 100%;
+        position: relative;
        
+       
+    }
+    
+    .custom-legend{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: 240px;
+        max-height: 250px;
+        overflow-y: auto;
+    }
+
+    .color-bar{
+        width: 6px;
+        height: 100%;
+        background-color: slateblue;
+        border-radius: 1px;
+    }
+
+    .item-legend{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-right: 10px;
+    }
+
+    .label-donut {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        pointer-events: none; 
+    }
+
+    .item-text{
+        font-weight: bolder;
+        color: black;
     }
 </style>
