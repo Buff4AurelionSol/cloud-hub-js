@@ -85,11 +85,12 @@ import { computed, ref } from 'vue';
         xaxis: {
             categories: uniqueDates.value,
 
-            labels: {
+         /*    labels: {
                 formatter: function(value){
                     
                 }
-            }
+            } 
+         */
         },
 
         yaxis: {
@@ -100,7 +101,15 @@ import { computed, ref } from 'vue';
         legend: {
             position: 'right',
             offsetY: 40
-        }
+        },
+        responsive: [{
+            breakpoint: 530,
+            options: {
+                legend: {
+                    position: 'top'
+                }
+            },
+        }]
 
     }))
 
@@ -133,7 +142,7 @@ import { computed, ref } from 'vue';
         <footer class="w-100">
             <div class="ml-5 mb-2 font-weight-light">
                 <span>
-                    Total de facturas: 
+                    Total de reportes: 
                     <v-chip class="bg-blue">
                         {{totalBills}}
                     </v-chip>
