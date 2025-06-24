@@ -199,8 +199,6 @@
         Total de registros: {{recordsToShow.length}}
         <button @click="filterCampsTable">si</button>
       </footer>
-
-  
   </div>  
 </template>
 

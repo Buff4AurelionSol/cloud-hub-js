@@ -83,6 +83,13 @@ export const FACTURA_COLUMNS = [
   { title: 'facturas.fecha', value: 'FECHA FACTURA' },
 ]
 
+export const MOTIVO_RECHAZO = [
+  {title: 'motivo_rechazo', value: 'MOTIVO RECHAZO'}
+]
+
+export const DEUDA = [
+  {title: 'deuda', value: 'DEUDA'}
+]
 export const COLUMNS_BY_TYPE = {
   'Por Facturar': [
     ...COMMON_COLUMNS,
@@ -97,5 +104,46 @@ export const COLUMNS_BY_TYPE = {
     ...CONTRATO_COLUMNS,
     ...FACTURA_COLUMNS
   ],
+  'Rechazados':[
+    ...COMMON_COLUMNS,
+    ...REPORTE_COLUMNS,
+    ...TRANSACCION_COLUMNS,
+    ...CONTRATO_COLUMNS,
+    ...MOTIVO_RECHAZO
+  ],
+  'Por verificar':[
+    ...COMMON_COLUMNS,
+    ...TRANSACCION_COLUMNS,
+    ...CONTRATO_COLUMNS,
+    ...DEUDA
+
+  ],
+  'Divisas/Por Facturar':[
+    ...COMMON_COLUMNS,
+    ...REPORTE_COLUMNS,
+    ...TRANSACCION_COLUMNS,
+    ...CONTRATO_COLUMNS
+  ],
+  'Divisas/Facturados':[
+    ...COMMON_COLUMNS,
+    ...REPORTE_COLUMNS,
+    ...TRANSACCION_COLUMNS,
+    ...CONTRATO_COLUMNS,
+    ...FACTURA_COLUMNS
+  ],
+  'Divisas/Rechazados':[
+    ...COMMON_COLUMNS,
+    ...REPORTE_COLUMNS,
+    ...TRANSACCION_COLUMNS,
+    ...CONTRATO_COLUMNS,
+    ...MOTIVO_RECHAZO
+  ],
+  'Divisas/Por Verificar':[
+    ...COMMON_COLUMNS,
+    ...TRANSACCION_COLUMNS,
+    ...CONTRATO_COLUMNS,
+    ...DEUDA
+  ]
+
 }
 

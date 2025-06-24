@@ -67,27 +67,34 @@
     if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'RECHAZADOS'){
       tableType.value = 'Rechazados'
       dataTable.value = REPORTS_RECHAZADOS
+      columnsItems.value = COLUMNS_BY_TYPE.Rechazados
     }
     if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'POR VERIFICAR'){
-      tableType.value = 'Por verificar'
-      dataTable.value = REPORTS_POR_VERIFICAR
+      tableType.value = 'Por verificar';
+      dataTable.value = REPORTS_POR_VERIFICAR;
+      columnsItems.value = COLUMNS_BY_TYPE['Por verificar']
+     
     }
     
     if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'POR FACTURAR'){
-      tableType.value = 'Divisas/Por facturar'
-      dataTable.value = REPORTS_DIVISAS
+      tableType.value = 'Divisas/Por facturar';
+      dataTable.value = REPORTS_DIVISAS;
+      columnsItems.value = COLUMNS_BY_TYPE['Divisas/Por Facturar']
     }
     if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'FACTURADOS'){
-      tableType.value = 'Divisas/Facturados'
-      dataTable.value = REPORTS_FACTURADOS_DIVISAS
+      tableType.value = 'Divisas/Facturados';
+      dataTable.value = REPORTS_FACTURADOS_DIVISAS;
+      columnsItems.value = COLUMNS_BY_TYPE['Divisas/Facturados']
     }
     if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'RECHAZADOS'){
       tableType.value = 'Divisas/Rechazados'
       dataTable.value = REPORTS_DIVISAS_RECHAZADOS
+      columnsItems.value = COLUMNS_BY_TYPE['Divisas/Rechazados']
     }
     if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'POR VERIFICAR'){
       tableType.value = 'Divisas/Por verificar'
       dataTable.value = REPORTS_POR_VERIFICAR
+      columnsItems.value = COLUMNS_BY_TYPE['Divisas/Por Verificar']
       
     }
   })
@@ -104,6 +111,11 @@
 </script>
 
 <template>
+  <header class="d-flex flex-column align-center pa-2 ga-2">
+    <h1 class="text-h3">Reportes de Pagos</h1>
+
+    <span class="text-h4">{{tableType}}</span>
+  </header>
       <Form
         @numberToFilter="getNumberToFilter"
         @sendData="getData"
@@ -122,7 +134,7 @@
         <TableFacturados
           :indexState="indexState"
           :columns="columnsToFilter"
-          :type="tableType"
+          :typeTable="tableType"
           :dataTable="dataTable"
           :columnsHeaders="columnsItems"
         />

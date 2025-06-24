@@ -10,10 +10,12 @@ declare global {
   const COLUMNS_BY_TYPE: typeof import('./src/stores/const.js')['COLUMNS_BY_TYPE']
   const COMMON_COLUMNS: typeof import('./src/stores/const.js')['COMMON_COLUMNS']
   const CONTRATO_COLUMNS: typeof import('./src/stores/const.js')['CONTRATO_COLUMNS']
+  const DEUDA: typeof import('./src/stores/const.js')['DEUDA']
   const EffectScope: typeof import('vue')['EffectScope']
   const FACTURA_COLUMNS: typeof import('./src/stores/const.js')['FACTURA_COLUMNS']
   const HEADERS: typeof import('./src/stores/const.js')['HEADERS']
   const LISTA_TASAS: typeof import('./src/stores/mockdata/tasas.js')['LISTA_TASAS']
+  const MOTIVO_RECHAZO: typeof import('./src/stores/const.js')['MOTIVO_RECHAZO']
   const OPTIONS_ORDER_BY: typeof import('./src/stores/const.js')['OPTIONS_ORDER_BY']
   const OPTIONS_TRANSACTION: typeof import('./src/stores/const.js')['OPTIONS_TRANSACTION']
   const RECIBOS: typeof import('./src/stores/mockdata/reports.js')['RECIBOS']
@@ -146,9 +148,11 @@ declare module 'vue' {
     readonly COLUMNS_BY_TYPE: UnwrapRef<typeof import('./src/stores/const.js')['COLUMNS_BY_TYPE']>
     readonly COMMON_COLUMNS: UnwrapRef<typeof import('./src/stores/const.js')['COMMON_COLUMNS']>
     readonly CONTRATO_COLUMNS: UnwrapRef<typeof import('./src/stores/const.js')['CONTRATO_COLUMNS']>
+    readonly DEUDA: UnwrapRef<typeof import('./src/stores/const.js')['DEUDA']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly FACTURA_COLUMNS: UnwrapRef<typeof import('./src/stores/const.js')['FACTURA_COLUMNS']>
     readonly LISTA_TASAS: UnwrapRef<typeof import('./src/stores/mockdata/tasas.js')['LISTA_TASAS']>
+    readonly MOTIVO_RECHAZO: UnwrapRef<typeof import('./src/stores/const.js')['MOTIVO_RECHAZO']>
     readonly OPTIONS_ORDER_BY: UnwrapRef<typeof import('./src/stores/const.js')['OPTIONS_ORDER_BY']>
     readonly OPTIONS_TRANSACTION: UnwrapRef<typeof import('./src/stores/const.js')['OPTIONS_TRANSACTION']>
     readonly RECIBOS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['RECIBOS']>

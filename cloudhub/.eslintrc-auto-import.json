@@ -138,6 +138,8 @@
     "FACTURA_COLUMNS": true,
     "TRANSACCION_COLUMNS": true,
     "COLUMNS_BY_TYPE": true,
-    "REPORTE_COLUMNS": true
+    "REPORTE_COLUMNS": true,
+    "MOTIVO_RECHAZO": true,
+    "DEUDA": true
   }
 }

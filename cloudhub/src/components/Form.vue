@@ -106,7 +106,6 @@
 </script>
 
 <template>
-  <header class="header-Form"><h1>Reportes de Pagos</h1></header>
   <form ref="formRef" @input="handleSubmit" @change="handleSubmit">
     <v-container>
       <v-row cols="12" class="flex d-flex justify-center mb-2">
