@@ -183,25 +183,35 @@
       </thead>
 
       <tbody>
-        <tr v-for="(report, index) in PAGINATED_DATA" :key="index">
-          <td>{{ index + 1 }}</td>
+        <template v-if="PAGINATED_DATA.length > 0">
+          <tr v-for="(report, index) in PAGINATED_DATA" :key="index">
+            <td>{{ index + 1 }}</td>
 
-          <td v-for="col in VISIBLE_COLUMN" :key="col.title">
-              <template v-if=" Array.isArray(formatedValue(report, col.title))">
-                  {{ formatedValue(report, col.title).join("") }}
-              </template>
+            <td v-for="col in VISIBLE_COLUMN" :key="col.title">
+                <template v-if=" Array.isArray(formatedValue(report, col.title))">
+                    {{ formatedValue(report, col.title).join("") }}
+                </template>
+            
+                <template v-else>
+                  {{ formatedValue(report, col.title) }}
+                </template>
+                
+            </td>
 
-              <template v-else>
-                {{ formatedValue(report, col.title) }}
-              </template>
-              
-          </td>
-
-          <td>
-            <Modal :image-icon="DetailsIcon" :reportData="report" />
-          </td>
-       </tr>
-    </tbody>
+            <td>
+              <Modal :image-icon="DetailsIcon" :reportData="report" />
+            </td>
+          </tr>
+        </template>
+        <template v-else>
+           <tr>
+              <td :colspan="VISIBLE_COLUMN.length + 2" class="text-center text-h6 pa-5">
+                No se han encontrado coincidencias
+              </td>
+           </tr>
+        </template>
+        
+      </tbody>
     </v-table>
     <div class="d-flex justify-end align-center mt-4">
       <v-pagination
@@ -212,6 +222,7 @@
       />
     </div>
 </template>
+
 
 
 <style>
