@@ -71,18 +71,51 @@
       return sortedAndFilteredData.value.slice(start, end)
     })
 
-    const totalPages = computed(() => Math.ceil(tableData.value.length / rowsPerPage.value))
+    const totalPages = computed(() => Math.ceil(sortedAndFilteredData.value.length / rowsPerPage.value))
 
-    const sortedAndFilteredData = computed(()=>{
+    const getDataTransactionFiltered = (DATA) => {
+        return DATA.filter(item => {
+          if (props.transactions.length <= 0 || props.transactions.includes('TODOS')) {
+            return true;
+          }
+
+            return item.transaccions.some(trans => props.transactions.includes(trans.tipo));
+        });
+    }
+
+    const getDataSerchFiltered = (DATA) => {
+      return DATA.filter(item => {
+          if (!props.searchValue) return true;
+
+          const search = props.searchValue.toLowerCase().trim();
+
+          // Unimos todos los valores visibles en una sola cadena
+          const combinedText = props.columnsHeaders.map(col => {
+              const value = formatedValue(item, col.title);
+              return typeof value === 'string' || typeof value === 'number'
+                ? String(value).toLowerCase()
+                : ''; 
+            })
+            .join(' ');
+
+            console.log(item, "y el combined text es:::: ", combinedText )
+
+          return combinedText.includes(search);
+        });
+
+    }
+
+    const sortedAndFilteredData = computed(() => {
       
       let DATA = tableData.value;
-      
-      let sortedData = DATA; 
+      const filtereTransaction = getDataTransactionFiltered(DATA);
+      const filteredBySearch = getDataSerchFiltered(filtereTransaction)
 
-     
+      return props.haveIChangeDirectionOrderBy
+        ? [...filteredBySearch].reverse()
+        : filteredBySearch;
+    });
 
-      return props.haveIChangeDirectionOrderBy ? [...sortedData].reverse(): sortedData;
-    })
    
 
 

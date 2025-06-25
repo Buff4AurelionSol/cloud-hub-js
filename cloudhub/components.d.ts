@@ -8,7 +8,6 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AppBar: typeof import('./src/components/AppBar.vue')['default']
     ColumnsFilter: typeof import('./src/components/ColumnsFilter.vue')['default']
     ContractsTable: typeof import('./src/components/ContractsTable.vue')['default']
     DataBillingComponent: typeof import('./src/components/DataBillingComponent.vue')['default']
@@ -22,7 +21,6 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     SearchInput: typeof import('./src/components/SearchInput.vue')['default']
     ShowPaysInput: typeof import('./src/components/ShowPaysInput.vue')['default']
-    SideNav: typeof import('./src/layouts/SideNav.vue')['default']
     Table: typeof import('./src/components/Table.vue')['default']
     TableDolarFacturados: typeof import('./src/components/TableDolarFacturados.vue')['default']
     TableFacturados: typeof import('./src/components/TableFacturados.vue')['default']
