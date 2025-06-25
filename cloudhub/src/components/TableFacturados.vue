@@ -102,21 +102,56 @@
 
           return combinedText.includes(search);
         });
+    }
+
+    const getDataOrderBy = (DATA) => {
+      let dataOrderBy; 
+      switch (props.orderBy) {
+        case 'Por defecto':
+          dataOrderBy = DATA;
+          break;
+        case 'Referencia':
+          dataOrderBy = [...DATA].sort((a, b) => parseInt(a.transaccions[0].referencia) - parseInt(b.transaccions[0].referencia) ) 
+          break;
+        case 'Monto Bs':
+          dataOrderBy = [...DATA].sort((a,b) => parseInt(a.transaccions[0].monto) - parseInt(b.transaccions[0].monto));
+          break;
+        case 'Contrato':
+          dataOrderBy = [...DATA].sort((a,b)=> parseInt(a.contratos[0].contrato) - parseInt(b.contratos[0].contrato));
+          break;
+        case 'Cliente':
+          dataOrderBy = [...DATA].sort((a,b) => a.contratos[0].nombre.localeCompare(b.contratos[0].nombre));
+          break;
+        case 'Rif/Cedula':
+          dataOrderBy = [...DATA].sort((a,b) => parseInt(a.contratos[0].rif) - parseInt(b.contratos[0].rif) );
+          break;
+        case 'Banco destino':
+          dataOrderBy = [...DATA].sort((a,b) => a.transaccions[0].banco_destino.localeCompare(b.transaccions[0].banco_destino));
+          break;
+        case 'Banco origen':
+          dataOrderBy = [...DATA].sort((a,b) => a.transaccions[0].banco_origen.localeCompare(b.transaccions[0].banco_origen));
+          break;
+        default:
+          dataOrderBy = DATA;
+      }
+
+      return dataOrderBy;
 
     }
 
     const sortedAndFilteredData = computed(() => {
       
       let DATA = tableData.value;
-      const filtereTransaction = getDataTransactionFiltered(DATA);
-      const filteredBySearch = getDataSerchFiltered(filtereTransaction)
+      const filtereTransaction = getDataTransactionFiltered([...DATA]);
+      const filteredBySearch = getDataSerchFiltered([...filtereTransaction])
+      const filteredOrderBy = getDataOrderBy([...filteredBySearch]);
 
       return props.haveIChangeDirectionOrderBy
-        ? [...filteredBySearch].reverse()
-        : filteredBySearch;
+        ? [...filteredOrderBy].reverse()
+        : filteredOrderBy;
     });
 
-   
+    
 
 
 </script>
