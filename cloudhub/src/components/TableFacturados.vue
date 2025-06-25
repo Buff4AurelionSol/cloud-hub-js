@@ -156,7 +156,7 @@
 
     const sortedAndFilteredData = computed(() => {
       
-      let DATA = tableData.value;
+      let DATA = [...tableData.value];
       const filtereTransaction = getDataTransactionFiltered([...DATA]);
       const filteredBySearch = getDataSerchFiltered([...filtereTransaction])
       const filteredOrderBy = getDataOrderBy([...filteredBySearch]);
@@ -167,10 +167,17 @@
         : filteredTypeReport;
     });
 
+    const handleExport = () => {
+      exportTable(PAGINATED_DATA.value, VISIBLE_COLUMN.value, formatedValue, props.typeTable);
+    }
+
 
 </script>
 
 <template>
+    <div class="w-100 d-flex justify-center mb-2">
+      <v-btn variant="outlined" rounded="xl" @click="handleExport">Exportar a Excell</v-btn>
+    </div>
     <v-table class="table-container box-filters-fade rounded-xl">
       <thead>
         <tr>
