@@ -13,6 +13,11 @@
   const typeReport = ref([])
 
 
+  const route = useRoute();
+  const router = useRouter();
+
+
+
   const columnsItems = ref(COLUMNS_BY_TYPE['Por Facturar'])
 
   const getNumberToFilter = (value) => {
@@ -49,6 +54,21 @@
     reportTypeState.value = data
   }
 
+  const changeUrl = () => {
+      if (tableType.value) {
+      const viewParam = tableType.value
+        .toLowerCase()
+        .replace(/\s+/g, '-')         
+        .replace(/\//g, '--');        
+
+      router.replace({
+        query: {
+          ...route.query,
+          view: viewParam
+        }
+      });
+    }
+  }
    
   watchEffect(()=>{
     if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'POR FACTURAR'){
@@ -95,6 +115,10 @@
       columnsItems.value = COLUMNS_BY_TYPE['Divisas/Por Verificar']
       
     }
+
+    changeUrl()
+
+    
   })
 
     const submitBill =(e) => {
