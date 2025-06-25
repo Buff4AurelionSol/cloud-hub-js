@@ -14,8 +14,8 @@
    const ordersState = ref(null)
    const showFormState = ref(false)
    
-
-   const selectedColumns = defineModel('selectedColumns')
+  const selectedColumns = defineModel('selectedColumns')
+  const typeReport = defineModel('typeReport')
 
   const props = defineProps({
     haveIChangeDirectionOrderBy:{
@@ -159,8 +159,11 @@
       </v-row>
 
       <v-row v-if="showFormState" >
-        <v-col :class="{'box-filters-fade': showFormState}">
+        <v-col cols="6" :class="{'box-filters-fade': showFormState}">
           <ColumnsFilter :columnsItems="columnsItems" v-model:selected="selectedColumns" />
+        </v-col>
+        <v-col :class="{'box-filters-fade': showFormState}">
+          <TypeReportInput v-model="typeReport"/>
         </v-col>
       </v-row>
 

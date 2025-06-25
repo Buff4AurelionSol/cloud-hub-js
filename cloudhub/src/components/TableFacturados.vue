@@ -31,6 +31,10 @@
         searchValue:{
           type: String
         },
+        typeReport:{
+          type: Array,
+          default: () => []
+        }
     })
 
     
@@ -81,6 +85,17 @@
 
             return item.transaccions.some(trans => props.transactions.includes(trans.tipo));
         });
+    }
+
+    const getTypeReportFiltered = (DATA) => {
+      return DATA.filter(item =>{
+        if(props.typeReport.length <= 0){
+          return true
+        }
+        return props.typeReport.includes(item.tipo_reporte)
+
+      })
+
     }
 
     const getDataSerchFiltered = (DATA) => {
@@ -145,13 +160,12 @@
       const filtereTransaction = getDataTransactionFiltered([...DATA]);
       const filteredBySearch = getDataSerchFiltered([...filtereTransaction])
       const filteredOrderBy = getDataOrderBy([...filteredBySearch]);
+      const filteredTypeReport = getTypeReportFiltered([...filteredOrderBy])
 
       return props.haveIChangeDirectionOrderBy
-        ? [...filteredOrderBy].reverse()
-        : filteredOrderBy;
+        ? [...filteredTypeReport].reverse()
+        : filteredTypeReport;
     });
-
-    
 
 
 </script>

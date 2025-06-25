@@ -3659,7 +3659,7 @@ export const REPORTS_FACTURADOS = [
   {
     id: 478123,
     reporte_estado: "Facturado",
-    tipo_reporte: "MENSUALIDAD",
+    tipo_reporte: "INSTALACION",
     nota: "Reporte creado mediante opción de BanescoPagos.",
     transaccions: [
       {
@@ -4042,6 +4042,49 @@ export const REPORTS_FACTURADOS = [
       }
     ],
     created_at: "2025-06-10 08:04:18"
+  },
+  {
+    id: 478093,
+    reporte_estado: "Facturado",
+    tipo_reporte: "MENSUALIDAD",
+    nota: "-",
+    transaccions: [
+      {
+        id: 44124124,
+        referencia: "122211",
+        pago_proveedor: false,
+        banco_destino: "DEL TESORO",
+        banco_origen: "DEL TESORO",
+        tipo: "POS VIRTUAL",
+        monto: "3.567,33",
+        monto_usd: "35,99",
+        tasa_id: 1104,
+        tasa: 99.12,
+        fecha: "10/06/2025",
+        moneda: "BS",
+        depositante: null,
+        comprobante: false
+      }
+    ],
+    total_usd: "44,99",
+    contratos: [
+      {
+        nombre: "DEIVIS JOEL GUILLEN",
+        contrato: "1025986",
+        rif: "6481458",
+        estado: "N/D"
+      }
+    ],
+    facturas: [
+      {
+        factura: "B11111",
+        fecha: "10/07/2025",
+        monto: "44444.33",
+        nro_contrato: "444444",
+        id_contrato: 4444456512
+      }
+    ],
+    created_at: "2025-06-10 08:02:34"
   },
   {
     id: 478093,

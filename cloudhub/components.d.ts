@@ -27,5 +27,6 @@ declare module 'vue' {
     TransactionInput: typeof import('./src/components/TransactionInput.vue')['default']
     TransactionsSpace: typeof import('./src/components/TransactionsSpace.vue')['default']
     TypeReport: typeof import('./src/components/TypeReport.vue')['default']
+    TypeReportInput: typeof import('./src/components/TypeReportInput.vue')['default']
   }
 }

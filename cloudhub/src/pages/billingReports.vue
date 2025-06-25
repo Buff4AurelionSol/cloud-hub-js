@@ -10,9 +10,7 @@
   const columnsToFilter = ref([])
   const tableType = ref('Por facturar')
   const dataTable = ref(REPORTS)
-
-  
-
+  const typeReport = ref([])
 
 
   const columnsItems = ref(COLUMNS_BY_TYPE['Por Facturar'])
@@ -104,10 +102,6 @@
       console.log(e.target.value)
     }
 
-    watch(columnsItems, (val) => {
-  console.log('columnsItems padre actualizado:', val)
-})
-
 </script>
 
 <template>
@@ -128,6 +122,7 @@
         v-model:selectedColumns="columnsToFilter"
         :columnsItems="columnsItems"
         @sendTypeReport="getTypeReport"
+        v-model:typeReport="typeReport"
       />
 
       <section>
@@ -141,6 +136,7 @@
           :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy"
           :transactions="transactions"
           :searchValue="searchValue"
+          :typeReport="typeReport"
         />
       </section> 
 </template>
