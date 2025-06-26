@@ -84,11 +84,11 @@ export const FACTURA_COLUMNS = [
 ]
 
 export const MOTIVO_RECHAZO = [
-  {title: 'motivo_rechazo', value: 'MOTIVO RECHAZO'}
+  { title: 'motivo_rechazo', value: 'MOTIVO RECHAZO' }
 ]
 
 export const DEUDA = [
-  {title: 'deuda', value: 'DEUDA'}
+  { title: 'deuda', value: 'DEUDA' }
 ]
 export const COLUMNS_BY_TYPE = {
   'Por Facturar': [
@@ -104,41 +104,41 @@ export const COLUMNS_BY_TYPE = {
     ...CONTRATO_COLUMNS,
     ...FACTURA_COLUMNS
   ],
-  'Rechazados':[
+  'Rechazados': [
     ...COMMON_COLUMNS,
     ...REPORTE_COLUMNS,
     ...TRANSACCION_COLUMNS,
     ...CONTRATO_COLUMNS,
     ...MOTIVO_RECHAZO
   ],
-  'Por verificar':[
+  'Por verificar': [
     ...COMMON_COLUMNS,
     ...TRANSACCION_COLUMNS,
     ...CONTRATO_COLUMNS,
     ...DEUDA
 
   ],
-  'Divisas/Por Facturar':[
+  'Divisas/Por Facturar': [
     ...COMMON_COLUMNS,
     ...REPORTE_COLUMNS,
     ...TRANSACCION_COLUMNS,
     ...CONTRATO_COLUMNS
   ],
-  'Divisas/Facturados':[
+  'Divisas/Facturados': [
     ...COMMON_COLUMNS,
     ...REPORTE_COLUMNS,
     ...TRANSACCION_COLUMNS,
     ...CONTRATO_COLUMNS,
     ...FACTURA_COLUMNS
   ],
-  'Divisas/Rechazados':[
+  'Divisas/Rechazados': [
     ...COMMON_COLUMNS,
     ...REPORTE_COLUMNS,
     ...TRANSACCION_COLUMNS,
     ...CONTRATO_COLUMNS,
     ...MOTIVO_RECHAZO
   ],
-  'Divisas/Por Verificar':[
+  'Divisas/Por Verificar': [
     ...COMMON_COLUMNS,
     ...TRANSACCION_COLUMNS,
     ...CONTRATO_COLUMNS,
