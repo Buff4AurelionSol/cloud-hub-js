@@ -1,45 +1,55 @@
 <script setup>
-    const typeReportValue = ref('POR FACTURAR')
-    const emit = defineEmits(['sendTypeReportState'])
-    const OPTIONS_REPORT_TYPE = ['POR FACTURAR', 'FACTURADOS', 'RECHAZADOS', 'POR VERIFICAR', 'RECIBOS']
+  const OPTIONS_REPORT_TYPE = [
+    'POR FACTURAR',
+    'FACTURADOS',
+    'RECHAZADOS',
+    'POR VERIFICAR',
+    'RECIBOS' 
+  ]
 
-    watch(typeReportValue, (newValue)=>{
-     OPTIONS_REPORT_TYPE.includes(newValue) 
-      ? emit('sendTypeReportState', newValue)
-      : console.warn("Valor no permitido", newValue)
-    })
-
-
+  const VALUES_TYPE_REPORT = defineModel('typeReportsValue', {
+    default: 'POR FACTURAR' // Valor por defecto
+  })
 </script>
 
 <template>
   <v-row class="text-center">
     <v-col>
       <v-btn-toggle
-        v-model="typeReportValue"
+        v-model="VALUES_TYPE_REPORT"
         color="deep-purple-accent-3"
-        rounded="0"
         group
+        mandatory
+        class="responsive-toggle"
       >
-        <div>
-          <v-btn value="POR FACTURAR" class="h-100">
-            POR FACTURAR
-          </v-btn>
-
-          <v-btn value="FACTURADOS" class="h-100">
-            FACTURADOS
-          </v-btn>
-
-          <v-btn value="RECHAZADOS" class="h-100">
-            RECHAZADOS
-          </v-btn>
-
-          <v-btn value="POR VERIFICAR" class="h-100">
-            POR VERIFICAR
-          </v-btn>
-        </div>
+        <v-btn
+          v-for="option in OPTIONS_REPORT_TYPE"
+          :key="option"
+          :value="option"
+          class="responsive-btn"
+          min-width="auto"
+          :height="$vuetify.display.smAndDown ? '36px' : '48px'"
+          :class="{
+            'text-caption': $vuetify.display.xsOnly,
+            'text-body-2': $vuetify.display.smOnly,
+            'py-2': $vuetify.display.smAndDown
+          }"
+        >
+          {{ option }}
+        </v-btn>
       </v-btn-toggle>
     </v-col>
   </v-row>
 </template>
 
+<style scoped>
+.responsive-toggle {
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.responsive-btn {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+</style>

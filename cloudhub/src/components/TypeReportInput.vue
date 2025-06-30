@@ -1,6 +1,6 @@
 <script setup>
     const OPTIONS_TYPE_REPORT = ['MENSUALIDAD', 'INSTALACION']
-    const model = defineModel()
+    const model = defineModel('typeReport')
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <script setup>
-  const indexState = ref(10)
-  const filters = ref([])
+  //ESTADOS (REFS)
+  const RECORDS_TO_SHOW = ref(10)
   const transactions = ref([])
   const orderBy = ref("")
   const haveIChangeDirectionOrderBy = ref(false)
@@ -11,47 +11,20 @@
   const tableType = ref('Por facturar')
   const dataTable = ref(REPORTS)
   const typeReport = ref([])
+  const columnsItems = ref(COLUMNS_BY_TYPE['Por Facturar'])
 
-
+  //VARIABLES PARA EL ROUTER
   const route = useRoute();
   const router = useRouter();
 
 
 
-  const columnsItems = ref(COLUMNS_BY_TYPE['Por Facturar'])
 
-  const getNumberToFilter = (value) => {
-    indexState.value = Number(value)
-  }
-
-  const getData = (data) =>{
-    filters.value = data
-  }
-
-  const getTransactions = (data) => {
-    transactions.value = data
-  }
-
-  const getOrderBy = (data) => {
-    orderBy.value = data
-  }
-  
-  const getSearch = (data) => {
-    searchValue.value = data
-  }
 
   const isChangeDirectionOrderBy = () =>{
     haveIChangeDirectionOrderBy.value 
       ? haveIChangeDirectionOrderBy.value = false 
       : haveIChangeDirectionOrderBy.value = true
-  }
-
-  const getPayType = (data) =>{
-    payTypeState.value = data
-  }
-
-  const getTypeReport = (data) => {
-    reportTypeState.value = data
   }
 
   const changeUrl = () => {
@@ -121,37 +94,31 @@
     
   })
 
-    const submitBill =(e) => {
-      e.preventDefault()
-      console.log(e.target.value)
-    }
-
 </script>
 
 <template>
   <header class="d-flex flex-column align-center pa-2 ga-2">
-    <h1 class="text-h3">Reportes de Pagos</h1>
+    <h1 class="text-h3 box-filters-move">Reportes de Pagos</h1>
 
     <span class="text-h4">{{tableType}}</span>
   </header>
       <Form
-        @numberToFilter="getNumberToFilter"
-        @sendData="getData"
-        @transactions="getTransactions"
-        @orderBy="getOrderBy"
         :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy"
-        @isChangeDirectionOrderBy="isChangeDirectionOrderBy"
-        @sendSearch="getSearch"
-        @sendPayTypeState="getPayType"
-        v-model:selectedColumns="columnsToFilter"
         :columnsItems="columnsItems"
-        @sendTypeReport="getTypeReport"
+        @isChangeDirectionOrderBy="isChangeDirectionOrderBy"
+        v-model:selectedColumns="columnsToFilter"
+        v-model:valueInputShow="RECORDS_TO_SHOW"
         v-model:typeReport="typeReport"
+        v-model:transactionsValues="transactions"
+        v-model:searchValue="searchValue"
+        v-model:selectedOrders="orderBy"
+        v-model:payTypeValue="payTypeState"
+        v-model:tyeReportsValue="reportTypeState"
       />
 
       <section>
         <TableFacturados
-          :indexState="indexState"
+          :indexState="RECORDS_TO_SHOW"
           :columns="columnsToFilter"
           :typeTable="tableType"
           :dataTable="dataTable"

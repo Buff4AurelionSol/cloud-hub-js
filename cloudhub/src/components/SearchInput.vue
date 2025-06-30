@@ -1,4 +1,5 @@
 <script setup>
+    const SEARCH_VALUE = defineModel('searchValue')
 </script>
 
 <template>
@@ -10,6 +11,7 @@
         label="Buscar"
         prepend-icon="$vuetify"
         variant="outlined"
+        v-model="SEARCH_VALUE"
     />
 </template>
 

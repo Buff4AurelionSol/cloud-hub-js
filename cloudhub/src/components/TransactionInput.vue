@@ -1,21 +1,15 @@
 <script setup>
-    const selectedValues = ref([])
-    const emit = defineEmits(['sendSelectedValues'])
-    const sendValuesSelect = (value) => {
-        emit('sendSelectedValues', value)
-    }
-  
+    const TRANSACTIONS_VALUES = defineModel("transactionsValues")
 </script>
 
 <template>
     <v-combobox
       multiple
       label="Transacción"
-      v-model="selectedValues"
+      v-model="TRANSACTIONS_VALUES"
       :items="OPTIONS_TRANSACTION"
       class="transactions"
       density="compact"
-       @update:modelValue="sendValuesSelect"
     />
   </template>
   

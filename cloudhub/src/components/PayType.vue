@@ -1,22 +1,12 @@
 <script setup>
-    const payTypeValue = ref('BOLIVARES')
-    const payTypeState = ref('')
-    const emit = defineEmits(['sendPayTypeState'])
-    const OPTIONS_TYPE_PAY = ['BOLIVARES', 'DIVISAS']
-
-    watch(payTypeValue, (newValue)=>{
-     OPTIONS_TYPE_PAY.includes(newValue) 
-      ? emit('sendPayTypeState', newValue)
-      : console.warn("Valor no permitido", newValue)
-    })
-
+  const VALUES_PAY_TYPE = defineModel('payTypeValue')
 </script>
 
 <template>
   <v-row class="text-center">
     <v-col>
       <v-btn-toggle
-        v-model="payTypeValue"
+        v-model="VALUES_PAY_TYPE"
         color="deep-purple-accent-3"
         rounded="0"
         group

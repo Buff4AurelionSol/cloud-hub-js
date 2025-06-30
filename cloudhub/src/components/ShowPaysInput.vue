@@ -1,11 +1,6 @@
 <script setup>
     const options = [10, 25, 50, 100];
-    const defaultValue = ref(options[0])
-    const emit = defineEmits(['sendValuesToShow'])
-
-    const sendValuesShowInputs = (value) => {
-        emit('sendValuesToShow', value)
-    }
+    const VALUES_INPUT_SHOW = defineModel('valuesInputShow')
 </script>
 
 <template>
@@ -15,8 +10,7 @@
         label="Cantidad de registros a mostrar"
         :items="options"
         variant="outlined"
-        v-model="defaultValue"
-        @update:modelValue="sendValuesShowInputs"
+        v-model="VALUES_INPUT_SHOW"
     />
 </template>
     

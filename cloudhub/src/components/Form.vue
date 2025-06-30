@@ -1,21 +1,23 @@
 <script setup >
-   import ExchangeIMG from '@/pics/exchangeIMG.png'
-   import arrowVerticle from '@/pics/arrows-verticle.svg'
+  import ExchangeIMG from '@/pics/exchangeIMG.png'
+  import arrowVerticle from '@/pics/arrows-verticle.svg'
 
-   const emit = defineEmits(['numberToFilter','sendData', 'transactions', 'orderBy', 
-    'isChangeDirectionOrderBy', 'isChangeDirectionTransaction', 'sendSearch', 'sendPayTypeState',
-    'sendTypeReport','sendColumnsToFilter'])
-   const selectedValues = ref([])
-   const payTypeState = ref('BOLIVARES')
-   const reportTypeState = ref('POR FACTURAR')
-  
-   const recordsToShow = ref(10)
-   const formRef = ref(null)
-   const ordersState = ref(null)
-   const showFormState = ref(false)
+
+
+  const formRef = ref(null)
+  const showFormState = ref(false)
    
-  const selectedColumns = defineModel('selectedColumns')
-  const typeReport = defineModel('typeReport')
+  //MODELS
+  const SELECTED_COLUMNS = defineModel('selectedColumns')
+  const TYPE_REPORT = defineModel('typeReport')
+  const TRANSACTIONS_VALUES = defineModel('transactionsValues')
+  const SELECTED_ORDERS = defineModel('selectedOrders')
+  const SEARCH_VALUE = defineModel('searchValue')
+  const VALUES_INPUT_SHOW = defineModel('valueInputShow')
+  const VALUES_TYPE_REPORT = defineModel('tyeReportsValue')
+  const VALUES_PAY_TYPE = defineModel('payTypeValue')
+
+  const emit = defineEmits(['isChangeDirectionOrderBy'])
 
   const props = defineProps({
     haveIChangeDirectionOrderBy:{
@@ -32,57 +34,17 @@
     
     const formData = new FormData(formRef.value)
     
-    const dataArray = []
     const data = Object.fromEntries(formData.entries()) 
-    data.showPaysSelect = recordsToShow.value
-    data.transaction = selectedValues.value
-
-    emit('numberToFilter', recordsToShow.value)
-    emit('sendData', dataArray)
-    emit('transactions', data.transaction)
-    emit('orderBy', ordersState.value)
-    emit('sendSearch', data.search)
-    emit('sendPayTypeState', payTypeState.value)
-    emit('sendTypeReport', reportTypeState.value)
     
 
   }
 
 
 
-  
-
-  const getTransactions = (values) =>{
-     selectedValues.value =  values
-  }
-
-  const getColumnsToFilter = (values) =>{
-    selectedColumns.value = values
-  }
-
   const isChangeDirectionOrderBy = () => {
     emit('isChangeDirectionOrderBy')
   }
 
-  const isChangeDirectionTransaction = () => {
-    emit('isChangeDirectionTransaction')
-  }
-
-  const getPayType = (data) =>{
-    payTypeState.value = data
-  }
-
-  const getReportType = (data) => {
-    reportTypeState.value = data
-  }
-
-  const getRecordsToShow = (data) => {
-    recordsToShow.value = data
-  }
-
-  const getOrders = (data) => {
-    ordersState.value = data; 
-  }
 
   watchEffect(()=>{
     handleSubmit()
@@ -94,13 +56,6 @@
       : showFormState.value = true
   }
 
-  const Columns = computed(()=> {
-    return props.columnsItems
-  })
-
-  watch(() => props.columnsItems, (val) => {
-  console.log('Se actualizó columnsItems en el form', val)
-})
 
 </script>
 
@@ -114,11 +69,11 @@
       </v-row>    
       <v-row :class="{ 'justify-center': !showFormState }">
         <v-col cols="12" md="6" v-if="showFormState":class="{'box-filters-fade': showFormState}">
-          <SearchInput/> 
+          <SearchInput v-model:searchValue="SEARCH_VALUE"/> 
         </v-col>
         <v-col cols="12" md="6" :class="showFormState ? 'box-filters-fade': 'box-filters-move'">
-          <PayType @sendPayTypeState="getPayType"/>
-          <TypeReport @sendTypeReportState="getReportType"/>
+          <PayType v-model:payTypeValue="VALUES_PAY_TYPE"/>
+          <TypeReport v-model:typeReportsValue="VALUES_TYPE_REPORT"/>
         </v-col>
       </v-row>
 
@@ -130,7 +85,7 @@
           <DateInput name="fecha-2" label="Fecha final"/>
         </v-col>
         <v-col cols="12" md="6" class="order-by-col" :class="{'box-filters-fade': showFormState}">
-          <OrderByInput @sendOrdersBy="getOrders"/>
+          <OrderByInput v-model:selectedOrders="SELECTED_ORDERS"/>
           <button 
             class="buttonExchange" 
             name="changeDirectionOrderByButton" 
@@ -151,19 +106,19 @@
 
       <v-row v-if="showFormState">
         <v-col cols="6" :class="{'box-filters-fade': showFormState}">
-          <ShowPaysInput @sendValuesToShow="getRecordsToShow"/>
+          <ShowPaysInput v-model:valuesInputShow="VALUES_INPUT_SHOW"/>
         </v-col>
         <v-col cols="6" :class="{'box-filters-fade': showFormState}">
-          <TransactionInput @sendSelectedValues="getTransactions"/>
+          <TransactionInput v-model="TRANSACTIONS_VALUES"/>
         </v-col>
       </v-row>
 
       <v-row v-if="showFormState" >
         <v-col cols="6" :class="{'box-filters-fade': showFormState}">
-          <ColumnsFilter :columnsItems="columnsItems" v-model:selected="selectedColumns" />
+          <ColumnsFilter :columnsItems="columnsItems" v-model:selected="SELECTED_COLUMNS" />
         </v-col>
         <v-col :class="{'box-filters-fade': showFormState}">
-          <TypeReportInput v-model="typeReport"/>
+          <TypeReportInput v-model:typeReport="TYPE_REPORT"/>
         </v-col>
       </v-row>
 
@@ -234,4 +189,3 @@
 
   
 </style>
-

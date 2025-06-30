@@ -1,9 +1,5 @@
 <script setup>
-    const emits = defineEmits(['sendOrdersBy'])
-    const selectedOrder = ref([])
-    const sendOrders = (newValue) => {
-        emits('sendOrdersBy', newValue)
-    }
+    const SELECTED_ORDER = defineModel('selectedOrders')
 </script>
 
 
@@ -11,9 +7,8 @@
         <v-combobox
             name="orderBy"
             label="Ordenar por"
-            v-model="selectedOrder"
+            v-model="SELECTED_ORDER"
             :items="OPTIONS_ORDER_BY"
-            @update:model-value="sendOrders"
         />
 </template>
 
