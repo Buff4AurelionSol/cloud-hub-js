@@ -1,4 +1,6 @@
 <script setup>
+import { ssrLooseEqual } from 'vue/server-renderer'
+
   //ESTADOS (REFS)
   const RECORDS_TO_SHOW = ref(10)
   const transactions = ref([])
@@ -12,6 +14,11 @@
   const dataTable = ref(REPORTS)
   const typeReport = ref([])
   const columnsItems = ref(COLUMNS_BY_TYPE['Por Facturar'])
+  const DATA_TABLE = ref([])
+  const TOTAL_PAGES = ref(0)
+
+  const {getReportesPaginados, getReportPaginadosTipoReporteMoneda} = useReportesServices()
+
 
   //VARIABLES PARA EL ROUTER
   const route = useRoute();
@@ -33,7 +40,6 @@
         .toLowerCase()
         .replace(/\s+/g, '-')         
         .replace(/\//g, '--');        
-
       router.replace({
         query: {
           ...route.query,
@@ -42,57 +48,112 @@
       });
     }
   }
+
+
+  const handleDataTable = async(page, perPage, moneda, estado) => {
+    try {
+      const response = await getReportPaginadosTipoReporteMoneda(page, perPage, moneda, estado)
+      const {data, total_pages} = response
+      return {data, total_pages}
+
+    } catch (error) {
+      console.error("Error al obtener reportes:", error)
+    }
+  }
+
+  const initialDataTable = async(page, perPage) => {
+     try {
+      const response = await getReportesPaginados(page, perPage)
+      const {data, total_pages} = response
+      return {data, total_pages}
+
+    } catch (error) {
+      console.error("Error al obtener reportes:", error)
+    }
+    
+
+  }
    
-  watchEffect(()=>{
+  watchEffect(async ()=>{
     if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'POR FACTURAR'){
       tableType.value = 'Por facturar'
       dataTable.value = REPORTS
       columnsItems.value = COLUMNS_BY_TYPE['Por Facturar']
+      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.BOLIVARES, OPTIONS_STATES_REPORTS['En facturacion'])
+      DATA_TABLE.value = data
+      TOTAL_PAGES.value= total_pages
     }
     if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'FACTURADOS'){
       tableType.value = 'Facturados'
       dataTable.value = REPORTS_FACTURADOS
       columnsItems.value = COLUMNS_BY_TYPE['Facturados']
-     
+      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.BOLIVARES, OPTIONS_STATES_REPORTS.Facturado)
+      DATA_TABLE.value = data
+      TOTAL_PAGES.value= total_pages
     }
     if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'RECHAZADOS'){
       tableType.value = 'Rechazados'
       dataTable.value = REPORTS_RECHAZADOS
       columnsItems.value = COLUMNS_BY_TYPE.Rechazados
+      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.BOLIVARES, OPTIONS_STATES_REPORTS.Rechazado)
+      DATA_TABLE.value = data
+      TOTAL_PAGES.value= total_pages
     }
     if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'POR VERIFICAR'){
       tableType.value = 'Por verificar';
       dataTable.value = REPORTS_POR_VERIFICAR;
       columnsItems.value = COLUMNS_BY_TYPE['Por verificar']
-     
+      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.BOLIVARES, OPTIONS_STATES_REPORTS['Por verificar'])
+      DATA_TABLE.value = data
+      TOTAL_PAGES.value= total_pages
     }
     
     if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'POR FACTURAR'){
       tableType.value = 'Divisas/Por facturar';
       dataTable.value = REPORTS_DIVISAS;
       columnsItems.value = COLUMNS_BY_TYPE['Divisas/Por Facturar']
+      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.DOLARES, OPTIONS_STATES_REPORTS['En facturacion'])
+      DATA_TABLE.value = data
+      TOTAL_PAGES.value= total_pages
     }
     if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'FACTURADOS'){
       tableType.value = 'Divisas/Facturados';
       dataTable.value = REPORTS_FACTURADOS_DIVISAS;
       columnsItems.value = COLUMNS_BY_TYPE['Divisas/Facturados']
+      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.DOLARES, OPTIONS_STATES_REPORTS.Facturado)
+      DATA_TABLE.value = data
+      TOTAL_PAGES.value= total_pages
+      DATA_TABLE.value = data
+      TOTAL_PAGES.value= total_pages
     }
     if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'RECHAZADOS'){
       tableType.value = 'Divisas/Rechazados'
       dataTable.value = REPORTS_DIVISAS_RECHAZADOS
       columnsItems.value = COLUMNS_BY_TYPE['Divisas/Rechazados']
+      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.DOLARES, OPTIONS_STATES_REPORTS.Rechazado)
+      DATA_TABLE.value = data
+      TOTAL_PAGES.value= total_pages
     }
     if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'POR VERIFICAR'){
       tableType.value = 'Divisas/Por verificar'
       dataTable.value = REPORTS_POR_VERIFICAR
       columnsItems.value = COLUMNS_BY_TYPE['Divisas/Por Verificar']
-      
+      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.DOLARES, OPTIONS_STATES_REPORTS.Facturado)
+      DATA_TABLE.value = data
+      TOTAL_PAGES.value= total_pages 
     }
 
     changeUrl()
 
     
   })
+
+
+ onMounted(async () => {
+  const {data, total_pages} = await initialDataTable(1, RECORDS_TO_SHOW.value)
+  DATA_TABLE.value = data
+  TOTAL_PAGES.value= total_pages
+})
 
 </script>
 
@@ -121,13 +182,14 @@
           :indexState="RECORDS_TO_SHOW"
           :columns="columnsToFilter"
           :typeTable="tableType"
-          :dataTable="dataTable"
+          :dataTable="DATA_TABLE"
           :columnsHeaders="columnsItems"
           :order-by="orderBy"
           :haveIChangeDirectionOrderBy="haveIChangeDirectionOrderBy"
           :transactions="transactions"
           :searchValue="searchValue"
           :typeReport="typeReport"
+          :reciveTotalPages="TOTAL_PAGES"
         />
       </section> 
 </template>

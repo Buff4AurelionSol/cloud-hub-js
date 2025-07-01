@@ -140,6 +140,8 @@
     "COLUMNS_BY_TYPE": true,
     "REPORTE_COLUMNS": true,
     "MOTIVO_RECHAZO": true,
-    "DEUDA": true
+    "DEUDA": true,
+    "OPTIONS_STATES_REPORTS": true,
+    "OPTIONS_MONEDA": true
   }
 }

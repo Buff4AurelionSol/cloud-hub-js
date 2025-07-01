@@ -71,10 +71,12 @@
         <v-col cols="12" md="6" v-if="showFormState":class="{'box-filters-fade': showFormState}">
           <SearchInput v-model:searchValue="SEARCH_VALUE"/> 
         </v-col>
-        <v-col cols="12" md="6" :class="showFormState ? 'box-filters-fade': 'box-filters-move'">
+        <v-col cols="12" md="6" :class="showFormState ? 'box-filters-fade': 'box-filters-move mb-2'">
           <PayType v-model:payTypeValue="VALUES_PAY_TYPE"/>
-          <TypeReport v-model:typeReportsValue="VALUES_TYPE_REPORT"/>
         </v-col>
+        <v-row cols="12" md="6" class="mb-2">
+            <TypeReport v-model:typeReportsValue="VALUES_TYPE_REPORT"/>
+        </v-row>
       </v-row>
 
       <v-row v-if="showFormState">

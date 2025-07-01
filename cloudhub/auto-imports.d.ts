@@ -16,7 +16,9 @@ declare global {
   const HEADERS: typeof import('./src/stores/const.js')['HEADERS']
   const LISTA_TASAS: typeof import('./src/stores/mockdata/tasas.js')['LISTA_TASAS']
   const MOTIVO_RECHAZO: typeof import('./src/stores/const.js')['MOTIVO_RECHAZO']
+  const OPTIONS_MONEDA: typeof import('./src/stores/const.js')['OPTIONS_MONEDA']
   const OPTIONS_ORDER_BY: typeof import('./src/stores/const.js')['OPTIONS_ORDER_BY']
+  const OPTIONS_STATES_REPORTS: typeof import('./src/stores/const.js')['OPTIONS_STATES_REPORTS']
   const OPTIONS_TRANSACTION: typeof import('./src/stores/const.js')['OPTIONS_TRANSACTION']
   const RECIBOS: typeof import('./src/stores/mockdata/reports.js')['RECIBOS']
   const REPORTE_COLUMNS: typeof import('./src/stores/const.js')['REPORTE_COLUMNS']
@@ -115,7 +117,7 @@ declare global {
   const usePaymentsServices: typeof import('./src/stores/paymentsServices/index.js')['usePaymentsServices']
   const usePaymentsStore: typeof import('./src/stores/payments/index.js')['usePaymentsStore']
   const useReporteStore: typeof import('./src/stores/payments/reporte.js')['useReporteStore']
-  const useReportesServices: typeof import('./src/stores/paymentsServices/reportes.js')['useReportesServices']
+  const useReportesServices: typeof import('./src/services/reportes.js')['useReportesServices']
   const useRoute: typeof import('vue-router')['useRoute']
   const useRouter: typeof import('vue-router')['useRouter']
   const useRtl: typeof import('vuetify')['useRtl']
@@ -153,7 +155,9 @@ declare module 'vue' {
     readonly FACTURA_COLUMNS: UnwrapRef<typeof import('./src/stores/const.js')['FACTURA_COLUMNS']>
     readonly LISTA_TASAS: UnwrapRef<typeof import('./src/stores/mockdata/tasas.js')['LISTA_TASAS']>
     readonly MOTIVO_RECHAZO: UnwrapRef<typeof import('./src/stores/const.js')['MOTIVO_RECHAZO']>
+    readonly OPTIONS_MONEDA: UnwrapRef<typeof import('./src/stores/const.js')['OPTIONS_MONEDA']>
     readonly OPTIONS_ORDER_BY: UnwrapRef<typeof import('./src/stores/const.js')['OPTIONS_ORDER_BY']>
+    readonly OPTIONS_STATES_REPORTS: UnwrapRef<typeof import('./src/stores/const.js')['OPTIONS_STATES_REPORTS']>
     readonly OPTIONS_TRANSACTION: UnwrapRef<typeof import('./src/stores/const.js')['OPTIONS_TRANSACTION']>
     readonly RECIBOS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['RECIBOS']>
     readonly REPORTE_COLUMNS: UnwrapRef<typeof import('./src/stores/const.js')['REPORTE_COLUMNS']>
@@ -250,7 +254,7 @@ declare module 'vue' {
     readonly usePaymentsServices: UnwrapRef<typeof import('./src/stores/paymentsServices/index.js')['usePaymentsServices']>
     readonly usePaymentsStore: UnwrapRef<typeof import('./src/stores/payments/index.js')['usePaymentsStore']>
     readonly useReporteStore: UnwrapRef<typeof import('./src/stores/payments/reporte.js')['useReporteStore']>
-    readonly useReportesServices: UnwrapRef<typeof import('./src/stores/paymentsServices/reportes.js')['useReportesServices']>
+    readonly useReportesServices: UnwrapRef<typeof import('./src/services/reportes.js')['useReportesServices']>
     readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useRtl: UnwrapRef<typeof import('vuetify')['useRtl']>

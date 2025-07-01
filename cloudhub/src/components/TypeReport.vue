@@ -13,27 +13,20 @@
 </script>
 
 <template>
-  <v-row class="text-center">
+  <v-row class="text-center"  >
     <v-col>
       <v-btn-toggle
         v-model="VALUES_TYPE_REPORT"
         color="deep-purple-accent-3"
         group
         mandatory
-        class="responsive-toggle"
+        class="bg-black"
       >
         <v-btn
           v-for="option in OPTIONS_REPORT_TYPE"
           :key="option"
           :value="option"
-          class="responsive-btn"
-          min-width="auto"
-          :height="$vuetify.display.smAndDown ? '36px' : '48px'"
-          :class="{
-            'text-caption': $vuetify.display.xsOnly,
-            'text-body-2': $vuetify.display.smOnly,
-            'py-2': $vuetify.display.smAndDown
-          }"
+    
         >
           {{ option }}
         </v-btn>
@@ -43,13 +36,8 @@
 </template>
 
 <style scoped>
-.responsive-toggle {
-  flex-wrap: wrap;
-  gap: 4px;
-}
+  .box{
+    width: auto;
+  }
 
-.responsive-btn {
-  flex: 1 1 auto;
-  min-width: 0;
-}
 </style>

@@ -58,29 +58,29 @@ export const COMMON_COLUMNS = [
 
 export const REPORTE_COLUMNS = [
   { title: 'tipo_reporte', value: 'TIPO REPORTE' },
-  { title: 'reporte_estado', value: 'ESTADO' },
+  { title: 'reporteestado.estado', value: 'ESTADO' },
 ]
 
 export const TRANSACCION_COLUMNS = [
   { title: 'transaccions.referencia', value: 'REFERENCIA' },
-  { title: 'transaccions.banco_origen', value: 'BANCO ORIGEN' },
-  { title: 'transaccions.banco_destino', value: 'BANCO DESTINO' },
+  { title: 'transaccions.bancoorigen.nombre', value: 'BANCO ORIGEN' },
+  { title: 'transaccions.bancodestino.nombre', value: 'BANCO DESTINO' },
   { title: 'transaccions.monto', value: 'MONTO' },
   { title: 'transaccions.monto_usd', value: 'MONTO USD' },
   { title: 'transaccions.tasa', value: 'TASA' },
-  { title: 'transaccions.tipo', value: 'TIPO TRANSACCIÓN' },
-  { title: 'transaccions.fecha', value: 'FECHA TRANSACCIÓN' },
+  { title: 'transaccions.transacciontipo.tipo', value: 'TIPO TRANSACCIÓN' },
+  { title: 'transaccions.transacciontipo.created_at', value: 'FECHA TRANSACCIÓN' },
 ]
 
 export const CONTRATO_COLUMNS = [
-  { title: 'contratos.nombre', value: 'CLIENTE' },
-  { title: 'contratos.contrato', value: 'CONTRATO(S)' },
-  { title: 'contratos.rif', value: 'RIF/CEDULA' },
+  { title: 'contrato.nombre', value: 'CLIENTE' },
+  { title: 'contrato.contrato', value: 'CONTRATO(S)' },
+  { title: 'contrato.rif_id', value: 'RIF/CEDULA' },
 ]
 
 export const FACTURA_COLUMNS = [
-  { title: 'facturas.factura', value: 'FACTURA(S)' },
-  { title: 'facturas.fecha', value: 'FECHA FACTURA' },
+  { title: 'factura.factura', value: 'FACTURA(S)' },
+  { title: 'factura.fecha', value: 'FECHA FACTURA' },
 ]
 
 export const MOTIVO_RECHAZO = [
@@ -146,4 +146,22 @@ export const COLUMNS_BY_TYPE = {
   ]
 
 }
+export const OPTIONS_STATES_REPORTS = {
+  'Por verificar': 1,
+  'Exonerado': 2,
+  'En verificacion': 3,
+  'Rechazado': 4,
+  'Verificado': 5,
+  'En facturacion': 6,
+  'Facturado': 7,
+  'Recibo': 8,
+  'Conciliar Manual': 9,
+  'Por confirmar Banesco': 10,
+  'Por revisar': 11,
+  'En Espera de Deposito': 12,
+};
 
+export const OPTIONS_MONEDA = {
+  'BOLIVARES': 1,
+  'DOLARES': 2,
+};

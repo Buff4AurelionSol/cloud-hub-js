@@ -34,6 +34,9 @@
         typeReport:{
           type: Array,
           default: () => []
+        },
+        reciveTotalPages:{
+          type: Number
         }
     })
 
@@ -75,7 +78,7 @@
       return sortedAndFilteredData.value.slice(start, end)
     })
 
-    const totalPages = computed(() => Math.ceil(sortedAndFilteredData.value.length / rowsPerPage.value))
+    const totalPages = computed(() => props.reciveTotalPages)
 
     const getDataTransactionFiltered = (DATA) => {
         return DATA.filter(item => {
@@ -175,6 +178,7 @@
 </script>
 
 <template>
+
     <div class="w-100 d-flex justify-center mb-2">
       <v-btn variant="outlined" rounded="xl" @click="handleExport">Exportar a Excell</v-btn>
     </div>
