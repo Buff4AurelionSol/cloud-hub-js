@@ -143,6 +143,7 @@
     "DEUDA": true,
     "OPTIONS_STATES_REPORTS": true,
     "OPTIONS_MONEDA": true,
-    "VALUES_ORDER_VALUES": true
+    "VALUES_ORDER_VALUES": true,
+    "configMap": true
   }
 }

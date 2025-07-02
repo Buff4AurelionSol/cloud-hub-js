@@ -89,79 +89,35 @@
 
   }
    
-  watchEffect(async ()=>{
-    if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'POR FACTURAR'){
-      tableType.value = 'Por facturar'
-      dataTable.value = REPORTS
-      columnsItems.value = COLUMNS_BY_TYPE['Por Facturar']
-      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.BOLIVARES, OPTIONS_STATES_REPORTS['En facturacion'])
-      DATA_TABLE.value = data
-      TOTAL_PAGES.value= total_pages
-    }
-    if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'FACTURADOS'){
-      tableType.value = 'Facturados'
-      dataTable.value = REPORTS_FACTURADOS
-      columnsItems.value = COLUMNS_BY_TYPE['Facturados']
-      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.BOLIVARES, OPTIONS_STATES_REPORTS.Facturado)
-      DATA_TABLE.value = data
-      TOTAL_PAGES.value= total_pages
-    }
-    if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'RECHAZADOS'){
-      tableType.value = 'Rechazados'
-      dataTable.value = REPORTS_RECHAZADOS
-      columnsItems.value = COLUMNS_BY_TYPE.Rechazados
-      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.BOLIVARES, OPTIONS_STATES_REPORTS.Rechazado)
-      DATA_TABLE.value = data
-      TOTAL_PAGES.value= total_pages
-    }
-    if(payTypeState.value === 'BOLIVARES' && reportTypeState.value === 'POR VERIFICAR'){
-      tableType.value = 'Por verificar';
-      dataTable.value = REPORTS_POR_VERIFICAR;
-      columnsItems.value = COLUMNS_BY_TYPE['Por verificar']
-      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.BOLIVARES, OPTIONS_STATES_REPORTS['Por verificar'])
-      DATA_TABLE.value = data
-      TOTAL_PAGES.value= total_pages
-    }
-    
-    if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'POR FACTURAR'){
-      tableType.value = 'Divisas/Por facturar';
-      dataTable.value = REPORTS_DIVISAS;
-      columnsItems.value = COLUMNS_BY_TYPE['Divisas/Por Facturar']
-      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.DOLARES, OPTIONS_STATES_REPORTS['En facturacion'])
-      DATA_TABLE.value = data
-      TOTAL_PAGES.value= total_pages
-    }
-    if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'FACTURADOS'){
-      tableType.value = 'Divisas/Facturados';
-      dataTable.value = REPORTS_FACTURADOS_DIVISAS;
-      columnsItems.value = COLUMNS_BY_TYPE['Divisas/Facturados']
-      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.DOLARES, OPTIONS_STATES_REPORTS.Facturado)
-      DATA_TABLE.value = data
-      TOTAL_PAGES.value= total_pages
-      DATA_TABLE.value = data
-      TOTAL_PAGES.value= total_pages
-    }
-    if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'RECHAZADOS'){
-      tableType.value = 'Divisas/Rechazados'
-      dataTable.value = REPORTS_DIVISAS_RECHAZADOS
-      columnsItems.value = COLUMNS_BY_TYPE['Divisas/Rechazados']
-      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.DOLARES, OPTIONS_STATES_REPORTS.Rechazado)
-      DATA_TABLE.value = data
-      TOTAL_PAGES.value= total_pages
-    }
-    if(payTypeState.value === 'DIVISAS' && reportTypeState.value === 'POR VERIFICAR'){
-      tableType.value = 'Divisas/Por verificar'
-      dataTable.value = REPORTS_POR_VERIFICAR
-      columnsItems.value = COLUMNS_BY_TYPE['Divisas/Por Verificar']
-      const {data, total_pages} =  await handleDataTable(1, RECORDS_TO_SHOW.value, OPTIONS_MONEDA.DOLARES, OPTIONS_STATES_REPORTS.Facturado)
-      DATA_TABLE.value = data
-      TOTAL_PAGES.value= total_pages 
-    }
+watchEffect(async () => {
+  const currentConfig = configMap[payTypeState.value]?.[reportTypeState.value]
+
+  if (!currentConfig) return
+
+  LOADING.value = true
+
+  try {
+    tableType.value = currentConfig.tableType
+    dataTable.value = currentConfig.report
+    columnsItems.value = currentConfig.columns
+
+    const { data, total_pages } = await handleDataTable(
+      1,
+      RECORDS_TO_SHOW.value,
+      OPTIONS_MONEDA[payTypeState.value],
+      currentConfig.estado
+    )
+
+    DATA_TABLE.value = data
+    TOTAL_PAGES.value = total_pages
 
     changeUrl()
-
-    
-  })
+  } catch (err) {
+    console.error(err)
+  } finally {
+    LOADING.value = false
+  }
+})
 
 
   onMounted(async () => {

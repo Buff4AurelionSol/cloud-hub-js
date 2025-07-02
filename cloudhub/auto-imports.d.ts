@@ -38,6 +38,7 @@ declare global {
   const banescopagos: typeof import('./src/stores/mockdata/bills.js')['banescopagos']
   const bnc: typeof import('./src/stores/mockdata/bills.js')['bnc']
   const computed: typeof import('vue')['computed']
+  const configMap: typeof import('./src/stores/configViewsReportsTable.js')['configMap']
   const createApp: typeof import('vue')['createApp']
   const createPinia: typeof import('pinia')['createPinia']
   const customRef: typeof import('vue')['customRef']
@@ -177,6 +178,7 @@ declare module 'vue' {
     readonly banescopagos: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['banescopagos']>
     readonly bnc: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['bnc']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
+    readonly configMap: UnwrapRef<typeof import('./src/stores/configViewsReportsTable.js')['configMap']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly createPinia: UnwrapRef<typeof import('pinia')['createPinia']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>

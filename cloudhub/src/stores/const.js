@@ -176,3 +176,5 @@ export const VALUES_ORDER_VALUES = {
   "Banco Destino": "transaccions.bancodestino_id",
   "Banco Origen":"transaccions.bancoorigen_id"
 }
+
+
