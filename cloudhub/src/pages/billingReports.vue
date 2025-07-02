@@ -140,7 +140,7 @@ watchEffect(async () => {
       DATA_TABLE.value = data;
       TOTAL_PAGES.value = total_pages
     }finally{
-      LOADING.value = true
+      LOADING.value = false
     }
   })
 
