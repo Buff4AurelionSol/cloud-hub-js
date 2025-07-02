@@ -19,6 +19,14 @@
                const finalDate = `${month}-${year}`
                return finalDate; 
             }
+
+            if(modifiers.dateFull){
+                const year = value.getFullYear()
+                const month = String(value.getMonth() + 1).padStart(2, '0');
+                const day = String(value.getDate()).padStart(2, '0');   
+                const finalDate = `${year}-${month}-${day}`
+                return finalDate
+            }
             return value
         }
     })

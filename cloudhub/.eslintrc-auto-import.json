@@ -142,6 +142,7 @@
     "MOTIVO_RECHAZO": true,
     "DEUDA": true,
     "OPTIONS_STATES_REPORTS": true,
-    "OPTIONS_MONEDA": true
+    "OPTIONS_MONEDA": true,
+    "VALUES_ORDER_VALUES": true
   }
 }

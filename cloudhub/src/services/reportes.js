@@ -39,7 +39,7 @@ export const useReportesServices = () => {
 
 
   /**
-   * Obtiene una lista paginada de reportes
+   * Obtiene una lista paginada de reportes filtradas por una moneda y un estado de reporte
    * @param {Number} page Página a consultar
    * @param {Number} perPage Cantidad de elementos por página
    * @param {Number} moneda El tipo de moneda (Bolivares-Dolares)
@@ -76,10 +76,123 @@ export const useReportesServices = () => {
     }
   }
 
+  /**
+   * Obtiene una lista paginada de reportesfiltradas por un orden 
+   * @param {Number} page Página a consultar
+   * @param {Number} perPage Cantidad de elementos por página
+   * @param {String} order_by Criterio para ordenar 
+   * @returns {Promise<Object>} Resultado de la operación
+   */
+  const getReportOrderBy = async (page, perPage, order_by) => {
+    try {
+      const {data} = await axios.get(
+         `/cloudpayments/reporte/get/paginate`,{
+          params:{
+            page,
+            perPage,
+            order_by
+          }
+        }
+      );
+      if (!data.success) {
+        return {
+          success: false,
+          mensaje: data.mensaje,
+        };
+      }
+      return {
+        success: true,
+        data: data.data,
+        total_pages: data.total_pages
+      };
+
+    }
+    catch(error){
+      return handleAxiosError(error)
+    }
+  }
+
+    /**
+   * Obtiene una lista paginada de reportes filtradas por el tipo de reporte
+   * @param {Number} page Página a consultar
+   * @param {Number} perPage Cantidad de elementos por página
+   * @param {String} order_by Tipo de Reporte 
+   * @returns {Promise<Object>} Resultado de la operación
+   */
+  const getReportByType = async (page, perPage, tipo_reporte ) => {
+    try {
+      const {data} = await axios.get(
+         `/cloudpayments/reporte/get/paginate`,{
+          params:{
+            page,
+            perPage,
+            tipo_reporte
+          }
+        }
+      );
+      if (!data.success) {
+        return {
+          success: false,
+          mensaje: data.mensaje,
+        };
+      }
+      return {
+        success: true,
+        data: data.data,
+        total_pages: data.total_pages
+      };
+
+    }
+    catch(error){
+      return handleAxiosError(error)
+    }
+  }
+    /**
+   * Obtiene una lista paginada de reportes filtradas por el tipo de reporte
+   * @param {Number} page Página a consultar
+   * @param {Number} perPage Cantidad de elementos por página
+   * @param {String} order_by Tipo de Reporte 
+   * @returns {Promise<Object>} Resultado de la operación
+   */
+  const getReportByDate = async (page, perPage, fecha_ini, fecha_fin ) => {
+    try {
+      const {data} = await axios.get(
+         `/cloudpayments/reporte/get/paginate`,{
+          params:{
+            page,
+            perPage,
+            fecha_ini,
+            fecha_fin
+          }
+        }
+      );
+      if (!data.success) {
+        return {
+          success: false,
+          mensaje: data.mensaje,
+        };
+      }
+      return {
+        success: true,
+        data: data.data,
+        total_pages: data.total_pages
+      };
+
+    }
+    catch(error){
+      return handleAxiosError(error)
+    }
+  }
+
+
+
 
   return {
     getReportesPaginados,
-    getReportPaginadosTipoReporteMoneda
+    getReportPaginadosTipoReporteMoneda,
+    getReportOrderBy,
+    getReportByType,
+    getReportByDate
 
   };
 };

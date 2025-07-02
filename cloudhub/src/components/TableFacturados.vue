@@ -1,6 +1,7 @@
 <script setup>
 
     import DetailsIcon from '@/pics/visible.png'
+    const modelPage = defineModel('valueCurrentPage')
 
     const props = defineProps({
         indexState: {
@@ -37,21 +38,24 @@
         },
         reciveTotalPages:{
           type: Number
+        },
+        loading: {
+          type: Boolean
         }
     })
 
     
-
- 
-    //Funcionalidades del Renderizado 
-    const tableData = computed(() => props.dataTable)
-    
-    const COLUMNS_HEADERS = computed(() => props.columnsHeaders)
-
+    //FUNCIÓN PARA SOLO MOSTRAR HEADERS PERTINENTES DE CADA TABLE DINÀMICAMENTE
     const VISIBLE_COLUMN = computed(() => {
       return COLUMNS_HEADERS.value.filter((col) => !props.columns.includes(col.value));
     });
 
+
+
+    //Funcionalidades del Renderizado 
+    const tableData = computed(() => props.dataTable)
+    
+    const COLUMNS_HEADERS = computed(() => props.columnsHeaders)
 
     const formatedValue = (data, pathKey) => {
         return pathKey.split(".").reduce((currentValue, key)=>{
@@ -69,37 +73,11 @@
     }
 
     //Funcionalidades del paginado
-    const rowsPerPage = computed(()=> props.indexState)
-    const currentPage = ref(1)
 
-    const PAGINATED_DATA = computed(() => {
-      const start = (currentPage.value - 1) * rowsPerPage.value
-      const end = start + rowsPerPage.value
-      return sortedAndFilteredData.value.slice(start, end)
-    })
+    const PAGINATED_DATA = computed(() => sortedAndFilteredData.value);
 
-    const totalPages = computed(() => props.reciveTotalPages)
 
-    const getDataTransactionFiltered = (DATA) => {
-        return DATA.filter(item => {
-          if (props.transactions.length <= 0 || props.transactions.includes('TODOS')) {
-            return true;
-          }
-
-            return item.transaccions.some(trans => props.transactions.includes(trans.tipo));
-        });
-    }
-
-    const getTypeReportFiltered = (DATA) => {
-      return DATA.filter(item =>{
-        if(props.typeReport.length <= 0){
-          return true
-        }
-        return props.typeReport.includes(item.tipo_reporte)
-
-      })
-
-    }
+    const TOTAL_PAGES = computed(() => props.reciveTotalPages)
 
     const getDataSerchFiltered = (DATA) => {
       return DATA.filter(item => {
@@ -122,52 +100,16 @@
         });
     }
 
-    const getDataOrderBy = (DATA) => {
-      let dataOrderBy; 
-      switch (props.orderBy) {
-        case 'Por defecto':
-          dataOrderBy = DATA;
-          break;
-        case 'Referencia':
-          dataOrderBy = [...DATA].sort((a, b) => parseInt(a.transaccions[0].referencia) - parseInt(b.transaccions[0].referencia) ) 
-          break;
-        case 'Monto Bs':
-          dataOrderBy = [...DATA].sort((a,b) => parseInt(a.transaccions[0].monto) - parseInt(b.transaccions[0].monto));
-          break;
-        case 'Contrato':
-          dataOrderBy = [...DATA].sort((a,b)=> parseInt(a.contratos[0].contrato) - parseInt(b.contratos[0].contrato));
-          break;
-        case 'Cliente':
-          dataOrderBy = [...DATA].sort((a,b) => a.contratos[0].nombre.localeCompare(b.contratos[0].nombre));
-          break;
-        case 'Rif/Cedula':
-          dataOrderBy = [...DATA].sort((a,b) => parseInt(a.contratos[0].rif) - parseInt(b.contratos[0].rif) );
-          break;
-        case 'Banco destino':
-          dataOrderBy = [...DATA].sort((a,b) => a.transaccions[0].banco_destino.localeCompare(b.transaccions[0].banco_destino));
-          break;
-        case 'Banco origen':
-          dataOrderBy = [...DATA].sort((a,b) => a.transaccions[0].banco_origen.localeCompare(b.transaccions[0].banco_origen));
-          break;
-        default:
-          dataOrderBy = DATA;
-      }
-
-      return dataOrderBy;
-
-    }
 
     const sortedAndFilteredData = computed(() => {
       
       let DATA = [...tableData.value];
-      const filtereTransaction = getDataTransactionFiltered([...DATA]);
-      const filteredBySearch = getDataSerchFiltered([...filtereTransaction])
-      const filteredOrderBy = getDataOrderBy([...filteredBySearch]);
-      const filteredTypeReport = getTypeReportFiltered([...filteredOrderBy])
-
+    
+      const filteredBySearch = getDataSerchFiltered([...DATA])
+   
       return props.haveIChangeDirectionOrderBy
-        ? [...filteredTypeReport].reverse()
-        : filteredTypeReport;
+        ? [...filteredBySearch].reverse()
+        : filteredBySearch;
     });
 
     const handleExport = () => {
@@ -175,10 +117,10 @@
     }
 
 
+
 </script>
 
 <template>
-
     <div class="w-100 d-flex justify-center mb-2">
       <v-btn variant="outlined" rounded="xl" @click="handleExport">Exportar a Excell</v-btn>
     </div>
@@ -194,7 +136,7 @@
       </thead>
 
       <tbody>
-        <template v-if="PAGINATED_DATA.length > 0">
+        <template v-if="PAGINATED_DATA.length > 0 && loading === false">
           <tr v-for="(report, index) in PAGINATED_DATA" :key="index">
             <td>{{ index + 1 }}</td>
 
@@ -214,6 +156,13 @@
             </td>
           </tr>
         </template>
+        <template v-else-if="loading === true">
+          <tr>
+            <td :colspan="VISIBLE_COLUMN.length + 2">
+              <v-skeleton-loader :elevation="3" color="secondary" type="article"></v-skeleton-loader>
+            </td>
+          </tr>
+        </template>
         <template v-else>
            <tr>
               <td :colspan="VISIBLE_COLUMN.length + 2" class="text-center text-h6 pa-5">
@@ -221,17 +170,21 @@
               </td>
            </tr>
         </template>
+       
         
       </tbody>
     </v-table>
     <div class="d-flex justify-end align-center mt-4">
       <v-pagination
-        v-model="currentPage"
-        :length="totalPages"
+        v-model="modelPage"
+        :length="TOTAL_PAGES"
         :total-visible="indexState"
         color="primary"
       />
     </div>
+
+
+  
 </template>
 
 

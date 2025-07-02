@@ -1,7 +1,7 @@
 <script setup >
   import ExchangeIMG from '@/pics/exchangeIMG.png'
   import arrowVerticle from '@/pics/arrows-verticle.svg'
-
+  
 
 
   const formRef = ref(null)
@@ -16,6 +16,7 @@
   const VALUES_INPUT_SHOW = defineModel('valueInputShow')
   const VALUES_TYPE_REPORT = defineModel('tyeReportsValue')
   const VALUES_PAY_TYPE = defineModel('payTypeValue')
+  const DATE_MODEL = defineModel('dateValue')
 
   const emit = defineEmits(['isChangeDirectionOrderBy'])
 
@@ -73,18 +74,19 @@
         </v-col>
         <v-col cols="12" md="6" :class="showFormState ? 'box-filters-fade': 'box-filters-move mb-2'">
           <PayType v-model:payTypeValue="VALUES_PAY_TYPE"/>
-        </v-col>
-        <v-row cols="12" md="6" class="mb-2">
+          <v-row cols="12" md="6">
             <TypeReport v-model:typeReportsValue="VALUES_TYPE_REPORT"/>
-        </v-row>
+          </v-row>
+        </v-col>
+        
       </v-row>
 
       <v-row v-if="showFormState">
         <v-col cols="12" md="3" :class="{'box-filters-fade': showFormState}">
-          <DateInput name="fecha-1" label="Fecha de inicio"/>
+          <DateInput name="fecha_ini" label="Fecha de inicio"  v-model.dateFull="DATE_MODEL.fecha_ini"/>
         </v-col>
         <v-col cols="12" md="3" :class="{'box-filters-fade': showFormState}">
-          <DateInput name="fecha-2" label="Fecha final"/>
+          <DateInput name="fecha_fin" label="Fecha final"  v-model.dateFull="DATE_MODEL.fecha_fin" />
         </v-col>
         <v-col cols="12" md="6" class="order-by-col" :class="{'box-filters-fade': showFormState}">
           <OrderByInput v-model:selectedOrders="SELECTED_ORDERS"/>
@@ -186,8 +188,5 @@
       transform: translateY(0px) scale(1);
     }
   }
-
-  
-
   
 </style>

@@ -32,6 +32,7 @@ declare global {
   const REPORTS_POR_VERIFICAR: typeof import('./src/stores/mockdata/reports.js')['REPORTS_POR_VERIFICAR']
   const REPORTS_RECHAZADOS: typeof import('./src/stores/mockdata/reports.js')['REPORTS_RECHAZADOS']
   const TRANSACCION_COLUMNS: typeof import('./src/stores/const.js')['TRANSACCION_COLUMNS']
+  const VALUES_ORDER_VALUES: typeof import('./src/stores/const.js')['VALUES_ORDER_VALUES']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const banesco: typeof import('./src/stores/mockdata/bills.js')['banesco']
   const banescopagos: typeof import('./src/stores/mockdata/bills.js')['banescopagos']
@@ -170,6 +171,7 @@ declare module 'vue' {
     readonly REPORTS_POR_VERIFICAR: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_POR_VERIFICAR']>
     readonly REPORTS_RECHAZADOS: UnwrapRef<typeof import('./src/stores/mockdata/reports.js')['REPORTS_RECHAZADOS']>
     readonly TRANSACCION_COLUMNS: UnwrapRef<typeof import('./src/stores/const.js')['TRANSACCION_COLUMNS']>
+    readonly VALUES_ORDER_VALUES: UnwrapRef<typeof import('./src/stores/const.js')['VALUES_ORDER_VALUES']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly banesco: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['banesco']>
     readonly banescopagos: UnwrapRef<typeof import('./src/stores/mockdata/bills.js')['banescopagos']>

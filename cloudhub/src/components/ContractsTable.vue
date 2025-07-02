@@ -12,7 +12,6 @@
       <tr>
         <th>Contrato</th>
         <th>Nombre</th>
-        <th>Estado</th>
       </tr>
     </thead>
     <tbody>
@@ -22,7 +21,6 @@
       >
         <td>{{ item.contrato }}</td>
         <td>{{ item.nombre}}</td>
-        <td>{{ item.estado }}</td>
       </tr>
     </tbody>
   </v-table>

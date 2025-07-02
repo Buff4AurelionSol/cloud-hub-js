@@ -1,12 +1,12 @@
 export const OPTIONS_ORDER_BY = [
   "Por defecto",
   "Referencia",
-  "Monto Bs",
+  "Monto BS",
   "Contrato",
   "Cliente",
-  "Rif/Cedula",
-  "Banco destino",
-  "Banco origen"
+  "RIF",
+  "Banco Destino",
+  "Banco Origen"
 ]
 
 export const OPTIONS_TRANSACTION = [
@@ -53,34 +53,34 @@ export const ALL_HEADERS = [
 
 export const COMMON_COLUMNS = [
   { title: 'id', value: 'ID' },
-  { title: 'created_at', value: 'FECHA REPORTE' },
+  { title: 'fecha_creacion', value: 'FECHA REPORTE' },
 ]
 
 export const REPORTE_COLUMNS = [
   { title: 'tipo_reporte', value: 'TIPO REPORTE' },
-  { title: 'reporteestado.estado', value: 'ESTADO' },
+  { title: 'estado', value: 'ESTADO' },
 ]
 
 export const TRANSACCION_COLUMNS = [
-  { title: 'transaccions.referencia', value: 'REFERENCIA' },
-  { title: 'transaccions.bancoorigen.nombre', value: 'BANCO ORIGEN' },
-  { title: 'transaccions.bancodestino.nombre', value: 'BANCO DESTINO' },
-  { title: 'transaccions.monto', value: 'MONTO' },
-  { title: 'transaccions.monto_usd', value: 'MONTO USD' },
-  { title: 'transaccions.tasa', value: 'TASA' },
-  { title: 'transaccions.transacciontipo.tipo', value: 'TIPO TRANSACCIÓN' },
-  { title: 'transaccions.transacciontipo.created_at', value: 'FECHA TRANSACCIÓN' },
+  { title: 'transacciones.referencia', value: 'REFERENCIA' },
+  { title: 'transacciones.banco_origen', value: 'BANCO ORIGEN' },
+  { title: 'transacciones.banco_destino', value: 'BANCO DESTINO' },
+  { title: 'transacciones.monto', value: 'MONTO' },
+  { title: 'transacciones.monto_usd', value: 'MONTO USD' },
+  { title: 'transacciones.tasa', value: 'TASA' },
+  { title: 'transacciones.tipo_transaccion', value: 'TIPO TRANSACCIÓN' },
+  { title: 'transacciones.fecha', value: 'FECHA TRANSACCIÓN' },
 ]
 
 export const CONTRATO_COLUMNS = [
-  { title: 'contrato.nombre', value: 'CLIENTE' },
-  { title: 'contrato.contrato', value: 'CONTRATO(S)' },
-  { title: 'contrato.rif_id', value: 'RIF/CEDULA' },
+  { title: 'contratos.nombre', value: 'CLIENTE' },
+  { title: 'contratos.contrato', value: 'CONTRATO(S)' },
+  { title: 'rifs.rif', value: 'RIF/CEDULA' },
 ]
 
 export const FACTURA_COLUMNS = [
-  { title: 'factura.factura', value: 'FACTURA(S)' },
-  { title: 'factura.fecha', value: 'FECHA FACTURA' },
+  { title: 'facturas.factura', value: 'FACTURA(S)' },
+  { title: 'facturas.fecha', value: 'FECHA FACTURA' },
 ]
 
 export const MOTIVO_RECHAZO = [
@@ -165,3 +165,14 @@ export const OPTIONS_MONEDA = {
   'BOLIVARES': 1,
   'DOLARES': 2,
 };
+
+export const VALUES_ORDER_VALUES = {
+  "Por defecto" : "",
+  "Referencia": "transaccions.referencia",
+  "Monto BS": "transaccions.monto",
+  "Contrato": "contratos.contrato",
+  "Cliente": "contratos.nombre",
+  "RIF": "rifs.rif",
+  "Banco Destino": "transaccions.bancodestino_id",
+  "Banco Origen":"transaccions.bancoorigen_id"
+}
