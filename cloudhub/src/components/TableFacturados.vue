@@ -58,19 +58,31 @@
     const COLUMNS_HEADERS = computed(() => props.columnsHeaders)
 
     const formatedValue = (data, pathKey) => {
-        return pathKey.split(".").reduce((currentValue, key)=>{
-          if(Array.isArray(currentValue)){
-            currentValue = currentValue[0];
-          }
+      const rawValue = pathKey.split(".").reduce((currentValue, key) => {
+        if (Array.isArray(currentValue)) {
+          currentValue = currentValue[0];
+        }
 
-          if(currentValue?.[key] === null || currentValue?.[key]  === ''){
-            return 'NO DATA'
-          }
+        if (currentValue?.[key] === null || currentValue?.[key] === '') {
+          return 'NO DATA';
+        }
 
-          return currentValue?.[key] 
+        return currentValue?.[key];
+      }, data);
 
-        },data)
-    }
+      // Si es string tipo fecha ISO → YYYY-MM-DD
+      if (typeof rawValue === 'string' && /^\d{4}-\d{2}-\d{2}T/.test(rawValue)) {
+        return rawValue.substring(0, 10).trim();
+      }
+
+      // Si es string normal, quitar espacios
+      if (typeof rawValue === 'string') {
+        return rawValue.trim();
+      }
+
+      return rawValue;
+    };
+
 
     //Funcionalidades del paginado
 

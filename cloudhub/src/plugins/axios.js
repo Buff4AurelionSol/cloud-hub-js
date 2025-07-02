@@ -6,7 +6,7 @@ import { useAppStore } from "@/stores/app";
 
 
 
-const STATIC_TOKEN = "377828|yrPQV73JOL8pEQGeZY5fmbsaiKR6qGc6ClT1Bf3V5105d3a2"
+const STATIC_TOKEN = "377841|RExCflV0dJX96GoQGcCaAdQDMX6IFCf8WmjQpOXS60979650"
 
  if (import.meta.env.DEV) {
   axios.defaults.baseURL = "http://10.0.0.77/api/cloudhub";

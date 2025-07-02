@@ -110,7 +110,8 @@ watchEffect(async () => {
 
     DATA_TABLE.value = data
     TOTAL_PAGES.value = total_pages
-
+    console.log("PAYTYPE: ",payTypeState.value)
+    console.log(data)
     changeUrl()
   } catch (err) {
     console.error(err)
